@@ -1,0 +1,339 @@
+% Font Samples - Title Comparison: ПАНЕЛЬКИ vs ПАНЕЛЬГРАД
+% Compile with LuaLaTeX
+
+\documentclass[10pt, a3paper, landscape, oneside]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+
+% Page layout
+\usepackage[a3paper, landscape, left=19.05mm, right=19.05mm, top=19.05mm, bottom=19.05mm]{geometry}
+
+% Background
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\definecolor{pagewhite}{HTML}{FCFCFC}
+\pagecolor{pagewhite}
+
+% Colors
+\definecolor{black}{HTML}{1A1A1A}
+\definecolor{gray}{HTML}{888888}
+\definecolor{sovietred}{HTML}{CC0000}
+\definecolor{boxbg}{HTML}{F5F5F5}
+\definecolor{border}{HTML}{DDDDDD}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+
+% Soviet font path
+\def\sovietfontpath{/Users/jennifer/Documents/GitHub/virtuelle-welten-worldbuilding/assets/fonts/soviet/}
+
+% ==========================================================================
+%   FONTS
+% ==========================================================================
+
+% Futura Bold - for section headings
+\newfontfamily\fontfutura{Futura}[
+  UprightFont = *-Bold,
+  BoldFont = *-Bold
+]
+
+% Soviet fonts for titles (only the 3 available)
+\newfontfamily\fontmolot{Molot}[
+  Path = \sovietfontpath,
+  Extension = .otf
+]
+
+\newfontfamily\fontfyodor{Fyodor-Bold}[
+  Path = \sovietfontpath,
+  Extension = .ttf
+]
+
+\newfontfamily\fontussrstencil{USSR-Stencil}[
+  Path = \sovietfontpath,
+  Extension = .otf
+]
+
+% Body fonts
+\newfontfamily\fontptsans{PT Sans}
+\newfontfamily\fontfuturabody{Futura}[
+  UprightFont = *-Medium,
+  BoldFont = *-Bold,
+  ItalicFont = *-MediumItalic
+]
+
+% ==========================================================================
+%   DOCUMENT
+% ==========================================================================
+\begin{document}
+
+% ==========================================================================
+%   PAGE 1: TITLE COMPARISON - ПАНЕЛЬКИ vs ПАНЕЛЬГРАД
+% ==========================================================================
+\thispagestyle{empty}
+
+\begin{center}
+  {\fontfutura\fontsize{24pt}{28pt}\selectfont TITLE COMPARISON\par}
+  \vspace{2mm}
+  {\fontptsans\small All Soviet fonts with both title options + subtitle · Futura for headings\par}
+\end{center}
+\vspace{8mm}
+
+% Row 1: Molot
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}MOLOT\par}
+  \vspace{5mm}
+  {\fontmolot\fontsize{54pt}{58pt}\selectfont ПАНЕЛЬКИ\par}
+  \vspace{4mm}
+  {\fontmolot\fontsize{18pt}{22pt}\selectfont Eine Worldbuilding Bible\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{14pt}{18pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+}}\hfill
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}MOLOT\par}
+  \vspace{5mm}
+  {\fontmolot\fontsize{54pt}{58pt}\selectfont ПАНЕЛЬГРАД\par}
+  \vspace{4mm}
+  {\fontmolot\fontsize{18pt}{22pt}\selectfont Eine Worldbuilding Bible\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{14pt}{18pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+}}
+
+\vspace{10mm}
+
+% Row 2: Fyodor Bold
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR BOLD\par}
+  \vspace{5mm}
+  {\fontfyodor\fontsize{54pt}{58pt}\selectfont ПАНЕЛЬКИ\par}
+  \vspace{4mm}
+  {\fontfyodor\fontsize{18pt}{22pt}\selectfont Eine Worldbuilding Bible\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{14pt}{18pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+}}\hfill
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR BOLD\par}
+  \vspace{5mm}
+  {\fontfyodor\fontsize{54pt}{58pt}\selectfont ПАНЕЛЬГРАД\par}
+  \vspace{4mm}
+  {\fontfyodor\fontsize{18pt}{22pt}\selectfont Eine Worldbuilding Bible\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{14pt}{18pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+}}
+
+\vspace{10mm}
+
+% Row 3: USSR Stencil
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}USSR STENCIL\par}
+  \vspace{5mm}
+  {\fontussrstencil\fontsize{54pt}{58pt}\selectfont ПАНЕЛЬКИ\par}
+  \vspace{4mm}
+  {\fontussrstencil\fontsize{18pt}{22pt}\selectfont Eine Worldbuilding Bible\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{14pt}{18pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+}}\hfill
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}USSR STENCIL\par}
+  \vspace{5mm}
+  {\fontussrstencil\fontsize{54pt}{58pt}\selectfont ПАНЕЛЬГРАД\par}
+  \vspace{4mm}
+  {\fontussrstencil\fontsize{18pt}{22pt}\selectfont Eine Worldbuilding Bible\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{14pt}{18pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+}}
+
+\newpage
+
+% ==========================================================================
+%   PAGE 2: COMBINED OPTIONS
+% ==========================================================================
+\thispagestyle{empty}
+
+\begin{center}
+  {\fontfutura\fontsize{24pt}{28pt}\selectfont COMBINED TITLE OPTIONS\par}
+  \vspace{2mm}
+  {\fontptsans\small Both names together in each font\par}
+\end{center}
+\vspace{10mm}
+
+% Large combined versions
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}MOLOT\par}
+  \vspace{6mm}
+  {\fontmolot\fontsize{42pt}{46pt}\selectfont ПАНЕЛЬКИ / ПАНЕЛЬГРАД\par}
+  \vspace{4mm}
+  {\fontmolot\fontsize{14pt}{18pt}\selectfont Eine Worldbuilding Bible für dystopische Sowjet-Fantasy\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{12pt}{16pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{12pt}{16pt}\selectfont ABSCHNITT 1.1: DIE WELT\par}
+  \vspace{3mm}
+}}\hfill
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR BOLD\par}
+  \vspace{6mm}
+  {\fontfyodor\fontsize{42pt}{46pt}\selectfont ПАНЕЛЬКИ / ПАНЕЛЬГРАД\par}
+  \vspace{4mm}
+  {\fontfyodor\fontsize{14pt}{18pt}\selectfont Eine Worldbuilding Bible für dystopische Sowjet-Fantasy\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{12pt}{16pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{12pt}{16pt}\selectfont ABSCHNITT 1.1: DIE WELT\par}
+  \vspace{3mm}
+}}
+
+\vspace{10mm}
+
+\begin{center}
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}USSR STENCIL\par}
+  \vspace{6mm}
+  {\fontussrstencil\fontsize{42pt}{46pt}\selectfont ПАНЕЛЬКИ / ПАНЕЛЬГРАД\par}
+  \vspace{4mm}
+  {\fontussrstencil\fontsize{14pt}{18pt}\selectfont Eine Worldbuilding Bible für dystopische Sowjet-Fantasy\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{12pt}{16pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{12pt}{16pt}\selectfont ABSCHNITT 1.1: DIE WELT\par}
+  \vspace{3mm}
+}}
+\end{center}
+
+\vspace{12mm}
+
+% Stacked version
+\begin{center}
+  {\fontfutura\fontsize{18pt}{22pt}\selectfont STACKED OPTION\par}
+  \vspace{6mm}
+  \fbox{\parbox{0.5\textwidth}{
+    \centering
+    \vspace{5mm}
+    {\fontmolot\fontsize{48pt}{52pt}\selectfont ПАНЕЛЬКИ\par}
+    \vspace{1mm}
+    {\fontmolot\fontsize{48pt}{52pt}\selectfont ПАНЕЛЬГРАД\par}
+    \vspace{4mm}
+    {\fontmolot\fontsize{14pt}{18pt}\selectfont Eine Worldbuilding Bible für dystopische Sowjet-Fantasy\par}
+    \vspace{3mm}
+    {\fontfutura\fontsize{12pt}{16pt}\selectfont KAPITEL EINS: EINFÜHRUNG\par}
+    \vspace{4mm}
+  }}
+\end{center}
+
+\newpage
+
+% ==========================================================================
+%   PAGE 3: BODY TEXT COMPARISON - PT Sans vs Futura
+% ==========================================================================
+\thispagestyle{empty}
+
+\begin{center}
+  {\fontfutura\fontsize{24pt}{28pt}\selectfont BODY TEXT COMPARISON\par}
+  \vspace{2mm}
+  {\fontptsans\small PT Sans vs Futura Medium at 10pt with 1.15 line spacing\par}
+\end{center}
+\vspace{8mm}
+
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}PT SANS (Current Body Font)\par}
+  \vspace{4mm}
+  \raggedright
+  {\fontptsans\fontsize{10pt}{11.5pt}\selectfont
+  Die Plattenbauten erheben sich wie graue Monolithen gegen den bleiernen Himmel. In den endlosen Korridoren der Wohnblocks hallen die Schritte der Bewohner wider, ein monotoner Rhythmus des sozialistischen Alltags.
+
+  \vspace{3mm}
+
+  Zwischen den identischen Fassaden suchen die Menschen nach Individualität. Hinter jeder nummerierten Tür verbirgt sich eine eigene Welt, ein privater Kosmos inmitten der kollektiven Architektur.
+
+  \vspace{3mm}
+
+  \textbf{Fetter Text zur Hervorhebung.} \textit{Kursiver Text für Betonung.} Normaler Fließtext für den Hauptinhalt des Dokuments.
+
+  \vspace{4mm}
+
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+  abcdefghijklmnopqrstuvwxyz\\
+  ÄÖÜäöüß\\
+  0123456789
+  \par}
+}}\hfill
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FUTURA MEDIUM (Alternative)\par}
+  \vspace{4mm}
+  \raggedright
+  {\fontfuturabody\fontsize{10pt}{11.5pt}\selectfont
+  Die Plattenbauten erheben sich wie graue Monolithen gegen den bleiernen Himmel. In den endlosen Korridoren der Wohnblocks hallen die Schritte der Bewohner wider, ein monotoner Rhythmus des sozialistischen Alltags.
+
+  \vspace{3mm}
+
+  Zwischen den identischen Fassaden suchen die Menschen nach Individualität. Hinter jeder nummerierten Tür verbirgt sich eine eigene Welt, ein privater Kosmos inmitten der kollektiven Architektur.
+
+  \vspace{3mm}
+
+  \textbf{Fetter Text zur Hervorhebung.} \textit{Kursiver Text für Betonung.} Normaler Fließtext für den Hauptinhalt des Dokuments.
+
+  \vspace{4mm}
+
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+  abcdefghijklmnopqrstuvwxyz\\
+  ÄÖÜäöüß\\
+  0123456789
+  \par}
+}}
+
+\vspace{10mm}
+
+% Longer text comparison
+\begin{center}
+  {\fontfutura\fontsize{18pt}{22pt}\selectfont EXTENDED READING SAMPLE\par}
+\end{center}
+\vspace{6mm}
+
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}PT SANS\par}
+  \vspace{4mm}
+  \raggedright
+  {\fontptsans\fontsize{10pt}{11.5pt}\selectfont
+  Das Jahr ist 1987. Die Sowjetunion existiert noch, aber sie ist nicht mehr die Sowjetunion, die wir kennen. In dieser alternativen Zeitlinie hat sich die Geschichte anders entwickelt. Die Technologie ist fortgeschrittener, die Kontrolle totaler, und die Träume der Menschen sind längst in den grauen Beton der Plattenbauten eingemauert.
+
+  \vspace{3mm}
+
+  Die Stadt erstreckt sich bis zum Horizont—ein Meer aus identischen Wohnblocks, durchzogen von breiten Boulevards, die zu monumentalen Plätzen führen. Über allem thront der Fernsehturm, ein technologisches Wunderwerk, das die Gedanken der Bürger überwacht.
+  \par}
+}}\hfill
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FUTURA MEDIUM\par}
+  \vspace{4mm}
+  \raggedright
+  {\fontfuturabody\fontsize{10pt}{11.5pt}\selectfont
+  Das Jahr ist 1987. Die Sowjetunion existiert noch, aber sie ist nicht mehr die Sowjetunion, die wir kennen. In dieser alternativen Zeitlinie hat sich die Geschichte anders entwickelt. Die Technologie ist fortgeschrittener, die Kontrolle totaler, und die Träume der Menschen sind längst in den grauen Beton der Plattenbauten eingemauert.
+
+  \vspace{3mm}
+
+  Die Stadt erstreckt sich bis zum Horizont—ein Meer aus identischen Wohnblocks, durchzogen von breiten Boulevards, die zu monumentalen Plätzen führen. Über allem thront der Fernsehturm, ein technologisches Wunderwerk, das die Gedanken der Bürger überwacht.
+  \par}
+}}
+
+\end{document}

@@ -10,39 +10,21 @@
 % Encoding and font support for LuaLaTeX
 \usepackage{fontspec}
 
-% Font path - fonts in shared assets folder (relative to de/ subdirectory)
-\def\fontpath{../../assets/fonts/}
+% Font configuration (Soviet-inspired fonts)
+% Body: PT Sans (clean, readable body text)
+\setmainfont{PT Sans}
 
-% Font configuration (variable fonts from repository)
-\setmainfont{OpenSans}[
-  Path = \fontpath,
-  UprightFont = {OpenSans[wdth,wght].ttf},
-  ItalicFont = {OpenSans-Italic[wdth,wght].ttf},
-  BoldFont = {OpenSans[wdth,wght].ttf},
-  BoldItalicFont = {OpenSans-Italic[wdth,wght].ttf},
-  BoldFeatures = {Weight=700},
-  BoldItalicFeatures = {Weight=700}
-]
+% Sans: PT Sans (same as body)
+\setsansfont{PT Sans}
 
-\setsansfont{OpenSans}[
-  Path = \fontpath,
-  UprightFont = {OpenSans[wdth,wght].ttf},
-  ItalicFont = {OpenSans-Italic[wdth,wght].ttf},
-  BoldFont = {OpenSans[wdth,wght].ttf},
-  BoldItalicFont = {OpenSans-Italic[wdth,wght].ttf},
-  BoldFeatures = {Weight=700},
-  BoldItalicFeatures = {Weight=700}
-]
+% Mono: PT Mono (for code blocks and technical text)
+\setmonofont{PT Mono}[Scale=0.9]
 
-\setmonofont{JetBrainsMono}[  % For tables and [bracketed descriptions]
-  Path = \fontpath,
-  UprightFont = {JetBrainsMono[wght].ttf},
-  ItalicFont = {JetBrainsMono-Italic[wght].ttf},
-  BoldFont = {JetBrainsMono[wght].ttf},
-  BoldItalicFont = {JetBrainsMono-Italic[wght].ttf},
-  BoldFeatures = {Weight=700},
-  BoldItalicFeatures = {Weight=700}
-]
+% Title font: Molot (Soviet constructivist display font)
+\newfontfamily\titlefont{Molot}[Scale=1.2]
+
+% Subsection font: Futura (geometric sans-serif)
+\newfontfamily\subsectionfont{Futura}[BoldFont={Futura Bold}]
 
 % Polyglossia for language support
 \usepackage{polyglossia}
@@ -80,17 +62,17 @@
 \setcounter{secnumdepth}{3}  % Number headings up to subsubsection
 \setcounter{tocdepth}{2}     % TOC shows up to subsection
 
-% Level 1: Large, Bold, Black
+% Level 1: Large, PT Sans Bold
 \titleformat{\section}
   {\normalfont\Large\bfseries}
   {\thesection}{1em}{}
 
-% Level 2: Medium, Bold, Black
+% Level 2: Medium, Futura Bold
 \titleformat{\subsection}
-  {\normalfont\large\bfseries}
+  {\subsectionfont\large\bfseries}
   {\thesubsection}{1em}{}
 
-% Level 3: Normal, Bold, Black
+% Level 3: Normal, PT Sans Bold
 \titleformat{\subsubsection}
   {\normalfont\normalsize\bfseries}
   {\thesubsubsection}{1em}{}
@@ -263,9 +245,9 @@ $endif$
 
     \vspace{4cm}
 
-    % Title (bold, centered)
+    % Title (Molot font, large and centered)
     \centering
-    {\bfseries\LARGE \@title \par}
+    {\titlefont\fontsize{32pt}{38pt}\selectfont \@title \par}
     \vspace{0.5cm}
     {\large Spieldesign-Dokument \par}
 

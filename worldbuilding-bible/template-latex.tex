@@ -10,56 +10,42 @@
 
 \usepackage{fontspec}
 
-% Font path - fonts in shared assets folder (relative to de/ subdirectory)
-\def\fontpath{../../assets/fonts/}
+% Soviet font path (relative to de/ subdirectory)
+\def\sovietfontpath{../../assets/fonts/soviet/}
 
-% Body: Lora 10pt (variable font from repository)
-\setmainfont{Lora}[
-  Path = \fontpath,
-  UprightFont = {Lora[wght].ttf},
-  ItalicFont = {Lora-Italic[wght].ttf},
-  BoldFont = {Lora[wght].ttf},
-  BoldItalicFont = {Lora-Italic[wght].ttf},
-  BoldFeatures = {Weight=700},
-  BoldItalicFeatures = {Weight=700}
+% Body: PT Sans (Russian-designed system font)
+\setmainfont{PT Sans}
+
+% Sans: PT Sans (same as body for consistency)
+\setsansfont{PT Sans}
+
+% Mono: PT Mono (Russian-designed, matches PT family)
+\setmonofont{PT Mono}[Scale=0.9]
+
+% Heading font: Futura Bold (system font, clean geometric)
+\newfontfamily\headingfont{Futura}[
+  UprightFont = *-Bold,
+  BoldFont = *-Bold
 ]
 
-% Sans: Open Sans (variable font from repository)
-\setsansfont{OpenSans}[
-  Path = \fontpath,
-  UprightFont = {OpenSans[wdth,wght].ttf},
-  ItalicFont = {OpenSans-Italic[wdth,wght].ttf},
-  BoldFont = {OpenSans[wdth,wght].ttf},
-  BoldItalicFont = {OpenSans-Italic[wdth,wght].ttf},
-  BoldFeatures = {Weight=700},
-  BoldItalicFeatures = {Weight=700}
+% Title font: Molot (Soviet constructivist style - best kerning)
+\newfontfamily\titlefont{Molot}[
+  Path = \sovietfontpath,
+  Extension = .otf
 ]
 
-\setmonofont{JetBrainsMono}[
-  Path = \fontpath,
-  UprightFont = {JetBrainsMono[wght].ttf},
-  ItalicFont = {JetBrainsMono-Italic[wght].ttf},
-  BoldFont = {JetBrainsMono[wght].ttf},
-  BoldItalicFont = {JetBrainsMono-Italic[wght].ttf},
-  BoldFeatures = {Weight=700},
-  BoldItalicFeatures = {Weight=700},
-  Scale = 0.9
+% Alternative fonts (available for special use)
+% Fyodor Bold - Soviet geometric (OFL license, full German support)
+\newfontfamily\fyodorfont{Fyodor-Bold}[
+  Path = \sovietfontpath,
+  Extension = .ttf
 ]
 
-% Heading font: Source Serif 4 Italic (variable font from repository)
-% Aria Text G2 is commercial - Source Serif 4 is a similar transitional serif
-\newfontfamily\headingfont{SourceSerif4}[
-  Path = \fontpath,
-  UprightFont = {SourceSerif4[opsz,wght].ttf},
-  ItalicFont = {SourceSerif4-Italic[opsz,wght].ttf},
-  BoldFont = {SourceSerif4[opsz,wght].ttf},
-  BoldItalicFont = {SourceSerif4-Italic[opsz,wght].ttf},
-  BoldFeatures = {Weight=700},
-  BoldItalicFeatures = {Weight=700}
+% USSR Stencil - military stencil style (OFL license)
+\newfontfamily\stencilfont{USSR-Stencil}[
+  Path = \sovietfontpath,
+  Extension = .otf
 ]
-
-% Title font (same as heading)
-\let\titlefont\headingfont
 
 \usepackage{polyglossia}
 \setdefaultlanguage{$if(lang)$$lang$$else$german$endif$}
@@ -90,7 +76,7 @@
 \setlength{\parskip}{1.25mm}
 
 % ==========================================================================
-%   HEADINGS - Source Serif 4 Italic 30pt
+%   HEADINGS - Fyodor Bold (Soviet geometric) 30pt
 % ==========================================================================
 
 \usepackage{fancyhdr}
@@ -113,18 +99,18 @@
 \renewcommand{\cftdotsep}{2}              % Dot spacing
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}  % Dots for sections too
 
-% H1 - Source Serif 4 Italic 30pt
+% H1 - Fyodor Bold 30pt (Soviet geometric display)
 \titleformat{\section}
-  {\headingfont\fontsize{30pt}{36pt}\selectfont\itshape\color{black}}
+  {\headingfont\fontsize{30pt}{36pt}\selectfont\color{black}}
   {}{0em}{}
 \titlespacing*{\section}{0pt}{10mm}{5mm}  % 10mm before, 5mm after major sections
 
 % Page break before each section (chapter)
 \newcommand{\sectionbreak}{\clearpage}
 
-% H2 - Source Serif 4 Italic 18pt
+% H2 - Fyodor Bold 18pt
 \titleformat{\subsection}
-  {\headingfont\fontsize{18pt}{22pt}\selectfont\itshape\color{black}}
+  {\headingfont\fontsize{18pt}{22pt}\selectfont\color{black}}
   {}{0em}{}
 \titlespacing*{\subsection}{0pt}{5mm}{2mm}
 
@@ -436,14 +422,14 @@ $if(date)$\date{$date$}$else$\date{}$endif$
   \vfill
 
   \begin{center}
-    % Title in Source Serif 4 Italic 48pt
-    {\titlefont\fontsize{48pt}{54pt}\selectfont\itshape\@title\par}
+    % Title in Molot 48pt (Soviet constructivist display)
+    {\titlefont\fontsize{48pt}{54pt}\selectfont\@title\par}
 
     \vspace{12mm}
 
-    % Subtitle
+    % Subtitle in Futura Bold
     $if(subtitle)$
-    {\titlefont\fontsize{16pt}{20pt}\selectfont $subtitle$\par}
+    {\headingfont\fontsize{16pt}{20pt}\selectfont $subtitle$\par}
     \vspace{10mm}
     $endif$
 

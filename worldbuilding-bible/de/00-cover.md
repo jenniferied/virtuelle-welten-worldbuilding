@@ -1,5 +1,5 @@
 ---
-title: "Dystopian District"
+title: "ПАНЕЛЬКИ / ПАНЕЛЬГРАД"
 subtitle: "Eine Worldbuilding Bible für dystopische Sowjet-Fantasy"
 author:
   - "Jennifer Meier"

@@ -154,6 +154,48 @@ function Div(el)
     }
   end
 
+  -- Full-page unbalanced column layouts
+  if classes:includes("page-1") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{page-1}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{page-1}")
+    }
+  end
+
+  if classes:includes("page-2") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{page-2}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{page-2}")
+    }
+  end
+
+  if classes:includes("page-3") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{page-3}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{page-3}")
+    }
+  end
+
+  if classes:includes("page-4") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{page-4}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{page-4}")
+    }
+  end
+
+  -- Boxed content (unified box style)
+  if classes:includes("boxed") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{boxed}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{boxed}")
+    }
+  end
+
   -- Cover / title page
   if classes:includes("cover") or classes:includes("title-page") then
     -- Skip - handled by maketitle
