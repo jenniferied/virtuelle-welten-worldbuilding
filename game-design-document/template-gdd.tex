@@ -1,0 +1,327 @@
+% LaTeX Template for Game Design Document
+% Configured for LuaLaTeX - similar to thesis template but single-spaced
+
+\documentclass[
+  $if(fontsize)$$fontsize$$else$11pt$endif$,
+  a4paper,
+  oneside
+]{article}
+
+% Encoding and font support for LuaLaTeX
+\usepackage{fontspec}
+
+% Font path - fonts in shared assets folder (relative to de/ subdirectory)
+\def\fontpath{../../assets/fonts/}
+
+% Font configuration (variable fonts from repository)
+\setmainfont{OpenSans}[
+  Path = \fontpath,
+  UprightFont = {OpenSans[wdth,wght].ttf},
+  ItalicFont = {OpenSans-Italic[wdth,wght].ttf},
+  BoldFont = {OpenSans[wdth,wght].ttf},
+  BoldItalicFont = {OpenSans-Italic[wdth,wght].ttf},
+  BoldFeatures = {Weight=700},
+  BoldItalicFeatures = {Weight=700}
+]
+
+\setsansfont{OpenSans}[
+  Path = \fontpath,
+  UprightFont = {OpenSans[wdth,wght].ttf},
+  ItalicFont = {OpenSans-Italic[wdth,wght].ttf},
+  BoldFont = {OpenSans[wdth,wght].ttf},
+  BoldItalicFont = {OpenSans-Italic[wdth,wght].ttf},
+  BoldFeatures = {Weight=700},
+  BoldItalicFeatures = {Weight=700}
+]
+
+\setmonofont{JetBrainsMono}[  % For tables and [bracketed descriptions]
+  Path = \fontpath,
+  UprightFont = {JetBrainsMono[wght].ttf},
+  ItalicFont = {JetBrainsMono-Italic[wght].ttf},
+  BoldFont = {JetBrainsMono[wght].ttf},
+  BoldItalicFont = {JetBrainsMono-Italic[wght].ttf},
+  BoldFeatures = {Weight=700},
+  BoldItalicFeatures = {Weight=700}
+]
+
+% Polyglossia for language support
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+
+% Page layout - standard margins (same as thesis)
+\usepackage[
+  left=2.54cm,
+  right=2.54cm,
+  top=2.54cm,
+  bottom=2.54cm
+]{geometry}
+
+% Single spacing for game design documents
+\usepackage{setspace}
+\singlespacing
+
+% Paragraph formatting - no indent, space between paragraphs
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip}
+
+% Color support
+\usepackage{xcolor}
+\definecolor{gddgray}{HTML}{808080}  % Gray for placeholder/sample text
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+% Section formatting - numbered, black headings
+\usepackage{titlesec}
+\setcounter{secnumdepth}{3}  % Number headings up to subsubsection
+\setcounter{tocdepth}{2}     % TOC shows up to subsection
+
+% Level 1: Large, Bold, Black
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+% Level 2: Medium, Bold, Black
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
+
+% Level 3: Normal, Bold, Black
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+
+% Hyperlinks - black (like thesis)
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdfusetitle
+]{hyperref}
+
+% Graphics support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Graphics path (relative to game-design-document/de/)
+\graphicspath{{../../assets/logos/}{../figures/}{./figures/}}
+
+% Table support
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}  % Required for Pandoc table width calculations
+
+% Longtable defaults for Pandoc-generated tables
+\setlength{\LTpre}{\bigskipamount}
+\setlength{\LTpost}{\bigskipamount}
+
+% Pandoc uses \LTcaptype{none} for tables without captions
+% Define a dummy 'none' counter to prevent "No counter 'none' defined" error
+\newcounter{none}
+
+% Monospace column type for tables
+\newcolumntype{M}{>{\ttfamily}l}
+
+% Table formatting
+\setlength{\heavyrulewidth}{0.08em}
+\setlength{\lightrulewidth}{0.05em}
+\setlength{\tabcolsep}{8pt}
+
+% Pandoc CSLReferences environment (required even without bibliography)
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2]
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+% List support
+\usepackage{enumitem}
+
+% Pandoc tightlist command
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Code block support (Shaded environment for Pandoc)
+\usepackage{fancyvrb}
+\usepackage{framed}
+\definecolor{shadecolor}{HTML}{F5F5F5}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[HTML]{007020}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[HTML]{902000}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[HTML]{40A070}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[HTML]{40A070}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[HTML]{40A070}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[HTML]{880000}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[HTML]{4070A0}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[HTML]{4070A0}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[HTML]{4070A0}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[HTML]{4070A0}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[HTML]{BB6688}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[HTML]{60A0B0}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[HTML]{BA2121}{\textit{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[HTML]{60A0B0}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[HTML]{60A0B0}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[HTML]{007020}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[HTML]{06287E}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[HTML]{19177C}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[HTML]{007020}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[HTML]{666666}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[HTML]{BC7A00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[HTML]{7D9029}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[HTML]{60A0B0}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[HTML]{FF0000}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[HTML]{FF0000}{\textbf{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[HTML]{FF0000}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small}
+
+% Sample text command - gray italic for placeholder content
+\newcommand{\sampletext}[1]{{\color{gddgray}\textit{#1}}}
+
+% Design note box (gray)
+\usepackage{tcolorbox}
+\newtcolorbox{designnote}{
+  colback=gray!5,
+  colframe=gray!50,
+  title={\textbf{Design Note}},
+  fonttitle=\bfseries\color{black},
+  coltitle=black
+}
+
+% Caption formatting
+\usepackage{caption}
+\captionsetup{
+  font={small},
+  labelfont={bf},
+  format=plain,
+  justification=raggedright,
+  singlelinecheck=false
+}
+
+% Pandoc variables
+$if(title)$
+\title{$title$}
+$endif$
+
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+
+$if(date)$
+\date{$date$}
+$else$
+\date{}
+$endif$
+
+% Document metadata
+\hypersetup{
+  pdftitle={$title$ - Game Design Document},
+  pdfauthor={$for(author)$$author$$sep$; $endfor$}
+}
+
+% GDD Title Page (similar to thesis)
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \singlespacing
+
+    % === HEADER: Logos (TH OWL left, MP right) - same as thesis ===
+    \noindent
+    \begin{minipage}[t]{0.3\textwidth}
+      \raggedright
+      \includegraphics[height=2.3cm]{th-owl-logo.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+      \raggedleft
+      \includegraphics[height=2.3cm]{mp-logo.png}
+    \end{minipage}
+
+    \vspace{4cm}
+
+    % Title (bold, centered)
+    \centering
+    {\bfseries\LARGE \@title \par}
+    \vspace{0.5cm}
+    {\large Spieldesign-Dokument \par}
+
+    \vspace{2cm}
+
+    % Version info
+    {\@author \par}
+    \vspace{0.5cm}
+
+    $if(institute)$
+    {$institute$ \par}
+    $endif$
+    $if(department)$
+    {$department$ \par}
+    $endif$
+    \vspace{0.75cm}
+
+    % Document info
+    \begin{tabular}{ll}
+      \textbf{Version:} & $if(version)$$version$$else$0.1$endif$ \\
+      \textbf{Status:} & $if(status)$$status$$else$Entwurf$endif$ \\
+      $if(platform)$\textbf{Plattform:} & $platform$ \\$endif$
+      $if(engine)$\textbf{Engine:} & $engine$ \\$endif$
+    \end{tabular}
+    \vspace{0.75cm}
+
+    % Date
+    {\@date \par}
+
+    \vfill
+  \end{titlepage}
+  \setcounter{page}{2}
+}
+\makeatother
+
+% Revision history table command
+\newcommand{\revisionhistory}[1]{%
+  \section*{Änderungshistorie}
+  \addcontentsline{toc}{section}{Änderungshistorie}
+  #1
+}
+
+% Begin document
+\begin{document}
+
+$if(title)$
+\maketitle
+\clearpage
+$endif$
+
+$if(toc)$
+\tableofcontents
+\newpage
+$endif$
+
+% Main content
+$body$
+
+\end{document}

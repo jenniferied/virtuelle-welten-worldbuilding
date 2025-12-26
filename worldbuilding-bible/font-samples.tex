@@ -1,0 +1,459 @@
+% Font Samples for Soviet-Style Worldbuilding Bible
+% Compile with LuaLaTeX
+% Compares heading fonts and body fonts separately
+
+\documentclass[10pt, a3paper, landscape, oneside]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+
+% Page layout
+\usepackage[a3paper, landscape, left=19.05mm, right=19.05mm, top=19.05mm, bottom=19.05mm]{geometry}
+
+% Background
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\definecolor{pagewhite}{HTML}{FCFCFC}
+\pagecolor{pagewhite}
+
+% Colors
+\definecolor{black}{HTML}{1A1A1A}
+\definecolor{gray}{HTML}{888888}
+\definecolor{sovietred}{HTML}{CC0000}
+\definecolor{boxbg}{HTML}{F5F5F5}
+\definecolor{border}{HTML}{DDDDDD}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{../assets/logos/}{../assets/fonts/soviet/}}
+
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+
+% Soviet font path - absolute path for reliable loading
+\def\sovietfontpath{/Users/jennifer/Documents/GitHub/virtuelle-welten-worldbuilding/assets/fonts/soviet/}
+
+% ==========================================================================
+%   HEADING FONTS - Soviet Style
+% ==========================================================================
+
+% System fonts
+\newfontfamily\fontfutura{Futura}[
+  UprightFont = *-Bold,
+  BoldFont = *-Bold
+]
+
+% Downloaded Soviet fonts
+\newfontfamily\fontmolot{Molot}[
+  Path = \sovietfontpath,
+  Extension = .otf
+]
+
+\newfontfamily\fontpropaganda{propaganda}[
+  Path = \sovietfontpath,
+  Extension = .ttf
+]
+
+\newfontfamily\fontfyodor{Fyodor-Bold}[
+  Path = \sovietfontpath,
+  Extension = .ttf
+]
+
+\newfontfamily\fontfyodorcondensed{Fyodor-BoldCondensed}[
+  Path = \sovietfontpath,
+  Extension = .ttf
+]
+
+\newfontfamily\fontussrstencil{USSR-Stencil}[
+  Path = \sovietfontpath,
+  Extension = .otf
+]
+
+% ==========================================================================
+%   BODY FONTS
+% ==========================================================================
+\newfontfamily\fontptserif{PT Serif}
+\newfontfamily\fontptsans{PT Sans}
+\newfontfamily\fontptmono{PT Mono}[Scale=0.9]
+
+% ==========================================================================
+%   DOCUMENT
+% ==========================================================================
+\begin{document}
+
+% ==========================================================================
+%   COVER PAGE
+% ==========================================================================
+\thispagestyle{empty}
+\null\vfill
+\begin{center}
+  {\fontfutura\fontsize{36pt}{40pt}\selectfont SOVIET-STYLE FONT SAMPLES\par}
+  \vspace{10mm}
+  {\fontptsans\Large Comparing Heading Fonts and Body Fonts Separately\par}
+  \vspace{20mm}
+  {\fontptsans\large
+  \textbf{HEADING FONTS:}\\[3mm]
+  Futura Bold (system) | Molot | Propaganda | Fyodor Bold | Fyodor Condensed | USSR Stencil\\[10mm]
+  \textbf{BODY FONTS:}\\[3mm]
+  PT Serif | PT Sans\\[10mm]
+  \textbf{MONOSPACE:}\\[3mm]
+  PT Mono
+  }
+  \vspace{20mm}
+  {\fontptmono\small Compile with: lualatex font-samples.tex\par}
+\end{center}
+\vfill
+\newpage
+
+% ==========================================================================
+%   HEADING FONTS COMPARISON
+% ==========================================================================
+\thispagestyle{empty}
+
+\begin{center}
+  {\color{sovietred}\bfseries\Huge HEADING FONTS COMPARISON\par}
+  \vspace{5mm}
+  {\fontptsans\small All shown at 48pt for title size\par}
+\end{center}
+\vspace{10mm}
+
+% Futura
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FUTURA BOLD (System)\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{48pt}{52pt}\selectfont WELTENBIBEL\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{30pt}{34pt}\selectfont KAPITEL EINS\par}
+  \vspace{3mm}
+  {\fontfutura\fontsize{18pt}{22pt}\selectfont UNTERABSCHNITT\par}
+}}\hfill
+% Molot
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}MOLOT (Downloaded)\par}
+  \vspace{3mm}
+  {\fontmolot\fontsize{48pt}{52pt}\selectfont WELTENBIBEL\par}
+  \vspace{3mm}
+  {\fontmolot\fontsize{30pt}{34pt}\selectfont KAPITEL EINS\par}
+  \vspace{3mm}
+  {\fontmolot\fontsize{18pt}{22pt}\selectfont UNTERABSCHNITT\par}
+}}
+
+\vspace{8mm}
+
+% Propaganda
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}PROPAGANDA (Downloaded)\par}
+  \vspace{3mm}
+  {\fontpropaganda\fontsize{48pt}{52pt}\selectfont WELTENBIBEL\par}
+  \vspace{3mm}
+  {\fontpropaganda\fontsize{30pt}{34pt}\selectfont KAPITEL EINS\par}
+  \vspace{3mm}
+  {\fontpropaganda\fontsize{18pt}{22pt}\selectfont UNTERABSCHNITT\par}
+}}\hfill
+% Fyodor Bold
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR BOLD (Downloaded, OFL)\par}
+  \vspace{3mm}
+  {\fontfyodor\fontsize{48pt}{52pt}\selectfont WELTENBIBEL\par}
+  \vspace{3mm}
+  {\fontfyodor\fontsize{30pt}{34pt}\selectfont KAPITEL EINS\par}
+  \vspace{3mm}
+  {\fontfyodor\fontsize{18pt}{22pt}\selectfont UNTERABSCHNITT\par}
+}}
+
+\vspace{8mm}
+
+% Fyodor Condensed
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR BOLD CONDENSED (Downloaded, OFL)\par}
+  \vspace{3mm}
+  {\fontfyodorcondensed\fontsize{48pt}{52pt}\selectfont WELTENBIBEL\par}
+  \vspace{3mm}
+  {\fontfyodorcondensed\fontsize{30pt}{34pt}\selectfont KAPITEL EINS\par}
+  \vspace{3mm}
+  {\fontfyodorcondensed\fontsize{18pt}{22pt}\selectfont UNTERABSCHNITT\par}
+}}\hfill
+% USSR Stencil
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}USSR STENCIL (Downloaded, OFL)\par}
+  \vspace{3mm}
+  {\fontussrstencil\fontsize{48pt}{52pt}\selectfont WELTENBIBEL\par}
+  \vspace{3mm}
+  {\fontussrstencil\fontsize{30pt}{34pt}\selectfont KAPITEL EINS\par}
+  \vspace{3mm}
+  {\fontussrstencil\fontsize{18pt}{22pt}\selectfont UNTERABSCHNITT\par}
+}}
+
+\newpage
+
+% ==========================================================================
+%   BODY FONTS COMPARISON
+% ==========================================================================
+\thispagestyle{empty}
+
+\begin{center}
+  {\color{sovietred}\bfseries\Huge BODY FONTS COMPARISON\par}
+  \vspace{5mm}
+  {\fontptsans\small Both are Russian-designed fonts from ParaType\par}
+\end{center}
+\vspace{10mm}
+
+% PT Serif
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}PT SERIF\par}
+  \vspace{5mm}
+  {\fontptserif\normalsize
+  Dies ist ein Beispieltext, um die Lesbarkeit der Schriftart zu demonstrieren.
+  Die Welt von \textit{Projekt Aurora} spielt in einer alternativen Realitaet,
+  in der die Sowjetunion nie zusammenbrach.
+
+  \vspace{3mm}
+
+  Technologie und Aesthetik verschmelzen zu einer retrofuturistischen Vision.
+  Die Architektur der Staedte verbindet brutalistische Betonbauten mit
+  futuristischen Glaskuppeln. Propaganda-Plakate zieren die Waende.
+
+  \vspace{3mm}
+
+  \textbf{Bold text example.} \textit{Italic text example.}
+
+  \vspace{3mm}
+
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+  abcdefghijklmnopqrstuvwxyz\\
+  0123456789
+  \par}
+}}\hfill
+% PT Sans
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}PT SANS\par}
+  \vspace{5mm}
+  {\fontptsans\normalsize
+  Dies ist ein Beispieltext, um die Lesbarkeit der Schriftart zu demonstrieren.
+  Die Welt von \textit{Projekt Aurora} spielt in einer alternativen Realitaet,
+  in der die Sowjetunion nie zusammenbrach.
+
+  \vspace{3mm}
+
+  Technologie und Aesthetik verschmelzen zu einer retrofuturistischen Vision.
+  Die Architektur der Staedte verbindet brutalistische Betonbauten mit
+  futuristischen Glaskuppeln. Propaganda-Plakate zieren die Waende.
+
+  \vspace{3mm}
+
+  \textbf{Bold text example.} \textit{Italic text example.}
+
+  \vspace{3mm}
+
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+  abcdefghijklmnopqrstuvwxyz\\
+  0123456789
+  \par}
+}}
+
+\vspace{15mm}
+
+% Monospace
+\begin{center}
+{\small\color{gray}PT MONO (Monospace)\par}
+\vspace{3mm}
+\fbox{\parbox{0.7\textwidth}{
+  {\fontptmono\normalsize
+  function calculateDamage(base, modifier) \{\\
+  \hspace{4mm}return base * modifier;\\
+  \}\\[3mm]
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+  abcdefghijklmnopqrstuvwxyz\\
+  0123456789 !@\#\$\%\&*()
+  \par}
+}}
+\end{center}
+
+\newpage
+
+% ==========================================================================
+%   TITLE PAGE SAMPLES - Best Combinations
+% ==========================================================================
+\thispagestyle{empty}
+
+\begin{center}
+  {\color{sovietred}\bfseries\Huge TITLE PAGE SAMPLES\par}
+  \vspace{5mm}
+  {\fontptsans\small Best heading + body combinations\par}
+\end{center}
+\vspace{10mm}
+
+% Sample 1: Fyodor + PT Serif
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR BOLD + PT SERIF\par}
+  \vspace{8mm}
+  {\fontfyodor\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptserif\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptserif\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptserif\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}\hfill
+% Sample 2: Fyodor + PT Sans
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR BOLD + PT SANS\par}
+  \vspace{8mm}
+  {\fontfyodor\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptsans\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptsans\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptsans\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}
+
+\vspace{8mm}
+
+% Sample 3: Molot + PT Serif
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}MOLOT + PT SERIF\par}
+  \vspace{8mm}
+  {\fontmolot\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptserif\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptserif\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptserif\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}\hfill
+% Sample 4: Molot + PT Sans
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}MOLOT + PT SANS\par}
+  \vspace{8mm}
+  {\fontmolot\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptsans\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptsans\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptsans\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}
+
+\vspace{8mm}
+
+% Sample 5: Futura + PT Serif
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FUTURA BOLD + PT SERIF\par}
+  \vspace{8mm}
+  {\fontfutura\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptserif\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptserif\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptserif\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}\hfill
+% Sample 6: Futura + PT Sans
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FUTURA BOLD + PT SANS\par}
+  \vspace{8mm}
+  {\fontfutura\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptsans\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptsans\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptsans\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}
+
+\newpage
+
+% ==========================================================================
+%   MORE TITLE PAGE SAMPLES
+% ==========================================================================
+\thispagestyle{empty}
+
+\begin{center}
+  {\color{sovietred}\bfseries\Huge MORE TITLE PAGE SAMPLES\par}
+  \vspace{5mm}
+  {\fontptsans\small Alternative heading fonts\par}
+\end{center}
+\vspace{10mm}
+
+% Sample 7: Propaganda + PT Serif
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}PROPAGANDA + PT SERIF\par}
+  \vspace{8mm}
+  {\fontpropaganda\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptserif\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptserif\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptserif\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}\hfill
+% Sample 8: USSR Stencil + PT Sans
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}USSR STENCIL + PT SANS\par}
+  \vspace{8mm}
+  {\fontussrstencil\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptsans\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptsans\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptsans\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}
+
+\vspace{8mm}
+
+% Sample 9: Fyodor Condensed + PT Serif
+\noindent\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR CONDENSED + PT SERIF\par}
+  \vspace{8mm}
+  {\fontfyodorcondensed\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptserif\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptserif\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptserif\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}\hfill
+% Sample 10: Fyodor Condensed + PT Sans
+\fbox{\parbox{0.48\textwidth}{
+  \centering
+  {\small\color{gray}FYODOR CONDENSED + PT SANS\par}
+  \vspace{8mm}
+  {\fontfyodorcondensed\fontsize{36pt}{40pt}\selectfont WELTENBIBEL\par}
+  \vspace{5mm}
+  {\fontptsans\fontsize{14pt}{18pt}\selectfont Eine Dokumentation der virtuellen Welt\par}
+  \vspace{4mm}
+  {\fontptsans\small Max Mustermann\quad\textperiodcentered\quad WS 2024/25\par}
+  \vspace{4mm}
+  {\fontptsans\small Technische Hochschule Ostwestfalen-Lippe\\
+   Fachbereich Medienproduktion\par}
+}}
+
+\end{document}

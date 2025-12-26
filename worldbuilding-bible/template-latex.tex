@@ -1,0 +1,512 @@
+% LaTeX Template for Worldbuilding Bible
+% A3 Landscape, Minimal Design
+% LuaLaTeX required
+
+\documentclass[10pt, a3paper, landscape, oneside]{article}
+
+% ==========================================================================
+%   PACKAGES & FONTS
+% ==========================================================================
+
+\usepackage{fontspec}
+
+% Font path - fonts in shared assets folder (relative to de/ subdirectory)
+\def\fontpath{../../assets/fonts/}
+
+% Body: Lora 10pt (variable font from repository)
+\setmainfont{Lora}[
+  Path = \fontpath,
+  UprightFont = {Lora[wght].ttf},
+  ItalicFont = {Lora-Italic[wght].ttf},
+  BoldFont = {Lora[wght].ttf},
+  BoldItalicFont = {Lora-Italic[wght].ttf},
+  BoldFeatures = {Weight=700},
+  BoldItalicFeatures = {Weight=700}
+]
+
+% Sans: Open Sans (variable font from repository)
+\setsansfont{OpenSans}[
+  Path = \fontpath,
+  UprightFont = {OpenSans[wdth,wght].ttf},
+  ItalicFont = {OpenSans-Italic[wdth,wght].ttf},
+  BoldFont = {OpenSans[wdth,wght].ttf},
+  BoldItalicFont = {OpenSans-Italic[wdth,wght].ttf},
+  BoldFeatures = {Weight=700},
+  BoldItalicFeatures = {Weight=700}
+]
+
+\setmonofont{JetBrainsMono}[
+  Path = \fontpath,
+  UprightFont = {JetBrainsMono[wght].ttf},
+  ItalicFont = {JetBrainsMono-Italic[wght].ttf},
+  BoldFont = {JetBrainsMono[wght].ttf},
+  BoldItalicFont = {JetBrainsMono-Italic[wght].ttf},
+  BoldFeatures = {Weight=700},
+  BoldItalicFeatures = {Weight=700},
+  Scale = 0.9
+]
+
+% Heading font: Source Serif 4 Italic (variable font from repository)
+% Aria Text G2 is commercial - Source Serif 4 is a similar transitional serif
+\newfontfamily\headingfont{SourceSerif4}[
+  Path = \fontpath,
+  UprightFont = {SourceSerif4[opsz,wght].ttf},
+  ItalicFont = {SourceSerif4-Italic[opsz,wght].ttf},
+  BoldFont = {SourceSerif4[opsz,wght].ttf},
+  BoldItalicFont = {SourceSerif4-Italic[opsz,wght].ttf},
+  BoldFeatures = {Weight=700},
+  BoldItalicFeatures = {Weight=700}
+]
+
+% Title font (same as heading)
+\let\titlefont\headingfont
+
+\usepackage{polyglossia}
+\setdefaultlanguage{$if(lang)$$lang$$else$german$endif$}
+
+% Page layout - 0.75 inch margins (19.05mm)
+\usepackage[a3paper, landscape, left=19.05mm, right=19.05mm, top=19.05mm, bottom=19.05mm]{geometry}
+
+% Background
+\usepackage{pagecolor}
+\definecolor{pagewhite}{HTML}{FCFCFC}
+\pagecolor{pagewhite}
+
+% Colors - minimal
+\usepackage{xcolor}
+\definecolor{black}{HTML}{1A1A1A}
+\definecolor{gray}{HTML}{888888}
+\definecolor{boxbg}{HTML}{F5F5F5}
+\definecolor{border}{HTML}{DDDDDD}
+\definecolor{quotetint}{HTML}{EDE8F0}  % Soft lavender for quote gradient
+
+% ==========================================================================
+%   SPACING
+% ==========================================================================
+
+\usepackage{setspace}
+\setstretch{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.25mm}
+
+% ==========================================================================
+%   HEADINGS - Source Serif 4 Italic 30pt
+% ==========================================================================
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\small\color{gray}\thepage}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+
+% TOC styling
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{4mm}        % Extra space before section entries
+\setlength{\cftaftertoctitleskip}{8mm}    % Space after TOC title
+\setlength{\cftsecindent}{0pt}            % No section indent
+\setlength{\cftsubsecindent}{0pt}         % No subsection indent
+\renewcommand{\cftdotsep}{2}              % Dot spacing
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}  % Dots for sections too
+
+% H1 - Source Serif 4 Italic 30pt
+\titleformat{\section}
+  {\headingfont\fontsize{30pt}{36pt}\selectfont\itshape\color{black}}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{10mm}{5mm}  % 10mm before, 5mm after major sections
+
+% Page break before each section (chapter)
+\newcommand{\sectionbreak}{\clearpage}
+
+% H2 - Source Serif 4 Italic 18pt
+\titleformat{\subsection}
+  {\headingfont\fontsize{18pt}{22pt}\selectfont\itshape\color{black}}
+  {}{0em}{}
+\titlespacing*{\subsection}{0pt}{5mm}{2mm}
+
+% H3 - Bold 12pt
+\titleformat{\subsubsection}
+  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{black}}
+  {}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{4mm}{1mm}
+
+% H4 - italic
+\titleformat{\paragraph}[runin]
+  {\itshape\color{black}}
+  {}{0em}{}
+\titlespacing*{\paragraph}{0pt}{2mm}{1em}
+
+% ==========================================================================
+%   LINKS & GRAPHICS
+% ==========================================================================
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=gray, pdfusetitle]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{float}
+\floatplacement{figure}{H}  % Force figures to stay in place, not float above headings
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\graphicspath{{../../assets/logos/}{../figures/}{./figures/}{./}}
+
+\providecommand{\pandocbounded}[1]{#1}
+\newcommand{\includesvg}[2][]{\fbox{\small [SVG: #2]}}
+
+% ==========================================================================
+%   TABLES
+% ==========================================================================
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{tabularx}
+
+\usepackage{caption}
+\captionsetup{font={small}, labelfont={bf}, format=plain, skip=2mm}
+
+% ==========================================================================
+%   BOXES - Minimal
+% ==========================================================================
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Lead - slightly larger
+\newenvironment{lead}{\fontsize{11pt}{14pt}\selectfont}{\par\vspace{2mm}}
+
+% Quote - radial gradient from soft lavender to page background (transparent effect)
+\renewenvironment{quote}{%
+  \vspace{2mm}
+  \begin{tcolorbox}[enhanced, frame hidden,
+    interior style={shading=radial, inner color=quotetint, outer color=pagewhite},
+    left=8mm, right=8mm, top=4mm, bottom=4mm,
+    before skip=3mm, after skip=3mm, breakable]
+  \itshape
+}{%
+  \end{tcolorbox}
+}
+
+% Single unified box style (replaces sidebar, infobox, warning, note, success)
+\newtcolorbox{boxed}{enhanced, frame hidden, borderline west={2pt}{0pt}{border},
+  colback=boxbg, left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=3mm, after skip=3mm, breakable}
+
+% Aliases for backwards compatibility
+\newenvironment{sidebar}{\begin{boxed}}{\end{boxed}}
+\newenvironment{infobox}{\begin{boxed}}{\end{boxed}}
+\newenvironment{warning}{\begin{boxed}}{\end{boxed}}
+\newenvironment{note}{\begin{boxed}}{\end{boxed}}
+\newenvironment{success}{\begin{boxed}}{\end{boxed}}
+
+% Special boxes with distinct styling
+\newtcolorbox{metadata}{enhanced, frame hidden, colback=boxbg,
+  left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=2mm, after skip=2mm, fontupper=\ttfamily\small}
+
+\newtcolorbox{hierarchy}{enhanced, colframe=border, colback=boxbg, boxrule=0.5pt,
+  left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=3mm, after skip=3mm, fontupper=\ttfamily\small}
+
+\newtcolorbox{statsbox}{enhanced, colframe=border, colback=boxbg, boxrule=0.5pt,
+  left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=3mm, after skip=3mm, fontupper=\small}
+
+% ==========================================================================
+%   COLUMNS - 1 to 4 columns with 0.2in (5.08mm) gutter
+%   Two modes:
+%   - columns-X: Balanced columns (equal height) - for sections within a page
+%   - page-X: Unbalanced columns (fill left-to-right) - for full pages
+% ==========================================================================
+
+\usepackage{multicol}
+\setlength{\columnsep}{5.08mm}  % 0.2 inch gutter
+\setlength{\columnseprule}{0pt}
+
+% Default is 2 columns (balanced)
+\newenvironment{columns}{\begin{multicols}{2}}{\end{multicols}}
+
+% Section-based columns: BALANCED height (columns try to be equal)
+% Use for content sections that don't fill a full page
+\newenvironment{columns-1}{\par\vspace{2mm}}{\par\vspace{2mm}}
+\newenvironment{columns-2}{\begin{multicols}{2}}{\end{multicols}}
+\newenvironment{columns-3}{\begin{multicols}{3}}{\end{multicols}}
+\newenvironment{columns-4}{\begin{multicols}{4}}{\end{multicols}}
+
+% Page-spanning columns: UNBALANCED (fill left column first, then next)
+% Use for full-page layouts where you want content to flow top-to-bottom
+\newenvironment{page-1}{\par}{\par}
+\newenvironment{page-2}{\begin{multicols*}{2}}{\end{multicols*}}
+\newenvironment{page-3}{\begin{multicols*}{3}}{\end{multicols*}}
+\newenvironment{page-4}{\begin{multicols*}{4}}{\end{multicols*}}
+
+% ==========================================================================
+%   INLINE IMAGES - Flow with column text (non-floating)
+%   Uses \columnwidth which correctly reflects multicol column width
+%   Heights use fixed minimums to ensure visibility in narrow columns
+% ==========================================================================
+
+% Full width box (100% of column) - default for multi-column layouts
+\newcommand{\inlinebox}[1]{%
+  \par\vspace{2mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{25mm}\centering\color{gray}\small [#1]\vspace{2mm}}}%
+  \par\vspace{2mm}%
+}
+
+% Three-quarter width box (75% of column)
+\newcommand{\inlineboxlarge}[1]{%
+  \par\vspace{2mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr0.75\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{20mm}\centering\color{gray}\small [#1]\vspace{2mm}}}%
+  \par\vspace{2mm}%
+}
+
+% Half width box (50% of column) - good for single-column layouts
+\newcommand{\inlineboxhalf}[1]{%
+  \par\vspace{2mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr0.5\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{18mm}\centering\color{gray}\small [#1]\vspace{2mm}}}%
+  \par\vspace{2mm}%
+}
+
+% Quarter width box (25% of column) - good for icons in single-column
+\newcommand{\inlineboxquarter}[1]{%
+  \par\vspace{1mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr0.25\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{12mm}\centering\color{gray}\scriptsize [#1]\vspace{1mm}}}%
+  \par\vspace{1mm}%
+}
+
+% Small box - shorter height, full column width
+\newcommand{\inlineboxsmall}[1]{%
+  \par\vspace{1mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{15mm}\centering\color{gray}\small [#1]\vspace{1mm}}}%
+  \par\vspace{1mm}%
+}
+
+% Tiny box - minimal height, full column width
+\newcommand{\inlineboxtiny}[1]{%
+  \par\vspace{1mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{8mm}\centering\color{gray}\scriptsize [#1]\vspace{1mm}}}%
+  \par\vspace{1mm}%
+}
+
+% ==========================================================================
+%   PLACEHOLDER IMAGES - Square variants (floating figures)
+% ==========================================================================
+
+\newcommand{\placeholder}[3]{%
+  \begin{figure}[H]
+    \centering
+    \fcolorbox{border}{boxbg}{\parbox{#1}{\vspace{#2}\centering\color{gray}\small [IMAGE]\vspace{#2}}}
+    \caption{#3}
+  \end{figure}
+}
+
+\newcommand{\placeholdersmall}[1]{\placeholder{40mm}{20mm}{#1}}
+\newcommand{\placeholdermedium}[1]{\placeholder{60mm}{30mm}{#1}}
+\newcommand{\placeholderlarge}[1]{\placeholder{80mm}{40mm}{#1}}
+\newcommand{\placeholderwide}[1]{\placeholder{\linewidth}{20mm}{#1}}
+
+% Square placeholders for columns
+\newcommand{\placeholdersquare}[1]{%
+  \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{0.9\linewidth}\mbox{}}}%
+  \par{\small\centering #1\par}%
+}
+\newcommand{\placeholdersquaresmall}[1]{%
+  \fcolorbox{border}{boxbg}{\parbox{30mm}{\vspace{30mm}\mbox{}}}%
+  \par{\small #1\par}%
+}
+
+% Image grids
+\newcommand{\imagegridtwo}[4]{%
+  \begin{figure}[H]\centering
+    \begin{subfigure}[t]{0.48\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{15mm}\centering\color{gray}\small [#1]\vspace{15mm}}}
+      \caption{#2}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.48\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{15mm}\centering\color{gray}\small [#3]\vspace{15mm}}}
+      \caption{#4}
+    \end{subfigure}
+  \end{figure}
+}
+
+\newcommand{\imagegridthree}[6]{%
+  \begin{figure}[H]\centering
+    \begin{subfigure}[t]{0.31\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{12mm}\centering\color{gray}\scriptsize [#1]\vspace{12mm}}}
+      \caption{#2}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.31\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{12mm}\centering\color{gray}\scriptsize [#3]\vspace{12mm}}}
+      \caption{#4}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.31\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{12mm}\centering\color{gray}\scriptsize [#5]\vspace{12mm}}}
+      \caption{#6}
+    \end{subfigure}
+  \end{figure}
+}
+
+% ==========================================================================
+%   CODE & DIVIDERS
+% ==========================================================================
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small, backgroundcolor=\color{boxbg},
+  frame=single, framesep=3mm, rulecolor=\color{border}, breaklines=true}
+
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\colorbox{boxbg}{\oldtexttt{\small #1}}}
+
+\newcommand{\sectiondivider}{\vspace{3mm}}
+\newcommand{\linedivider}{\vspace{2mm}}
+
+% ==========================================================================
+%   PANDOC COMPATIBILITY
+% ==========================================================================
+
+\newlength{\cslhangindent}\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2]
+ {\begin{list}{}{\setlength{\itemindent}{0pt}\setlength{\leftmargin}{0pt}\setlength{\parsep}{0pt}
+  \ifodd #1 \setlength{\leftmargin}{\cslhangindent}\setlength{\itemindent}{-1\cslhangindent}\fi
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=5mm, itemsep=0.5mm, topsep=0pt}
+\setlist[enumerate]{leftmargin=5mm, itemsep=0.5mm, topsep=0pt}
+\setlist[description]{style=unboxed, leftmargin=0pt, itemsep=1mm, font=\bfseries}
+
+\usepackage{longtable}
+\setlength{\LTpre}{\smallskipamount}
+\setlength{\LTpost}{\smallskipamount}
+\newcounter{none}
+
+\setlength{\heavyrulewidth}{0.08em}
+\setlength{\lightrulewidth}{0.04em}
+\setlength{\tabcolsep}{3mm}
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\}, fontsize=\small, frame=single, rulecolor=\color{border}
+}
+
+% ==========================================================================
+%   METADATA
+% ==========================================================================
+
+$if(title)$\title{$title$}$endif$
+$if(author)$\author{$for(author)$$author$$sep$ \and $endfor$}$endif$
+$if(date)$\date{$date$}$else$\date{}$endif$
+
+\hypersetup{pdftitle={$if(title)$$title$$endif$}, pdfauthor={$for(author)$$author$$sep$; $endfor$}}
+
+% ==========================================================================
+%   COVER PAGE
+% ==========================================================================
+
+\usepackage{tikz}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \thispagestyle{empty}
+
+  % Use a full-page centered box for the text
+  \null
+  \vfill
+
+  \begin{center}
+    % Title in Source Serif 4 Italic 48pt
+    {\titlefont\fontsize{48pt}{54pt}\selectfont\itshape\@title\par}
+
+    \vspace{12mm}
+
+    % Subtitle
+    $if(subtitle)$
+    {\titlefont\fontsize{16pt}{20pt}\selectfont $subtitle$\par}
+    \vspace{10mm}
+    $endif$
+
+    % Author and date
+    {\small \@author\quad·\quad\@date\par}
+
+    \vspace{10mm}
+
+    % Institution
+    {\small Technische Hochschule Ostwestfalen-Lippe\\[2mm]
+     Fachbereich Medienproduktion\\[2mm]
+     Master Medienproduktion\par}
+  \end{center}
+
+  \vfill
+
+  % Logos at bottom right using TikZ overlay (doesn't affect text centering)
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south east, inner sep=0pt] at ([xshift=-15mm, yshift=15mm]current page.south east) {%
+      \includegraphics[height=20mm]{../../assets/logos/th-owl-logo.png}%
+      \hspace{5mm}%
+      \includegraphics[height=20mm]{../../assets/logos/mp-logo.png}%
+    };
+  \end{tikzpicture}
+
+  \newpage
+}
+\makeatother
+
+% ==========================================================================
+%   DOCUMENT
+% ==========================================================================
+
+\begin{document}
+
+$if(title)$\maketitle$endif$
+
+$if(toc)$
+% TOC takes 2/3, placeholder image on right
+\thispagestyle{empty}
+\begin{minipage}[t]{0.62\textwidth}
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.33\textwidth}
+  \vspace{10mm}
+  \fcolorbox{border}{boxbg}{\parbox{0.95\linewidth}{\vspace{80mm}\centering\color{gray}[Cover Art]\vspace{80mm}}}
+\end{minipage}
+\newpage
+$endif$
+
+$if(lof)$
+% List of Figures
+\thispagestyle{empty}
+{
+  \hypersetup{linkcolor=black}
+  \renewcommand{\listfigurename}{$if(lof-title)$$lof-title$$else$Abbildungsverzeichnis$endif$}
+  \listoffigures
+}
+\newpage
+$endif$
+
+$body$
+
+\end{document}
