@@ -27,10 +27,10 @@ Die *Panelki* – standardisierte Plattenbauten aus der Sowjetzeit – prägen d
 Der Blick aus dem Fenster einer Plattenbauwohnung: Im Vordergrund die bunten Fassaden der Panelki, dahinter eine orthodoxe Kirche mit goldenen Kuppeln, und am Horizont der Rauch einer Fabrik. Diese Schichtung – Wohnen, Religion, Industrie – ist typisch für russische Städte. Bei Nacht verwandelt sich die Szene: Die Kirche erstrahlt, der Fabrikrauch leuchtet orange.
 
 ```{=latex}
-\colfig{russia-photographs/IMG_9620.png}{Sowjetisches Siegesdenkmal vor Wohnblock.}{Siegesdenkmal (J. Meier, 2025)}
+\colpairfig{russia-photographs/IMG_9620.png}{russia-photographs/IMG_8315.png}{Kriegsdenkmäler – im Sommer und im Winter allgegenwärtig.}{Kriegsdenkmäler (J. Meier, 2025)}
 ```
 
-Denkmäler des Großen Vaterländischen Krieges sind allgegenwärtig. Sie stehen oft direkt vor Wohnblöcken – die Geschichte ist nie weit entfernt.
+Denkmäler des Großen Vaterländischen Krieges sind allgegenwärtig. Sie stehen oft direkt vor Wohnblöcken – die Geschichte ist nie weit entfernt. Im Sommer mit frischen Blumen, im Winter unter Schnee begraben.
 
 \columnbreak
 
@@ -67,21 +67,17 @@ In vielen russischen Städten gibt es Cafés und Restaurants im Sowjet-Stil. „
 \columnbreak
 
 ```{=latex}
-\colfig{russia-photographs/IMG_9536.png}{Olympischer Mischka – Relief an einer Hauswand.}{Mischka-Relief (J. Meier, 2025)}
+\colfig{russia-photographs/IMG_9536.png}{Olympischer Mischka – Relief im Sowjet-Café.}{Mischka-Relief (J. Meier, 2025)}
 ```
 
-Der olympische Bär Mischka, Maskottchen der Spiele von 1980, ist noch immer überall präsent. Bei der Abschlussfeier stieg ein riesiger Mischka-Ballon mit Tränen in den Augen in den Moskauer Himmel – eine ganze Generation weinte mit.
-
-```{=latex}
-\colfig{russia-photographs/IMG_8315.png}{Kriegsdenkmal mit Statue und Blumenkränzen.}{Kriegsdenkmal (J. Meier, 2025)}
-```
+Der olympische Bär Mischka, Maskottchen der Spiele von 1980, ist noch immer überall präsent – auch in den Sowjet-Cafés. Bei der Abschlussfeier 1980 stieg ein riesiger Mischka-Ballon mit Tränen in den Augen in den Moskauer Himmel – eine ganze Generation weinte mit.
 
 \columnbreak
 
 ### Tiere
 
 ```{=latex}
-\colfig{russia-photographs/IMG_0125.png}{Katzen auf dem Ofen – Wärme im russischen Winter.}{Katzen auf dem Ofen (J. Meier, 2025)}
+\colpairfig{russia-photographs/IMG_0125.png}{russia-photographs/IMG_0111.png}{Katzen – auf dem Ofen und in der Küche.}{Katzen (J. Meier, 2025)}
 ```
 
 Die Liebe zu Tieren ist in Russland allgegenwärtig. Katzen haben einen besonderen Platz – sie wärmen sich auf dem Ofen, dem Herz des russischen Hauses. Diese Zuneigung zu Kreaturen inspiriert die anthropomorphen Charaktere unseres Spiels.
@@ -94,12 +90,6 @@ Die Liebe zu Tieren ist in Russland allgegenwärtig. Katzen haben einen besonder
 
 Auch Hunde sind treue Begleiter, selbst bei extremen Temperaturen. Die Beziehung zwischen Mensch und Tier ist eng und respektvoll – eine Quelle der Wärme in der Kälte.
 
-```{=latex}
-\colfig{russia-photographs/IMG_0042.png}{Dorfhaus mit rauchendem Schornstein.}{Dorfhaus (J. Meier, 2025)}
-```
-
-Das Dorfleben: Ein Holzhaus mit rauchendem Schornstein. Die Wärme drinnen, die Kälte draußen – ein ewiger Kampf.
-
 :::
 
 ::: {.page-4}
@@ -107,10 +97,18 @@ Das Dorfleben: Ein Holzhaus mit rauchendem Schornstein. Die Wärme drinnen, die 
 ### Atmosphäre
 
 ```{=latex}
-\colpairfig{russia-photographs/IMG_9940.png}{russia-photographs/IMG_0059.png}{Winternacht – Dunkelheit und Stille prägen die Atmosphäre.}{Winternacht (J. Meier, 2025)}
+\colfig{russia-photographs/IMG_9940.png}{Winternacht im Dorf – nur wenige Lichter durchbrechen die Dunkelheit.}{Winternacht (J. Meier, 2025)}
 ```
 
-Wenn der russische Winter einbricht, versinkt das Land in Dunkelheit. Nur vereinzelte Lichter durchbrechen die Schwärze. Der Mond über verschneiten Tannen – poetisch und einsam zugleich. Diese Melancholie, diese schwere Stille, prägt die Atmosphäre unseres Spiels.
+Wenn der russische Winter einbricht, versinkt das Land in Dunkelheit. Nur vereinzelte Lichter durchbrechen die Schwärze. Diese Melancholie, diese schwere Stille, prägt die Atmosphäre unseres Spiels.
+
+\columnbreak
+
+```{=latex}
+\colfig{russia-photographs/IMG_0059.png}{Mond über verschneiten Tannen.}{Mond über Tannen (J. Meier, 2025)}
+```
+
+Der Mond über verschneiten Tannen – poetisch und einsam zugleich. Die russische Landschaft hat eine eigene, schwermütige Schönheit.
 
 \columnbreak
 
