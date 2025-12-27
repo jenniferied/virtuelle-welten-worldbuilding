@@ -13,24 +13,22 @@ Was bleibt, ist das Bild eines Ortes voller Widersprüche: herzliche Menschen in
 ### Die Stadt
 
 ```{=latex}
-\colfig{russia-photographs/IMG_9611.png}{Panelki-Panorama – Eine typische mittelgroße russische Stadt.}{Panelki-Panorama (J. Meier, 2025)}
+\colgridfig{russia-photographs/IMG_9611.png}{russia-photographs/IMG_9612.png}{russia-photographs/IMG_9416.png}{russia-photographs/IMG_9415.png}{Panelki-Panoramen und Blick aus dem Fenster – bei Tag und bei Nacht.}{Die Stadt (J. Meier, 2025)}
 ```
 
-Die *Panelki* – standardisierte Plattenbauten aus der Sowjetzeit – prägen das Stadtbild jeder russischen Stadt. Millionen Menschen leben in diesen Wohnblöcken, die zwischen den 1960er und 1980er Jahren errichtet wurden.
+Die *Panelki* – standardisierte Plattenbauten aus der Sowjetzeit – prägen das Stadtbild jeder russischen Stadt. Millionen Menschen leben in diesen Wohnblöcken. Der Blick aus dem Fenster zeigt die typische Schichtung: Wohnen, Religion, Industrie. Bei Nacht verwandelt sich die Szene.
 
 ```{=latex}
-\colpairfig{russia-photographs/IMG_9416.png}{russia-photographs/IMG_9415.png}{Dieselbe Aussicht bei Tag und bei Nacht – Panelki, Kirche und Fabrikrauch.}{Tag und Nacht (J. Meier, 2025)}
+\colpairfig{russia-photographs/IMG_8315.png}{russia-photographs/IMG_0137.png}{Dasselbe Kriegsdenkmal – im Herbst mit Blumen, im Winter unter Schnee.}{Kriegsdenkmal (J. Meier, 2025)}
 ```
 
-\columnbreak
-
-Der Blick aus dem Fenster einer Plattenbauwohnung: Im Vordergrund die bunten Fassaden der Panelki, dahinter eine orthodoxe Kirche mit goldenen Kuppeln, und am Horizont der Rauch einer Fabrik. Diese Schichtung – Wohnen, Religion, Industrie – ist typisch für russische Städte. Bei Nacht verwandelt sich die Szene: Die Kirche erstrahlt, der Fabrikrauch leuchtet orange.
+Denkmäler des Großen Vaterländischen Krieges sind allgegenwärtig. Sie stehen oft direkt vor Wohnblöcken – die Geschichte ist nie weit entfernt. Im Herbst mit frischen Blumen geschmückt, im tiefen Winter unter einer Schneedecke begraben – die Erinnerung bleibt.
 
 ```{=latex}
-\colpairfig{russia-photographs/IMG_9620.png}{russia-photographs/IMG_8315.png}{Kriegsdenkmäler – im Sommer und im Winter allgegenwärtig.}{Kriegsdenkmäler (J. Meier, 2025)}
+\colpairfig{russia-photographs/IMG_9620.png}{russia-photographs/IMG_8319.png}{Sowjet-Symbole im Stadtbild – Orden und Flaggen.}{Sowjet-Symbole (J. Meier, 2025)}
 ```
 
-Denkmäler des Großen Vaterländischen Krieges sind allgegenwärtig. Sie stehen oft direkt vor Wohnblöcken – die Geschichte ist nie weit entfernt. Im Sommer mit frischen Blumen, im Winter unter Schnee begraben.
+Auch außerhalb der Friedhöfe begegnet man sowjetischen Symbolen: Orden des Vaterländischen Krieges an roten Tafeln, Flaggen auf Dächern. Die Vergangenheit ist nie weit.
 
 \columnbreak
 
@@ -52,6 +50,18 @@ Für ПАНЕЛЬКИ ist der Lada ein zentrales Requisit: Er verbindet die sowj
 
 Das Dorfleben: Holzhäuser mit rauchenden Schornsteinen, die Wärme drinnen kämpft gegen die Kälte draußen. In der Dämmerung versinkt alles in blaues Licht.
 
+\columnbreak
+
+### Winterlandschaften
+
+```{=latex}
+\colfig{russia-photographs/IMG_0046.png}{Eine verschneite Brücke führt ins Dorf – die Stille ist fast greifbar.}{Winterbrücke (J. Meier, 2025)}
+\colfig{russia-photographs/IMG_0052.png}{Dampf steigt vom warmen Wasser in die eisige Luft.}{Dampfendes Wasser (J. Meier, 2025)}
+\colfig{russia-photographs/IMG_0122.png}{Dorfstraße im Sonnenschein – doch die Kälte beißt.}{Winterdorf (J. Meier, 2025)}
+```
+
+Der russische Winter ist unbarmherzig und poetisch zugleich. Die Landschaft verwandelt sich in ein stilles, weißes Gemälde. Rauch steigt aus Schornsteinen, Dampf tanzt über warmem Wasser, und die Sonne steht tief am Horizont.
+
 :::
 
 ::: {.page-4}
@@ -63,6 +73,12 @@ Das Dorfleben: Holzhäuser mit rauchenden Schornsteinen, die Wärme drinnen käm
 ```
 
 In vielen russischen Städten gibt es Cafés und Restaurants im Sowjet-Stil. „Meine Adresse ist nicht Haus oder Straße – meine Adresse ist Sowjetunion" steht an der Wand. Alte Fernseher, Uniformen, Plakate und der allgegenwärtige olympische Bär Mischka schaffen eine Atmosphäre der Nostalgie.
+
+```{=latex}
+\colpairfig{russia-photographs/IMG_9513.png}{russia-photographs/IMG_9521.png}{Mehr Details aus dem Sowjet-Café – alter Fernseher und Erinnerungsstücke.}{Sowjet-Café Details (J. Meier, 2025)}
+```
+
+Jede Ecke erzählt eine Geschichte: sowjetische Uhren, Matroschkas, vergilbte Fotos. Die Ästhetik ist zugleich Museum und Geschäftsmodell – Nostalgie als Ware.
 
 \columnbreak
 
@@ -77,38 +93,22 @@ Der olympische Bär Mischka, Maskottchen der Spiele von 1980, ist noch immer üb
 ### Tiere
 
 ```{=latex}
-\colpairfig{russia-photographs/IMG_0125.png}{russia-photographs/IMG_0111.png}{Katzen – auf dem Ofen und in der Küche.}{Katzen (J. Meier, 2025)}
+\colgridfig{russia-photographs/IMG_0125.png}{russia-photographs/IMG_0111.png}{russia-photographs/IMG_0099.png}{russia-photographs/IMG_0140.png}{Katzen und Hunde – treue Begleiter im russischen Haus und im Schnee.}{Haustiere (J. Meier, 2025)}
 ```
 
-Die Liebe zu Tieren ist in Russland allgegenwärtig. Katzen haben einen besonderen Platz – sie wärmen sich auf dem Ofen, dem Herz des russischen Hauses. Diese Zuneigung zu Kreaturen inspiriert die anthropomorphen Charaktere unseres Spiels.
-
-\columnbreak
+Die Liebe zu Tieren ist in Russland allgegenwärtig. Katzen wärmen sich auf dem Ofen, dem Herz des russischen Hauses. Hunde sind treue Begleiter bei extremen Temperaturen. Diese Zuneigung zu Kreaturen inspiriert die anthropomorphen Charaktere unseres Spiels.
 
 ```{=latex}
-\colfig{russia-photographs/IMG_0099.png}{Hund vor seiner Hütte im Schnee.}{Hund im Schnee (J. Meier, 2025)}
+\colpairfig{russia-photographs/IMG_0078.png}{russia-photographs/IMG_0081.png}{Kühe im Schnee – das Dorfleben geht weiter.}{Kühe (J. Meier, 2025)}
 ```
 
-Auch Hunde sind treue Begleiter, selbst bei extremen Temperaturen. Die Beziehung zwischen Mensch und Tier ist eng und respektvoll – eine Quelle der Wärme in der Kälte.
-
-:::
-
-::: {.page-4}
-
-### Atmosphäre
+Auf dem Land leben die Menschen eng mit ihren Tieren zusammen. Kühe trotzen der Kälte, ihre dampfenden Atem sichtbar in der eisigen Luft.
 
 ```{=latex}
-\colfig{russia-photographs/IMG_9940.png}{Winternacht im Dorf – nur wenige Lichter durchbrechen die Dunkelheit.}{Winternacht (J. Meier, 2025)}
+\colgridfig{russia-photographs/IMG_0069.png}{russia-photographs/IMG_0072.png}{russia-photographs/IMG_9940.png}{russia-photographs/IMG_0059.png}{Stalltiere und Winteratmosphäre – Wärme und Kälte, Licht und Dunkelheit.}{Dorfleben (J. Meier, 2025)}
 ```
 
-Wenn der russische Winter einbricht, versinkt das Land in Dunkelheit. Nur vereinzelte Lichter durchbrechen die Schwärze. Diese Melancholie, diese schwere Stille, prägt die Atmosphäre unseres Spiels.
-
-\columnbreak
-
-```{=latex}
-\colfig{russia-photographs/IMG_0059.png}{Mond über verschneiten Tannen.}{Mond über Tannen (J. Meier, 2025)}
-```
-
-Der Mond über verschneiten Tannen – poetisch und einsam zugleich. Die russische Landschaft hat eine eigene, schwermütige Schönheit.
+Im Stall ist es warm: Schweine und Kaninchen trotzen dem Winter. Draußen versinkt das Land in Dunkelheit – nur vereinzelte Lichter und der Mond über verschneiten Tannen durchbrechen die Schwärze. Diese Kontraste prägen die Atmosphäre unseres Spiels.
 
 \columnbreak
 
