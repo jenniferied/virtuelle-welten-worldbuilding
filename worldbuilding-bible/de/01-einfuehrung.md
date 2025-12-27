@@ -1,3 +1,6 @@
+::: {.new-page}
+:::
+
 # Einführung
 
 ::: {.lead}
@@ -10,7 +13,7 @@ Eine dystopische, sowjetisch inspirierte Schneemetropole, in der korrupte Versio
 
 ПАНЕЛЬКИ (gesprochen: *Panelki*) ist eine Welt des ewigen Winters. Niemand weiß, wann der Schnee begann zu fallen, oder warum er nie aufhört. Die Bewohner – anthropomorphe Tiere in abgetragenen Mänteln und Pelzmützen – sprechen nicht darüber. Sie haben sich damit abgefunden. Sie leben ihr Leben zwischen den grauen Plattenbauten, warten in Schlangen, arbeiten in Fabriken, träumen von einer Wärme, an die sich niemand mehr erinnert.
 
-In diese Welt stolpert der Spieler: ein Mensch. Der einzige Mensch. Ein Fremder ohne Erinnerung, ohne Papiere, ohne Platz in der Ordnung der Dinge.
+In diese Welt stolpert der Spieler: ein Mensch. Der einzige Mensch. Er erwacht in ПАНЕЛЬГРАД – der grauen Hauptstadt dieser Welt, einem Labyrinth aus identischen Plattenbauten. Ein Fremder ohne Erinnerung, ohne Papiere, ohne Platz in der Ordnung der Dinge.
 
 \columnbreak
 
@@ -19,9 +22,9 @@ In diese Welt stolpert der Spieler: ein Mensch. Der einzige Mensch. Ein Fremder 
 Dieses Dokument definiert die Welt von ПАНЕЛЬКИ:
 
 - **Inspirationen** – Russlandreisen, sowjetische Animation, Architektur-Referenzen
-- **Die Welt** – Lore, Geschichte, Gesellschaft
+- **Die Welt** – Lore, Geschichte, Gesellschaft von ПАНЕЛЬКИ
 - **Bewohner** – Charaktere, Tierarten, soziale Klassen
-- **Orte** – Schauplätze, Gebäudetypen, Details
+- **Orte** – Schauplätze in ПАНЕЛЬГРАД, Gebäudetypen, Details
 - **Umgebung** – Wetter, Tageszeiten, Vegetation
 - **Visueller Stil** – Farbpalette, Rendering, Materialien
 

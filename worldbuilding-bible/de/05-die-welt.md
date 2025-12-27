@@ -1,7 +1,10 @@
+::: {.new-page}
+:::
+
 # Die Welt
 
 ::: {.lead}
-ПАНЕЛЬКИ spielt in einem namenlosen Bezirk einer namenlosen Stadt, irgendwo im Osten. Die Zeit ist unklar – es könnte die 1980er sein, es könnte heute sein, es könnte morgen sein. Die Welt ist eingefroren, buchstäblich und metaphorisch.
+ПАНЕЛЬКИ ist die Welt. ПАНЕЛЬГРАД ist die Stadt, in der der Spieler erwacht – die graue Hauptstadt, irgendwo im Osten. Die Zeit ist unklar – es könnte die 1980er sein, es könnte heute sein, es könnte morgen sein. Die Welt ist eingefroren, buchstäblich und metaphorisch.
 :::
 
 ## Der ewige Winter
@@ -30,7 +33,7 @@ Es gibt keine offizielle Erklärung, keine staatliche Verlautbarung. Das Thema e
 
 :::
 
-## Geschichte des Bezirks
+## Geschichte von ПАНЕЛЬГРАД
 
 ::: {.page-2}
 
@@ -46,7 +49,7 @@ Damals gab es Versprechen: Jede Familie eine Wohnung. Warmwasser für alle. Aufz
 
 Die Versprechen verblassten schneller als die Farbe an den Fassaden. Die Aufzüge begannen zu quietschen, dann auszufallen. Das Warmwasser wurde unzuverlässig. Die Spielplätze verrosteten. Und dann kam der Winter – und alles wurde noch schwerer.
 
-Heute ist der Bezirk ein Labyrinth aus identischen Gebäuden, in dem sich selbst Einheimische verirren. Die Straßennamen sind verblasst, die Hausnummern unleserlich. Die Menschen navigieren nach Landmarken: *„Das Haus mit dem großen Riss"*, *„Der Block neben dem kaputten Brunnen"*, *„Dritte Straßenbahn-Haltestelle nach dem Kreisel."*
+Heute ist ПАНЕЛЬГРАД ein Labyrinth aus identischen Gebäuden, in dem sich selbst Einheimische verirren. Die Straßennamen sind verblasst, die Hausnummern unleserlich. Die Bewohner navigieren nach Landmarken: *„Das Haus mit dem großen Riss"*, *„Der Block neben dem kaputten Brunnen"*, *„Dritte Straßenbahn-Haltestelle nach dem Kreisel."*
 
 :::
 

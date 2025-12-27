@@ -1,3 +1,6 @@
+::: {.new-page}
+:::
+
 # Inspiration: Sowjetische Animation und Illustration
 
 ::: {.page-4}

@@ -1,9 +1,13 @@
 ---
-title: "ПАНЕЛЬКИ / ПАНЕЛЬГРАД"
-subtitle: "Eine Worldbuilding Bible für dystopische Sowjet-Fantasy"
+title: "ПАНЕЛЬКИ"
+subtitle: "Eine Welt im ewigen Winter, bevölkert von anthropomorphen Tieren zwischen sowjetischen Plattenbauten."
 author:
   - "Jennifer Meier"
-date: "2026"
+date: "WiSe 2025/26"
+subject: "Virtuelle Welten"
+tutor: "Adrian Meyer"
+engine: "Unreal Engine 5.5+"
+houdini: "Houdini 21"
 lang: de
 toc: true
 toc-title: "Inhaltsverzeichnis"

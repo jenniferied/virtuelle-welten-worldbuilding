@@ -1,3 +1,6 @@
+::: {.new-page}
+:::
+
 # Inspiration: Eine Reise nach Russland
 
 ::: {.page-4}
@@ -42,17 +45,9 @@ Der *Lada* (ВАЗ) ist mehr als ein Auto – er ist ein kulturelles Symbol. Sei
 Für ПАНЕЛЬКИ ist der Lada ein zentrales Requisit: Er verbindet die sowjetische Vergangenheit mit der postsowjetischen Gegenwart, das Urbane mit dem Ländlichen.
 
 
-```{=latex}
-\colpairfig{russia-photographs/IMG_0042.png}{russia-photographs/IMG_0033.png}{Dorfhäuser im Winter – Holz, Rauch, Schnee.}{Dorfhäuser (J. Meier, 2025)}
-```
-
-Das Dorfleben: Holzhäuser mit rauchenden Schornsteinen, die Wärme drinnen kämpft gegen die Kälte draußen. In der Dämmerung versinkt alles in blaues Licht.
-
-
 ### Winterlandschaften
 
 ```{=latex}
-\colfig{russia-photographs/IMG_0046.png}{Eine verschneite Brücke führt ins Dorf – die Stille ist fast greifbar.}{Winterbrücke (J. Meier, 2025)}
 \colfig{russia-photographs/IMG_0052.png}{Dampf steigt vom warmen Wasser in die eisige Luft.}{Dampfendes Wasser (J. Meier, 2025)}
 \colfig{russia-photographs/IMG_0122.png}{Dorfstraße im Sonnenschein – doch die Kälte beißt.}{Winterdorf (J. Meier, 2025)}
 ```
@@ -91,16 +86,10 @@ Der olympische Bär Mischka, Maskottchen der Spiele von 1980, ist noch immer üb
 Die Liebe zu Tieren ist in Russland allgegenwärtig. Katzen wärmen sich auf dem Ofen, dem Herz des russischen Hauses. Hunde sind treue Begleiter bei extremen Temperaturen. Diese Zuneigung zu Kreaturen inspiriert die anthropomorphen Charaktere unseres Spiels.
 
 ```{=latex}
-\colpairfig{russia-photographs/IMG_0078.png}{russia-photographs/IMG_0081.png}{Kühe im Schnee – das Dorfleben geht weiter.}{Kühe (J. Meier, 2025)}
+\colgridfig{russia-photographs/IMG_0078.png}{russia-photographs/IMG_0081.png}{russia-photographs/IMG_0069.png}{russia-photographs/IMG_0072.png}{Nutztiere im Schnee – Kühe und Schweine trotzen der Kälte.}{Nutztiere (J. Meier, 2025)}
 ```
 
-Auf dem Land leben die Menschen eng mit ihren Tieren zusammen. Kühe trotzen der Kälte, ihre dampfenden Atem sichtbar in der eisigen Luft.
-
-```{=latex}
-\colgridfig{russia-photographs/IMG_0069.png}{russia-photographs/IMG_0072.png}{russia-photographs/IMG_9940.png}{russia-photographs/IMG_0059.png}{Stalltiere und Winteratmosphäre – Wärme und Kälte, Licht und Dunkelheit.}{Dorfleben (J. Meier, 2025)}
-```
-
-Im Stall ist es warm: Schweine und Kaninchen trotzen dem Winter. Draußen versinkt das Land in Dunkelheit – nur vereinzelte Lichter und der Mond über verschneiten Tannen durchbrechen die Schwärze. Diese Kontraste prägen die Atmosphäre unseres Spiels.
+Auf dem Land leben die Bewohner eng mit ihren Tieren zusammen. Kühe trotzen der Kälte, ihr dampfender Atem sichtbar in der eisigen Luft. Im Stall ist es warm: Schweine dösen in Boxen. Diese Kontraste zwischen Wärme und Kälte prägen die Atmosphäre unseres Spiels.
 
 
 ### Fazit

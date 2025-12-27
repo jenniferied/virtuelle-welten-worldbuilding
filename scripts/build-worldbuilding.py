@@ -121,10 +121,10 @@ function Div(el)
     }
   end
 
-  -- Multi-column layouts
+  -- Multi-column layouts (with \nopagebreak to keep with preceding heading)
   if classes:includes("columns-1") then
     return {
-      pandoc.RawBlock("latex", "\\begin{columns-1}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-1}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-1}")
     }
@@ -132,7 +132,7 @@ function Div(el)
 
   if classes:includes("columns-2") then
     return {
-      pandoc.RawBlock("latex", "\\begin{columns-2}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-2}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-2}")
     }
@@ -140,7 +140,7 @@ function Div(el)
 
   if classes:includes("columns-3") then
     return {
-      pandoc.RawBlock("latex", "\\begin{columns-3}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-3}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-3}")
     }
@@ -148,16 +148,16 @@ function Div(el)
 
   if classes:includes("columns-4") then
     return {
-      pandoc.RawBlock("latex", "\\begin{columns-4}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-4}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-4}")
     }
   end
 
-  -- Full-page unbalanced column layouts
+  -- Full-page unbalanced column layouts (with \nopagebreak to keep with preceding heading)
   if classes:includes("page-1") then
     return {
-      pandoc.RawBlock("latex", "\\begin{page-1}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-1}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-1}")
     }
@@ -165,7 +165,7 @@ function Div(el)
 
   if classes:includes("page-2") then
     return {
-      pandoc.RawBlock("latex", "\\begin{page-2}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-2}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-2}")
     }
@@ -173,7 +173,7 @@ function Div(el)
 
   if classes:includes("page-3") then
     return {
-      pandoc.RawBlock("latex", "\\begin{page-3}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-3}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-3}")
     }
@@ -181,7 +181,7 @@ function Div(el)
 
   if classes:includes("page-4") then
     return {
-      pandoc.RawBlock("latex", "\\begin{page-4}"),
+      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-4}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-4}")
     }
@@ -202,8 +202,8 @@ function Div(el)
     return el
   end
 
-  -- Page break
-  if classes:includes("page-break") or classes:includes("pagebreak") then
+  -- Page break (used at start of chapter files)
+  if classes:includes("page-break") or classes:includes("pagebreak") or classes:includes("new-page") or classes:includes("newpage") then
     return {
       pandoc.RawBlock("latex", "\\clearpage"),
       el
@@ -354,6 +354,9 @@ def build_latex(
 
     if toc:
         cmd.extend(["--toc", "--toc-depth=3", "-V", "toc=true"])
+
+    # Always include list of figures at end
+    cmd.extend(["-V", "lof=true"])
 
     print(f"\n🔨 Building LaTeX: {output_path.name}")
     print(f"   Template: {template.name}")

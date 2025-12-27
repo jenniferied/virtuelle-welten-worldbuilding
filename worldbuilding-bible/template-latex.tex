@@ -22,7 +22,7 @@
 % Mono: PT Mono (Russian-designed, matches PT family)
 \setmonofont{PT Mono}[Scale=0.9]
 
-% Heading font: Futura Bold (system font, clean geometric)
+% Heading font: Futura Bold (clean geometric)
 \newfontfamily\headingfont{Futura}[
   UprightFont = *-Bold,
   BoldFont = *-Bold
@@ -32,6 +32,11 @@
 \newfontfamily\titlefont{Molot}[
   Path = \sovietfontpath,
   Extension = .otf
+]
+
+% Subtitle font: PT Mono (Soviet technical aesthetic)
+\newfontfamily\subtitlefont{PT Mono}[
+  BoldFont = *-Bold
 ]
 
 % Alternative fonts (available for special use)
@@ -87,6 +92,7 @@
 \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
 
 \usepackage{titlesec}
+\usepackage{needspace}  % Prevent orphaned headings
 \setcounter{secnumdepth}{0}
 \setcounter{tocdepth}{2}
 
@@ -105,20 +111,28 @@
   {}{0em}{}
 \titlespacing*{\section}{0pt}{10mm}{5mm}  % 10mm before, 5mm after major sections
 
-% Page break before each section (chapter)
-\newcommand{\sectionbreak}{\clearpage}
+% Page break before sections - DISABLED (use ::: {.new-page} in markdown instead)
+\newcommand{\sectionbreak}{}
 
-% H2 - Fyodor Bold 18pt
+% H2 - Molot 18pt with flexible spacing
 \titleformat{\subsection}
   {\headingfont\fontsize{18pt}{22pt}\selectfont\color{black}}
   {}{0em}{}
-\titlespacing*{\subsection}{0pt}{5mm}{2mm}
+\titlespacing*{\subsection}{0pt}{2mm plus 1mm minus 1mm}{0.5mm}
 
-% H3 - Bold 12pt
+% H3 - Bold 12pt with flexible spacing
 \titleformat{\subsubsection}
   {\bfseries\fontsize{12pt}{14pt}\selectfont\color{black}}
-  {}{0em}{}
-\titlespacing*{\subsubsection}{0pt}{4mm}{1mm}
+  {}{0em}{}[\nopagebreak]
+\titlespacing*{\subsubsection}{0pt}{2mm plus 1mm minus 0.5mm}{0.5mm plus 0.25mm}
+
+% Prevent orphaned headings and widows/clubs
+\widowpenalty=10000
+\clubpenalty=10000
+\brokenpenalty=10000
+\interlinepenalty=150
+\predisplaypenalty=10000
+\postdisplaypenalty=10000
 
 % H4 - italic
 \titleformat{\paragraph}[runin]
@@ -218,6 +232,8 @@
 \usepackage{multicol}
 \setlength{\columnsep}{5.08mm}  % 0.2 inch gutter
 \setlength{\columnseprule}{0pt}
+\setlength{\multicolsep}{0pt}  % Minimal space before/after multicol environments
+\raggedcolumns  % Prevent extra vertical spacing to fill columns
 
 % Default is 2 columns (balanced)
 \newenvironment{columns}{\begin{multicols}{2}}{\end{multicols}}
@@ -443,6 +459,60 @@
 }
 
 % ==========================================================================
+%   CONTACT SHEET - Tight image grid for reference boards
+% ==========================================================================
+
+% Contact sheet row: 2 images side by side (for use within minipage)
+% Usage: \csrow{img1}{img2}
+\newcommand{\csrow}[2]{%
+  \includegraphics[width=0.48\columnwidth,height=0.10\textheight,keepaspectratio]{#1}\hspace{0.5mm}%
+  \includegraphics[width=0.48\columnwidth,height=0.10\textheight,keepaspectratio]{#2}\\[0.5mm]%
+}
+
+% Contact sheet single image (for odd counts)
+% Usage: \cssingle{img}
+\newcommand{\cssingle}[1]{%
+  \includegraphics[width=0.48\columnwidth,height=0.10\textheight,keepaspectratio]{#1}\\[0.5mm]%
+}
+
+% Contact sheet caption (placed at end of grid)
+% Usage: \cscaption{text caption}{list of figures caption}
+\newcommand{\cscaption}[2]{%
+  \par\vspace{1mm}%
+  \captionof{figure}[#2]{#1}%
+}
+
+% Full-page contact sheet (spans entire page width, use outside multicols)
+% Row of 4 images for full-page width
+% Usage: \fpcsrow{img1}{img2}{img3}{img4}
+\newcommand{\fpcsrow}[4]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#2}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#3}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#4}\\[1mm]%
+}
+
+% Full-page contact sheet row of 3 images (for odd counts)
+\newcommand{\fpcsrowthree}[3]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#2}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#3}\hfill%
+  \hspace{0.24\textwidth}\\[1mm]%
+}
+
+% Full-page contact sheet row of 2 images
+\newcommand{\fpcsrowtwo}[2]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#2}\hfill%
+  \hspace{0.24\textwidth}\hfill\hspace{0.24\textwidth}\\[1mm]%
+}
+
+% Full-page contact sheet single image
+\newcommand{\fpcssingle}[1]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\\[1mm]%
+}
+
+% ==========================================================================
 %   CODE & DIVIDERS
 % ==========================================================================
 
@@ -522,14 +592,22 @@ $if(date)$\date{$date$}$else$\date{}$endif$
   \vfill
 
   \begin{center}
-    % Title in Molot 48pt (Soviet constructivist display)
-    {\titlefont\fontsize{48pt}{54pt}\selectfont\@title\par}
+    % Title in Molot - plain black, industrial Soviet look
+    {\titlefont\fontsize{90pt}{100pt}\selectfont\@title\par}
 
-    \vspace{12mm}
+    \vspace{15mm}
 
-    % Subtitle in Futura Bold
+    % Subtitle in PT Mono (plain background)
     $if(subtitle)$
-    {\headingfont\fontsize{16pt}{20pt}\selectfont $subtitle$\par}
+    \begin{tcolorbox}[enhanced, frame hidden,
+      colback=pagewhite,
+      left=12mm, right=12mm, top=8mm, bottom=8mm,
+      width=0.85\textwidth]
+      \centering
+      {\subtitlefont\bfseries\fontsize{16pt}{20pt}\selectfont\color{black} Worldbuilding Bible\par}
+      \vspace{4mm}
+      {\subtitlefont\fontsize{11pt}{15pt}\selectfont\color{black!70} $subtitle$\par}
+    \end{tcolorbox}
     \vspace{10mm}
     $endif$
 
@@ -540,8 +618,8 @@ $if(date)$\date{$date$}$else$\date{}$endif$
 
     % Institution
     {\small Technische Hochschule Ostwestfalen-Lippe\\[2mm]
-     Fachbereich Medienproduktion\\[2mm]
-     Master Medienproduktion\par}
+     Fachbereich Medienproduktion, Master Medienproduktion\\[2mm]
+     $if(subject)$Fach: $subject$$if(tutor)$ · Dozent: $tutor$$endif$$endif$\par}
   \end{center}
 
   \vfill
@@ -564,6 +642,7 @@ $if(date)$\date{$date$}$else$\date{}$endif$
 % ==========================================================================
 
 \begin{document}
+\raggedbottom  % Allow natural page breaks without forcing justification
 
 $if(title)$\maketitle$endif$
 
@@ -582,17 +661,19 @@ $if(toc)$
 \newpage
 $endif$
 
+$body$
+
 $if(lof)$
-% List of Figures
+% List of Figures at end (added to TOC as last entry)
+\clearpage
 \thispagestyle{empty}
 {
   \hypersetup{linkcolor=black}
   \renewcommand{\listfigurename}{$if(lof-title)$$lof-title$$else$Abbildungsverzeichnis$endif$}
+  \phantomsection
+  \addcontentsline{toc}{section}{$if(lof-title)$$lof-title$$else$Abbildungsverzeichnis$endif$}
   \listoffigures
 }
-\newpage
 $endif$
-
-$body$
 
 \end{document}
