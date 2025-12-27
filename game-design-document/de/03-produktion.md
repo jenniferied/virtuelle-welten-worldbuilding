@@ -137,13 +137,24 @@ Dieses Kapitel dokumentiert den Produktionsablauf für ПАНЕЛЬКИ im Rahme
 
 ## Abgabe-Anforderungen
 
-### Cinematic Video
+### Cinematic Video – Opening Cutscene
+
+Das Cinematic dient als **Opening Cutscene / Trailer** für das Spiel – der erste Eindruck der Welt ПАНЕЛЬГРАД, bevor der Spieler die Kontrolle übernimmt.
 
 | Aspekt | Anforderung |
 |--------|-------------|
 | Format | Video (MP4, H.264) |
 | Länge | Minimum 30 Sekunden |
 | Shots | Minimum 5 verschiedene Einstellungen |
+| Audio | KI-generierter Voiceover + Musik |
+
+**Audio-Konzept:**
+
+- KI-generierte Stimme für atmosphärische Narration
+- KI-generierte Hintergrundmusik (melancholisch, sowjetisch inspiriert)
+- Ambiente: Wind, Schnee, ferne Stadtgeräusche
+
+*Hinweis: Das Cinematic zeigt nur die Umgebung – keine Charaktere oder NPCs, da der Fokus auf Environment Art liegt.*
 
 ### Shot-Planung
 

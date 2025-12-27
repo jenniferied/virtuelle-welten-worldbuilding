@@ -1,14 +1,16 @@
 ---
-title: "Dystopian District"
+title: "ПАНЕЛЬКИ"
+subtitle: "Prozessdokumentation"
 author:
   - "Jennifer Meier"
-date: "2026"
-version: "0.1"
-status: "Entwurf"
-platform: "PC"
-engine: "Unreal Engine 5.5+"
+date: "WiSe 2025/26"
 institute: "Technische Hochschule Ostwestfalen-Lippe"
 department: "Fachbereich Medienproduktion"
+course: "Master Medienproduktion"
+subject: "Virtuelle Welten"
+tutor: "Adrian Meyer"
+engine: "Unreal Engine 5.5+"
+houdini: "Houdini 21"
 lang: de
 toc: true
 ---

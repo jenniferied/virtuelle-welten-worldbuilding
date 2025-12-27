@@ -77,14 +77,20 @@
   {\normalfont\normalsize\bfseries}
   {\thesubsubsection}{1em}{}
 
-% Hyperlinks - black (like thesis)
+% Hyperlinks - grey and underlined
+\definecolor{linkgray}{HTML}{666666}
 \usepackage[
-  colorlinks=true,
-  linkcolor=black,
-  citecolor=black,
-  urlcolor=black,
+  colorlinks=false,
+  linkbordercolor=white,
+  citebordercolor=white,
+  urlbordercolor=white,
   pdfusetitle
 ]{hyperref}
+
+% Underlined links with grey color
+\usepackage[normalem]{ulem}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\color{linkgray}\uline{#2}}}
 
 % Graphics support
 \usepackage{graphicx}
@@ -249,7 +255,7 @@ $endif$
     \centering
     {\titlefont\fontsize{32pt}{38pt}\selectfont \@title \par}
     \vspace{0.5cm}
-    {\large Spieldesign-Dokument \par}
+    $if(subtitle)${\large $subtitle$ \par}$endif$
 
     \vspace{2cm}
 
@@ -261,18 +267,21 @@ $endif$
     {$institute$ \par}
     $endif$
     $if(department)$
-    {$department$ \par}
+    {$department$$if(course)$, $course$$endif$ \par}
+    $endif$
+    $if(subject)$
+    {Fach: $subject$$if(tutor)$ · Tutor: $tutor$$endif$ \par}
     $endif$
     \vspace{0.75cm}
 
-    % Document info
+    % Software info
+    $if(engine)$
     \begin{tabular}{ll}
-      \textbf{Version:} & $if(version)$$version$$else$0.1$endif$ \\
-      \textbf{Status:} & $if(status)$$status$$else$Entwurf$endif$ \\
-      $if(platform)$\textbf{Plattform:} & $platform$ \\$endif$
       $if(engine)$\textbf{Engine:} & $engine$ \\$endif$
+      $if(houdini)$\textbf{Houdini:} & $houdini$ \\$endif$
     \end{tabular}
     \vspace{0.75cm}
+    $endif$
 
     % Date
     {\@date \par}

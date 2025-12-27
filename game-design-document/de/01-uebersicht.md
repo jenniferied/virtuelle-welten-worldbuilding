@@ -2,16 +2,21 @@
 
 ## Konzept
 
-**ПАНЕЛЬКИ** (Panelki) ist eine atmosphärische Erkundung einer dystopischen, sowjetisch inspirierten Schneemetropole. Der Spieler – ein Mensch, der einzige Mensch – erwacht in einer Welt von anthropomorphen Tieren, gefangen in einem ewigen Winter, den niemand hinterfragt.
+**ПАНЕЛЬКИ** (Panelki) ist eine atmosphärische Erkundung einer dystopischen, sowjetisch inspirierten Schneemetropole. Der Spieler – ein Mensch, der einzige Mensch – erwacht in ПАНЕЛЬГРАД, der grauen Hauptstadt einer Welt von anthropomorphen Tieren, gefangen in einem ewigen Winter, den niemand hinterfragt.
 
 Das Projekt konzentriert sich zunächst auf die Environment-Erstellung und einen Cinematic-Trailer, der die Stimmung und Ästhetik der Welt etabliert.
 
-## Genre
+## Genre & Stil
 
 - Atmosphärische Exploration
 - Dystopie / Sowjet-Fantasy
 - Narrative Environment Design
-- (Kurs-Fokus: Environment Art, Cinematic)
+
+**Visuelle Inspirationen:**
+
+- Film Noir (Schatten, Kontraste, Melancholie)
+- Pixel Art Ästhetik
+- PS1-Grafik (Low-Poly Charme, limitierte Palette)
 
 ## Kern-Spielerfahrung
 
@@ -22,9 +27,18 @@ Die Atmosphäre ist melancholisch, aber nicht hoffnungslos. Es gibt Schönheit i
 ## Unique Selling Points
 
 1. **Ewiger Winter als Mysterium** – Ein unerklärtes Phänomen, das niemand hinterfragt. Möglicher Gameplay-Hook: Kann der Spieler den Winter beenden?
-2. **Sowjetische Zeichentrickfiguren als NPCs** – Korrupte Versionen bekannter Charaktere (inspiriert von Cheburashka, Nu Pogodi, Animal Farm) bevölkern die Welt.
+2. **Tier-Charaktere inspiriert von sowjetischer Animation** – Die anthropomorphen Bewohner sind von klassischen sowjetischen Zeichentrickfiguren (Cheburashka, Nu Pogodi, Animal Farm) *inspiriert*, nicht direkte Kopien. Die beschnittenen, stilisierten Tierformen wecken Assoziationen an diese Charaktere – ein bewusstes Stilmittel, keine Copyright-Umgehung.
 3. **Der einzige Mensch** – Der Spieler ist eine Anomalie im System, ein Fremder ohne Papiere, ohne Kategorie.
-4. **Nicht-realistischer Stil** – Inspiriert von sowjetischer Animation und Illustration, nicht fotorealistisch.
+4. **Dokumente und Bürokratie** – Papiere, Formulare und Genehmigungen spielen eine zentrale Rolle in dieser Welt.
+5. **Nicht-realistischer Stil** – Inspiriert von sowjetischer Animation und Illustration, nicht fotorealistisch.
+
+## Spiele-Inspirationen
+
+- **Papers, Please** – Bürokratie als Gameplay, moralische Entscheidungen, sowjetische Ästhetik
+- **Frostpunk** – Überlebenskampf im ewigen Winter, harte Entscheidungen
+- **Kentucky Route Zero** – Atmosphärisches Storytelling, melancholische Stimmung
+- **This War of Mine** – Zivile Perspektive, osteuropäische Tristesse
+- **Return of the Obra Dinn** – Stilisierte Grafik, Mysterium-Lösung
 
 ## Zielgruppe
 
