@@ -133,8 +133,8 @@
 \usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=gray, pdfusetitle]{hyperref}
 
 \usepackage{graphicx}
+\usepackage[export]{adjustbox}  % For max height/width constraints on images
 \usepackage{float}
-\floatplacement{figure}{H}  % Force figures to stay in place, not float above headings
 \usepackage{wrapfig}
 \usepackage{subcaption}
 \graphicspath{{../../assets/logos/}{../figures/}{./figures/}{./}}
@@ -155,6 +155,11 @@
 \usepackage{caption}
 \captionsetup{font={small}, labelfont={bf}, format=plain, skip=1mm}
 \renewcommand{\figurename}{Abb.}
+
+% Reduce spacing around figures
+\setlength{\intextsep}{2pt plus 1pt minus 1pt}  % Space above/below floats in text
+\setlength{\floatsep}{2pt plus 1pt minus 1pt}   % Space between floats
+\setlength{\textfloatsep}{4pt plus 1pt minus 1pt} % Space between float and text
 
 % ==========================================================================
 %   BOXES - Minimal
@@ -362,41 +367,79 @@
 }
 
 % Column figure with separate captions for text and list of figures
+% Uses minipage instead of figure[H] to prevent overflow in multicols
 % Usage: \colfig{image path}{text caption}{list caption with attribution}
 \newcommand{\colfig}[3]{%
-  \begin{figure}[H]%
+  \par\noindent%
+  \begin{minipage}{\columnwidth}%
     \centering%
-    \includegraphics[width=\columnwidth]{#1}%
-    \caption[#3]{#2}%
-  \end{figure}%
+    \includegraphics[width=\columnwidth,keepaspectratio,max height=0.4\textheight]{#1}%
+    \captionof{figure}[#3]{#2}%
+  \end{minipage}%
+  \par\vspace{2mm}%
 }
 
 % 2x2 grid figure with single caption (for grouping related images)
+% Uses minipage to prevent overflow in multicols
 % Usage: \colgridfig{img1}{img2}{img3}{img4}{text caption}{list caption}
 \newcommand{\colgridfig}[6]{%
-  \begin{figure}[H]%
+  \par\noindent%
+  \begin{minipage}{\columnwidth}%
     \centering%
     \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
-      \includegraphics[width=0.48\columnwidth]{#1} &
-      \includegraphics[width=0.48\columnwidth]{#2} \\[1mm]
-      \includegraphics[width=0.48\columnwidth]{#3} &
-      \includegraphics[width=0.48\columnwidth]{#4} \\
+      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#1} &
+      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#2} \\[1mm]
+      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#3} &
+      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#4} \\
     \end{tabular}%
-    \caption[#6]{#5}%
-  \end{figure}%
+    \captionof{figure}[#6]{#5}%
+  \end{minipage}%
+  \par\vspace{2mm}%
 }
 
 % 1x2 horizontal grid (two images side by side)
+% Uses minipage to prevent overflow in multicols
 % Usage: \colpairfig{img1}{img2}{text caption}{list caption}
 \newcommand{\colpairfig}[4]{%
-  \begin{figure}[H]%
+  \par\noindent%
+  \begin{minipage}{\columnwidth}%
     \centering%
     \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
-      \includegraphics[width=0.48\columnwidth]{#1} &
-      \includegraphics[width=0.48\columnwidth]{#2} \\
+      \includegraphics[width=0.48\columnwidth,max height=0.25\textheight,keepaspectratio]{#1} &
+      \includegraphics[width=0.48\columnwidth,max height=0.25\textheight,keepaspectratio]{#2} \\
     \end{tabular}%
-    \caption[#4]{#3}%
-  \end{figure}%
+    \captionof{figure}[#4]{#3}%
+  \end{minipage}%
+  \par\vspace{2mm}%
+}
+
+% 3-image vertical stack with single caption (compact)
+% Uses minipage to prevent overflow in multicols
+% Usage: \coltriplefig{img1}{img2}{img3}{text caption}{list caption}
+\newcommand{\coltriplefig}[5]{%
+  \par\noindent%
+  \begin{minipage}{\columnwidth}%
+    \centering%
+    \includegraphics[width=\columnwidth,max height=0.18\textheight,keepaspectratio]{#1}\\[1mm]
+    \includegraphics[width=\columnwidth,max height=0.18\textheight,keepaspectratio]{#2}\\[1mm]
+    \includegraphics[width=\columnwidth,max height=0.18\textheight,keepaspectratio]{#3}%
+    \captionof{figure}[#5]{#4}%
+  \end{minipage}%
+  \par\vspace{2mm}%
+}
+
+% 2-image vertical stack with single caption
+% Uses minipage to prevent overflow in multicols
+% Usage: \coldualfig{img1}{img2}{text caption}{list caption}
+\newcommand{\coldualfig}[4]{%
+  \par\noindent%
+  \begin{minipage}{\columnwidth}%
+    \centering%
+    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#1}\\[1mm]
+    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#2}%
+    \captionof{figure}[#4]{#3}%
+  \end{minipage}%
+  \par\vspace{2mm}%
 }
 
 % ==========================================================================
