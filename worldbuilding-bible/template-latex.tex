@@ -55,7 +55,7 @@
 
 % Background
 \usepackage{pagecolor}
-\definecolor{pagewhite}{HTML}{FCFCFC}
+\definecolor{pagewhite}{HTML}{FFFFFF}
 \pagecolor{pagewhite}
 
 % Colors - minimal
@@ -153,7 +153,8 @@
 \usepackage{tabularx}
 
 \usepackage{caption}
-\captionsetup{font={small}, labelfont={bf}, format=plain, skip=2mm}
+\captionsetup{font={small}, labelfont={bf}, format=plain, skip=1mm}
+\renewcommand{\figurename}{Abb.}
 
 % ==========================================================================
 %   BOXES - Minimal
@@ -342,6 +343,62 @@
   \end{figure}
 }
 
+% 2x2 image grid with real images (for column layouts)
+% Usage: \imagegridfour{img1}{img2}{img3}{img4}{caption}
+\newcommand{\imagegridfour}[5]{%
+  \par\vspace{1mm}%
+  \noindent\begin{minipage}{\columnwidth}%
+    \centering%
+    \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
+      \includegraphics[width=0.48\columnwidth]{#1} &
+      \includegraphics[width=0.48\columnwidth]{#2} \\[1mm]
+      \includegraphics[width=0.48\columnwidth]{#3} &
+      \includegraphics[width=0.48\columnwidth]{#4} \\
+    \end{tabular}%
+    \par\vspace{1mm}%
+    {\small #5}%
+  \end{minipage}%
+  \par\vspace{2mm}%
+}
+
+% Column figure with separate captions for text and list of figures
+% Usage: \colfig{image path}{text caption}{list caption with attribution}
+\newcommand{\colfig}[3]{%
+  \begin{figure}[H]%
+    \centering%
+    \includegraphics[width=\columnwidth]{#1}%
+    \caption[#3]{#2}%
+  \end{figure}%
+}
+
+% 2x2 grid figure with single caption (for grouping related images)
+% Usage: \colgridfig{img1}{img2}{img3}{img4}{text caption}{list caption}
+\newcommand{\colgridfig}[6]{%
+  \begin{figure}[H]%
+    \centering%
+    \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
+      \includegraphics[width=0.48\columnwidth]{#1} &
+      \includegraphics[width=0.48\columnwidth]{#2} \\[1mm]
+      \includegraphics[width=0.48\columnwidth]{#3} &
+      \includegraphics[width=0.48\columnwidth]{#4} \\
+    \end{tabular}%
+    \caption[#6]{#5}%
+  \end{figure}%
+}
+
+% 1x2 horizontal grid (two images side by side)
+% Usage: \colpairfig{img1}{img2}{text caption}{list caption}
+\newcommand{\colpairfig}[4]{%
+  \begin{figure}[H]%
+    \centering%
+    \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
+      \includegraphics[width=0.48\columnwidth]{#1} &
+      \includegraphics[width=0.48\columnwidth]{#2} \\
+    \end{tabular}%
+    \caption[#4]{#3}%
+  \end{figure}%
+}
+
 % ==========================================================================
 %   CODE & DIVIDERS
 % ==========================================================================
@@ -477,7 +534,7 @@ $if(toc)$
 \hfill
 \begin{minipage}[t]{0.33\textwidth}
   \vspace{10mm}
-  \fcolorbox{border}{boxbg}{\parbox{0.95\linewidth}{\vspace{80mm}\centering\color{gray}[Cover Art]\vspace{80mm}}}
+  \includegraphics[width=\linewidth]{../figures/toc-illustration.png}
 \end{minipage}
 \newpage
 $endif$
