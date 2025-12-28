@@ -118,13 +118,13 @@
 \titleformat{\subsection}
   {\headingfont\fontsize{18pt}{22pt}\selectfont\color{black}}
   {}{0em}{}
-\titlespacing*{\subsection}{0pt}{2mm plus 1mm minus 1mm}{0.5mm}
+\titlespacing*{\subsection}{0pt}{5mm plus 2mm minus 1mm}{1.5mm}
 
 % H3 - Bold 12pt with flexible spacing
 \titleformat{\subsubsection}
   {\bfseries\fontsize{12pt}{14pt}\selectfont\color{black}}
   {}{0em}{}
-\titlespacing*{\subsubsection}{0pt}{2mm plus 1mm minus 0.5mm}{0.5mm plus 0.25mm}
+\titlespacing*{\subsubsection}{0pt}{4mm plus 1mm minus 0.5mm}{1mm plus 0.25mm}
 
 % Prevent orphaned headings and widows/clubs
 \widowpenalty=10000
@@ -167,13 +167,13 @@
 \usepackage{tabularx}
 
 \usepackage{caption}
-\captionsetup{font={small}, labelfont={bf}, format=plain, skip=1mm}
+\captionsetup{font={small}, labelfont={bf}, format=plain, skip=2mm, justification=raggedright, singlelinecheck=false}
 \renewcommand{\figurename}{Abb.}
 
-% Reduce spacing around figures
-\setlength{\intextsep}{2pt plus 1pt minus 1pt}  % Space above/below floats in text
-\setlength{\floatsep}{2pt plus 1pt minus 1pt}   % Space between floats
-\setlength{\textfloatsep}{4pt plus 1pt minus 1pt} % Space between float and text
+% Spacing around figures (more breathing room)
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}  % Space above/below floats in text
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}   % Space between floats
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt} % Space between float and text
 
 % ==========================================================================
 %   BOXES - Minimal
@@ -198,9 +198,10 @@
 }
 
 % Single unified box style (replaces sidebar, infobox, warning, note, success)
+% width=\linewidth ensures boxes respect multi-column context
 \newtcolorbox{boxed}{enhanced, frame hidden, borderline west={2pt}{0pt}{border},
   colback=boxbg, left=4mm, right=4mm, top=2mm, bottom=2mm,
-  before skip=3mm, after skip=3mm, breakable}
+  before skip=3mm, after skip=3mm, breakable, width=\linewidth}
 
 % Aliases for backwards compatibility
 \newenvironment{sidebar}{\begin{boxed}}{\end{boxed}}
@@ -321,6 +322,7 @@
 \newcommand{\placeholdermedium}[1]{\placeholder{60mm}{30mm}{#1}}
 \newcommand{\placeholderlarge}[1]{\placeholder{80mm}{40mm}{#1}}
 \newcommand{\placeholderwide}[1]{\placeholder{\linewidth}{20mm}{#1}}
+\newcommand{\placeholderportrait}[1]{\placeholder{50mm}{70mm}{#1}}
 
 % Square placeholders for columns
 \newcommand{\placeholdersquare}[1]{%
@@ -387,11 +389,10 @@
 \newcommand{\colfig}[3]{%
   \par\noindent%
   \begin{minipage}{\columnwidth}%
-    \centering%
-    \includegraphics[width=\columnwidth,keepaspectratio,max height=0.4\textheight]{#1}%
+    \includegraphics[width=\columnwidth,keepaspectratio,max height=0.5\textheight]{#1}%
     \captionof{figure}[#3]{#2}%
   \end{minipage}%
-  \par\vspace{2mm}%
+  \par\vspace{4mm}%
 }
 
 % 2x2 grid figure with single caption (for grouping related images)
@@ -400,16 +401,15 @@
 \newcommand{\colgridfig}[6]{%
   \par\noindent%
   \begin{minipage}{\columnwidth}%
-    \centering%
-    \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
-      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#1} &
-      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#2} \\[1mm]
-      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#3} &
-      \includegraphics[width=0.48\columnwidth,max height=0.2\textheight,keepaspectratio]{#4} \\
+    \begin{tabular}{@{}l@{\hspace{1mm}}l@{}}%
+      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#1} &
+      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#2} \\[1mm]
+      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#3} &
+      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#4} \\
     \end{tabular}%
     \captionof{figure}[#6]{#5}%
   \end{minipage}%
-  \par\vspace{2mm}%
+  \par\vspace{4mm}%
 }
 
 % 1x2 horizontal grid (two images side by side)
@@ -418,14 +418,13 @@
 \newcommand{\colpairfig}[4]{%
   \par\noindent%
   \begin{minipage}{\columnwidth}%
-    \centering%
-    \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
-      \includegraphics[width=0.48\columnwidth,max height=0.25\textheight,keepaspectratio]{#1} &
-      \includegraphics[width=0.48\columnwidth,max height=0.25\textheight,keepaspectratio]{#2} \\
+    \begin{tabular}{@{}l@{\hspace{1mm}}l@{}}%
+      \includegraphics[width=0.485\columnwidth,max height=0.3\textheight,keepaspectratio]{#1} &
+      \includegraphics[width=0.485\columnwidth,max height=0.3\textheight,keepaspectratio]{#2} \\
     \end{tabular}%
     \captionof{figure}[#4]{#3}%
   \end{minipage}%
-  \par\vspace{2mm}%
+  \par\vspace{4mm}%
 }
 
 % 3-image vertical stack with single caption (compact)
@@ -434,13 +433,12 @@
 \newcommand{\coltriplefig}[5]{%
   \par\noindent%
   \begin{minipage}{\columnwidth}%
-    \centering%
-    \includegraphics[width=\columnwidth,max height=0.18\textheight,keepaspectratio]{#1}\\[1mm]
-    \includegraphics[width=\columnwidth,max height=0.18\textheight,keepaspectratio]{#2}\\[1mm]
-    \includegraphics[width=\columnwidth,max height=0.18\textheight,keepaspectratio]{#3}%
+    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#1}\\[1mm]
+    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#2}\\[1mm]
+    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#3}%
     \captionof{figure}[#5]{#4}%
   \end{minipage}%
-  \par\vspace{2mm}%
+  \par\vspace{4mm}%
 }
 
 % 2-image vertical stack with single caption
@@ -449,12 +447,11 @@
 \newcommand{\coldualfig}[4]{%
   \par\noindent%
   \begin{minipage}{\columnwidth}%
-    \centering%
-    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#1}\\[1mm]
-    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#2}%
+    \includegraphics[width=\columnwidth,max height=0.28\textheight,keepaspectratio]{#1}\\[1mm]
+    \includegraphics[width=\columnwidth,max height=0.28\textheight,keepaspectratio]{#2}%
     \captionof{figure}[#4]{#3}%
   \end{minipage}%
-  \par\vspace{2mm}%
+  \par\vspace{4mm}%
 }
 
 % ==========================================================================
@@ -591,22 +588,16 @@ $if(date)$\date{$date$}$else$\date{}$endif$
   \vfill
 
   \begin{center}
-    % Title in Molot - plain black, industrial Soviet look
+    % Title in Molot
     {\titlefont\fontsize{90pt}{100pt}\selectfont\@title\par}
 
     \vspace{15mm}
 
-    % Subtitle in PT Mono (plain background)
+    % Subtitle in PT Sans
     $if(subtitle)$
-    \begin{tcolorbox}[enhanced, frame hidden,
-      colback=pagewhite,
-      left=12mm, right=12mm, top=8mm, bottom=8mm,
-      width=0.85\textwidth]
-      \centering
-      {\subtitlefont\bfseries\fontsize{16pt}{20pt}\selectfont\color{black} Worldbuilding Bible\par}
-      \vspace{4mm}
-      {\subtitlefont\fontsize{11pt}{15pt}\selectfont\color{black!70} $subtitle$\par}
-    \end{tcolorbox}
+    {\sffamily\bfseries\fontsize{16pt}{20pt}\selectfont Worldbuilding Bible\par}
+    \vspace{4mm}
+    {\sffamily\fontsize{11pt}{15pt}\selectfont\color{black!60} $subtitle$\par}
     \vspace{10mm}
     $endif$
 
@@ -623,12 +614,12 @@ $if(date)$\date{$date$}$else$\date{}$endif$
 
   \vfill
 
-  % Logos at bottom right using TikZ overlay (doesn't affect text centering)
+  % Logos at bottom right using TikZ overlay
   \begin{tikzpicture}[remember picture, overlay]
     \node[anchor=south east, inner sep=0pt] at ([xshift=-15mm, yshift=15mm]current page.south east) {%
       \includegraphics[height=20mm]{../../assets/logos/th-owl-logo.png}%
       \hspace{5mm}%
-      \includegraphics[height=20mm]{../../assets/logos/mp-logo.png}%
+      \includegraphics[height=20mm]{../../assets/logos/mp-logo-gradient-red.png}%
     };
   \end{tikzpicture}
 

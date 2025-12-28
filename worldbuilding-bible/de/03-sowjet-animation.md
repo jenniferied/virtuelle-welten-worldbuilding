@@ -5,11 +5,11 @@
 
 ::: {.page-4}
 
-Die sowjetische Animation entwickelte sich weitgehend isoliert vom westlichen Einfluss und schuf einen völlig eigenständigen visuellen Kanon. Während Disney auf flüssige Bewegung und Slapstick setzte, kultivierte das staatliche Studio *Sojusmultfilm* (gegründet 1936) eine nachdenklichere, oft melancholische Ästhetik.
+Im Sowjet-Café begegnete ich dem olympischen Mischka wieder – als Relief an der Wand, neben einem Schild mit „Parken verboten". Ich konnte diese Charaktere überall sehen, und die Menschen scheinen sie noch immer zu mögen. Tscheburaschka lief im Fernsehen, sein Gesicht war auf Lebensmittelverpackungen.
 
-Diese Filme waren nicht bloße Unterhaltung – sie vermittelten Werte wie Freundschaft, Gemeinschaft und die Suche nach Zugehörigkeit. Anders als im Westen gab es keine Merchandising-Industrie; die Charaktere gehörten dem Staat und damit „allen".
+Es ist etwas Interessantes an diesen Figuren: Sie wirken utopisch – Freundschaft, Gemeinschaft, Zusammenhalt – aber gleichzeitig haben sie etwas Melancholisches, fast Dystopisches. Irgendwann kam mir der Gedanke: Was wäre, wenn man diese Charaktere korrumpieren könnte? Die Unschuld brechen, die Nostalgie verdunkeln.
 
-Für ПАНЕЛЬКИ interessiert uns das subversive Potenzial: Was passiert, wenn die Unschuld der sowjetischen Kindheit auf dystopische Realität trifft?
+Die sowjetische Animation entwickelte sich isoliert vom Westen und schuf einen eigenständigen visuellen Kanon. Das staatliche Studio *Sojusmultfilm* (gegründet 1936) kultivierte eine nachdenklichere, oft melancholische Ästhetik als Disney. Diese Filme vermittelten Werte wie Freundschaft und die Suche nach Zugehörigkeit. Die Charaktere gehörten dem Staat – und damit „allen".
 
 ### Tscheburaschka (Чебурашка)
 
