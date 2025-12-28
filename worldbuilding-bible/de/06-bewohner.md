@@ -20,8 +20,6 @@ Der Spieler erwacht im Bezirk ohne Erinnerung, ohne Papiere, ohne Erklärung. Er
 - Stumm oder wortkarg (Außenseiter-Perspektive)
 - Beobachtend, lernend, fragend
 
-\columnbreak
-
 ### Seine Rolle
 
 Der Fremde ist ein Katalysator. Seine bloße Existenz stört die Ordnung. In einer Welt, in der jeder seinen Platz hat, passt er nirgendwo hin. Das macht ihn gefährlich – für das System, aber auch für sich selbst.
@@ -52,8 +50,6 @@ Die Schweine sitzen in den Ämtern, hinter den Schreibtischen, vor den Akten. Si
 - Brillen, Schreibmaschinen, Stempel
 - Schweißflecken, Zigarettenrauch
 
-\columnbreak
-
 ### Wölfe (Волки)
 
 **Soziale Rolle:** Vollstrecker, Miliz, Ordnungshüter
@@ -67,8 +63,6 @@ Die Wölfe halten die Ordnung aufrecht – oder das, was als Ordnung gilt. Sie p
 - Wachsam, lauernd
 - Oft in Gruppen
 
-\columnbreak
-
 ### Bären (Медведи)
 
 **Soziale Rolle:** Schwere Arbeiter, Nostalgiker
@@ -81,8 +75,6 @@ Die Bären sind das Rückgrat der Arbeiterklasse – stark, ausdauernd, oft mela
 - Arbeitskleidung, Wattejacken
 - Groß, schwerfällig, sanft
 - Oft allein, nachdenklich
-
-\columnbreak
 
 ### Füchse (Лисы)
 
@@ -114,8 +106,6 @@ Die Eulen wissen Dinge. Sie lesen, sie denken, sie beobachten. Manche sind Lehre
 - Große, wache Augen
 - Oft erhöht (Balkone, Fenster)
 
-\columnbreak
-
 ### Katzen (Кошки)
 
 **Soziale Rolle:** Überlebenskünstler, Anpassungsfähige
@@ -129,8 +119,6 @@ Die Katzen kommen überall zurecht. Sie sind weder Herrscher noch Beherrschte �
 - Geschmeidige Bewegungen
 - Unabhängig, eigenwillig
 
-\columnbreak
-
 ### Igel (Ёжики)
 
 **Soziale Rolle:** Einfache Arbeiter, Kleine Leute
@@ -143,8 +131,6 @@ Die Igel sind die unsichtbare Masse. Sie arbeiten, sie warten, sie beschweren si
 - Einfache, praktische Kleidung
 - Klein, gedrungen
 - Oft in Gruppen, murmelnd
-
-\columnbreak
 
 ### Hasen (Зайцы)
 

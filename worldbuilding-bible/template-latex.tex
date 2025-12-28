@@ -123,7 +123,7 @@
 % H3 - Bold 12pt with flexible spacing
 \titleformat{\subsubsection}
   {\bfseries\fontsize{12pt}{14pt}\selectfont\color{black}}
-  {}{0em}{}[\nopagebreak]
+  {}{0em}{}
 \titlespacing*{\subsubsection}{0pt}{2mm plus 1mm minus 0.5mm}{0.5mm plus 0.25mm}
 
 % Prevent orphaned headings and widows/clubs
@@ -245,12 +245,11 @@
 \newenvironment{columns-3}{\begin{multicols}{3}}{\end{multicols}}
 \newenvironment{columns-4}{\begin{multicols}{4}}{\end{multicols}}
 
-% Page-spanning columns: UNBALANCED (fill left column first, then next)
-% Use for full-page layouts where you want content to flow top-to-bottom
+% Page-spanning columns: now using regular multicols to allow page breaks
 \newenvironment{page-1}{\par}{\par}
-\newenvironment{page-2}{\begin{multicols*}{2}}{\end{multicols*}}
-\newenvironment{page-3}{\begin{multicols*}{3}}{\end{multicols*}}
-\newenvironment{page-4}{\begin{multicols*}{4}}{\end{multicols*}}
+\newenvironment{page-2}{\begin{multicols}{2}}{\end{multicols}}
+\newenvironment{page-3}{\begin{multicols}{3}}{\end{multicols}}
+\newenvironment{page-4}{\begin{multicols}{4}}{\end{multicols}}
 
 % ==========================================================================
 %   INLINE IMAGES - Flow with column text (non-floating)

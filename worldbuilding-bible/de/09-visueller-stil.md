@@ -21,8 +21,6 @@ Der Stil von ПАНЕЛЬКИ ist bewusst nicht fotorealistisch. Stattdessen ori
 
 Das Ziel ist *emotionale Authentizität*, nicht technische Genauigkeit.
 
-\columnbreak
-
 ### Kernelemente
 
 **Vereinfachung:**
@@ -92,8 +90,6 @@ Das Hauptmaterial der Plattenbauten. Nicht einheitlich grau, sondern:
 
 **Shader:** Matt, leicht rau, absorptiv
 
-\columnbreak
-
 ### Schnee
 
 Nicht einfach weiß, sondern kontextuell:
@@ -103,8 +99,6 @@ Nicht einfach weiß, sondern kontextuell:
 - Schmutzig: Fast grau/schwarz
 
 **Shader:** Subsurface Scattering, leicht glitzernd bei Sonnenlicht
-
-\columnbreak
 
 ### Glas
 
@@ -116,8 +110,6 @@ Fenster als wichtiges Element:
 - Beschlagen von innen
 
 **Shader:** Transparent mit Reflexion, gelegentlich Frost-Overlay
-
-\columnbreak
 
 ### Metall
 
@@ -151,8 +143,6 @@ Geländer, Laternen, Spielgeräte:
 - Mondlicht (bläulich, weich)
 - Sternenlicht (punktuell)
 - Aurora (farbig, bewegt)
-
-\columnbreak
 
 ### Künstliches Licht
 
@@ -206,8 +196,6 @@ Die sowjetische Animationstradition zeigt, wie stilisierte Welten emotional wirk
 - **Sojusmultfilm:** Warme Farben, klare Formen
 - **Ёжик в тумане:** Atmosphärisch, mysteriös, traumhaft
 - **Nu, Pogodi!:** Dynamisch, karikiert, lebendig
-
-\columnbreak
 
 ### Moderne Referenzen
 

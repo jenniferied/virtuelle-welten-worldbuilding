@@ -17,8 +17,6 @@ Das Herz jedes Wohnblocks ist der Innenhof – der *Dwor*. Ein Rechteck aus Beto
 
 Der Innenhof ist gleichzeitig öffentlich und privat – ein Zwischenraum, in dem das Leben des Blocks sichtbar wird.
 
-\columnbreak
-
 ### Elemente
 
 **Spielplatz:**
@@ -58,8 +56,6 @@ Der Innenhof ist gleichzeitig öffentlich und privat – ein Zwischenraum, in de
 Die Straßen verbinden die Blöcke – breite Achsen zwischen den Gebäudewänden, gesäumt von kahlen Bäumen und Laternenmasten. In der Mitte: Straßenbahnschienen, blank poliert vom Eis.
 
 Die Straßen sind leer – aber nicht verlassen. Gelegentlich fährt eine Tram vorbei, ein Auto kämpft sich durch den Schnee, eine Gestalt huscht von einem Eingang zum nächsten.
-
-\columnbreak
 
 ### Elemente
 
@@ -107,8 +103,6 @@ Die klassische Chruschtschowka ist das Grundelement jeder sowjetischen Wohnsiedl
 - Basis-Baustein für prozedurale Generation
 - Variationen: Eingangszahl, Farbschema, Verfall-Grad
 
-\columnbreak
-
 ### Breschnewka (Брежневка)
 
 **Baujahre:** 1970–1991
@@ -127,8 +121,6 @@ Die Breschnewka ist größer, imposanter – und unpersönlicher. Sie ragt über
 - Höhenvariation für Skyline
 - Komplexere Fassadenstruktur
 - Antennenwälder auf den Dächern
-
-\columnbreak
 
 ### Sondergebäude
 
@@ -160,8 +152,6 @@ Der Bezirk erwacht. Erste Lichter in den Fenstern. Rauch aus Schornsteinen. Der 
 **Lichtstimmung:** Bläulich, kalt, flach
 **Aktivität:** Erste Pendler, Warteschlangen bilden sich
 
-\columnbreak
-
 ### Tag
 
 Das gedämpfte Licht des ewigen Winters. Grauer Himmel, diffuse Schatten. Die Straßenbahnen fahren, die Geschäfte sind offen, das Leben schleppt sich dahin.
@@ -169,16 +159,12 @@ Das gedämpfte Licht des ewigen Winters. Grauer Himmel, diffuse Schatten. Die St
 **Lichtstimmung:** Grau, gleichmäßig, matt
 **Aktivität:** Alltagsgeschäft, wenig Dynamik
 
-\columnbreak
-
 ### Dämmerung
 
 Der magische Moment. Der Himmel flammt auf – Rosa, Orange, Violett. Die Fenster beginnen zu leuchten. Tausend kleine Leben werden sichtbar.
 
 **Lichtstimmung:** Warm gegen kalt, Kontrast
 **Aktivität:** Heimkehr, Abendessen, Ruhe
-
-\columnbreak
 
 ### Nacht
 

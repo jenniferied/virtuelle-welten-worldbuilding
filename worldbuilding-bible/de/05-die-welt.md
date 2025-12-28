@@ -17,8 +17,6 @@ Der Winter kam, und er blieb. Niemand weiß genau, wann es begann – die Erinne
 
 Die Sonne geht auf und unter, aber sie wärmt nicht. Der Schnee fällt und schmilzt nie ganz. Die Temperaturen schwanken zwischen kalt und sehr kalt. Manchmal, in der Dämmerung, flammt der Himmel in Rosa und Orange auf – als würde sich die Welt an Wärme erinnern.
 
-\columnbreak
-
 ### Die Akzeptanz
 
 Die Bewohner haben aufgehört, Fragen zu stellen. Der ewige Winter ist keine Katastrophe – er ist Normalität. Die Heizungen laufen, die Straßenbahnen fahren, das Leben geht weiter. Kinder werden geboren, die nie einen Sommer gesehen haben. Alte sterben, die sich vielleicht an Grün erinnern – aber sie sprechen nicht darüber.
@@ -43,8 +41,6 @@ Der Bezirk wurde in den 1960er Jahren errichtet – Teil eines gigantischen Wohn
 
 Damals gab es Versprechen: Jede Familie eine Wohnung. Warmwasser für alle. Aufzüge, die funktionieren. Ein Spielplatz pro Hof. Eine strahlende Zukunft aus Beton und Stahl.
 
-\columnbreak
-
 ### Der Verfall
 
 Die Versprechen verblassten schneller als die Farbe an den Fassaden. Die Aufzüge begannen zu quietschen, dann auszufallen. Das Warmwasser wurde unzuverlässig. Die Spielplätze verrosteten. Und dann kam der Winter – und alles wurde noch schwerer.
@@ -63,15 +59,11 @@ Die Gesellschaft von ПАНЕЛЬКИ ist streng hierarchisch, aber auf eine sch
 
 Jeder hat seinen Platz. Jeder hat seine Nummer. Jeder hat seine Akte. Das System funktioniert nicht gut – aber es funktioniert. Und wer aus der Reihe tanzt, fällt auf.
 
-\columnbreak
-
 ### Die Bürokratie
 
 Alles erfordert Genehmigungen. Um zu arbeiten. Um zu wohnen. Um zu reisen. Um zu existieren. Die Ämter sind labyrinthisch, die Formulare endlos, die Wartezeiten astronomisch. Aber das System ist nicht böswillig – es ist einfach träge, überfordert, gleichgültig.
 
 Die wahre Macht liegt bei den mittleren Bürokraten – den Schweinen in ihren stickigen Büros, mit ihren Stempeln und ihren Formularen. Sie können beschleunigen oder verzögern, genehmigen oder ablehnen. Ein falsches Wort, ein fehlendes Dokument, und man verschwindet im System.
-
-\columnbreak
 
 ### Der Fremde
 
@@ -92,8 +84,6 @@ Manche Bewohner sehen ihn mit Neugier. Andere mit Angst. Wieder andere mit Hoffn
 - Die Straßenbahnen fahren nach Fahrplan (mehr oder weniger)
 - Geschäfte sind geöffnet, auch wenn die Regale oft leer sind
 - Die Bewohner leben ihr Leben – sie sind nicht im Überlebensmodus
-
-\columnbreak
 
 ### Was ist anders?
 

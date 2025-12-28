@@ -121,10 +121,10 @@ function Div(el)
     }
   end
 
-  -- Multi-column layouts (with \nopagebreak to keep with preceding heading)
+  -- Multi-column layouts
   if classes:includes("columns-1") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-1}"),
+      pandoc.RawBlock("latex", "\\begin{columns-1}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-1}")
     }
@@ -132,7 +132,7 @@ function Div(el)
 
   if classes:includes("columns-2") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-2}"),
+      pandoc.RawBlock("latex", "\\begin{columns-2}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-2}")
     }
@@ -140,7 +140,7 @@ function Div(el)
 
   if classes:includes("columns-3") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-3}"),
+      pandoc.RawBlock("latex", "\\begin{columns-3}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-3}")
     }
@@ -148,16 +148,16 @@ function Div(el)
 
   if classes:includes("columns-4") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{columns-4}"),
+      pandoc.RawBlock("latex", "\\begin{columns-4}"),
       el,
       pandoc.RawBlock("latex", "\\end{columns-4}")
     }
   end
 
-  -- Full-page unbalanced column layouts (with \nopagebreak to keep with preceding heading)
+  -- Full-page unbalanced column layouts
   if classes:includes("page-1") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-1}"),
+      pandoc.RawBlock("latex", "\\begin{page-1}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-1}")
     }
@@ -165,7 +165,7 @@ function Div(el)
 
   if classes:includes("page-2") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-2}"),
+      pandoc.RawBlock("latex", "\\begin{page-2}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-2}")
     }
@@ -173,7 +173,7 @@ function Div(el)
 
   if classes:includes("page-3") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-3}"),
+      pandoc.RawBlock("latex", "\\begin{page-3}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-3}")
     }
@@ -181,7 +181,7 @@ function Div(el)
 
   if classes:includes("page-4") then
     return {
-      pandoc.RawBlock("latex", "\\nopagebreak\\begin{page-4}"),
+      pandoc.RawBlock("latex", "\\begin{page-4}"),
       el,
       pandoc.RawBlock("latex", "\\end{page-4}")
     }

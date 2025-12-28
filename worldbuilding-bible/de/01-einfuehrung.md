@@ -15,8 +15,6 @@ Eine dystopische, sowjetisch inspirierte Schneemetropole, in der korrupte Versio
 
 In diese Welt stolpert der Spieler: ein Mensch. Der einzige Mensch. Er erwacht in ПАНЕЛЬГРАД – der grauen Hauptstadt dieser Welt, einem Labyrinth aus identischen Plattenbauten. Ein Fremder ohne Erinnerung, ohne Papiere, ohne Platz in der Ordnung der Dinge.
 
-\columnbreak
-
 ### Was ist diese Bible?
 
 Dieses Dokument definiert die Welt von ПАНЕЛЬКИ:
@@ -40,19 +38,13 @@ Die Bible dient als Referenz für alle kreativen Entscheidungen während der Pro
 
 Die Gesellschaft von ПАНЕЛЬКИ ist hierarchisch und kontrolliert. Bürokraten (Schweine) herrschen, Vollstrecker (Wölfe) überwachen, Arbeiter (Bären, Igel, Hasen) funktionieren. Jeder hat seinen Platz. Jeder wird beobachtet. Der Mensch passt in kein Schema – und das macht ihn gefährlich.
 
-\columnbreak
-
 ### Kälte und Isolation
 
 Der ewige Winter ist mehr als Wetter – er ist ein Zustand. Die Kälte kriecht in alles: in die Gebäude, in die Beziehungen, in die Seelen. Menschen – oder Tiere – ziehen sich zurück, in ihre Wohnungen, in sich selbst. Wärme ist kostbar und selten.
 
-\columnbreak
-
 ### Verfall und Vergessenheit
 
 Die Plattenbauten bröckeln. Die Farbe blättert. Die Mosaike verblassen. Diese Welt war einmal neu, einmal voller Versprechen. Jetzt ist sie alt und müde. Aber in den Rissen wächst etwas – Moos, Graffiti, Widerstand.
-
-\columnbreak
 
 ### Hoffnung in der Dunkelheit
 

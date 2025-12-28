@@ -19,8 +19,6 @@ Die Sonne kriecht über den Horizont, aber sie wärmt nicht. Das Licht ist blass
 **Licht:** Kalt, flach, diffus
 **Stimmung:** Stille vor dem Erwachen
 
-\columnbreak
-
 ### Tag (8:00–16:00)
 
 Die Sonne steht tief – selbst mittags erreicht sie kaum Höhe. Der Himmel ist meist grau, eine gleichmäßige Wolkendecke, die das Licht filtert.
@@ -29,8 +27,6 @@ Die Sonne steht tief – selbst mittags erreicht sie kaum Höhe. Der Himmel ist 
 **Licht:** Weich, schattenlos, gedämpft
 **Stimmung:** Routine, Gleichförmigkeit
 
-\columnbreak
-
 ### Dämmerung (16:00–18:00)
 
 Der magische Moment. Die Wolken brechen auf, der Horizont flammt in Rosa, Orange, Violett. Die ersten Fenster beginnen zu leuchten – warme Rechtecke gegen den kalten Himmel.
@@ -38,8 +34,6 @@ Der magische Moment. Die Wolken brechen auf, der Horizont flammt in Rosa, Orange
 **Himmel:** Dramatische Farbverläufe, tief gesättigte Töne
 **Licht:** Warm-kalt-Kontrast, goldene Stunde ohne Wärme
 **Stimmung:** Übergang, Melancholie, Schönheit
-
-\columnbreak
 
 ### Nacht (18:00–6:00)
 
@@ -60,8 +54,6 @@ Der Bezirk ruht, aber er schläft nicht ganz. Straßenlaternen werfen orange Kre
 Eine der wenigen Schönheiten des ewigen Winters: Die Aurora tanzt am Himmel. Grün, Violett, manchmal Rosa – schimmernde Vorhänge aus Licht, die sich langsam bewegen.
 
 Die Bewohner beachten sie kaum noch. Für sie ist die Aurora normal – wie der Schnee, wie die Kälte. Aber für den Fremden, den Spieler, ist sie ein Wunder.
-
-\columnbreak
 
 ### Technische Umsetzung
 
@@ -95,8 +87,6 @@ Nicht jeder Schnee ist gleich. Die Welt von ПАНЕЛЬКИ zeigt verschiedene 
 - Auf Wegen, an Eingängen
 - Kompakt, manchmal eisig
 
-\columnbreak
-
 ### Oberflächeneffekte
 
 **Schmutziger Schnee:**
@@ -113,8 +103,6 @@ Nicht jeder Schnee ist gleich. Die Welt von ПАНЕЛЬКИ zeigt verschiedene 
 - An Gebäudewänden, Zäunen
 - Organische Formen
 - Zeigt Windrichtung
-
-\columnbreak
 
 ### Wo liegt Schnee?
 
@@ -143,8 +131,6 @@ Nicht jeder Schnee ist gleich. Die Welt von ПАНЕЛЬКИ zeigt verschiedene 
 - Dunkelgrün, fast schwarz
 - Schnee auf den Zweigen
 - Einzige Farbe in der weißen Welt
-
-\columnbreak
 
 ### Bodenvegetation
 
@@ -177,8 +163,6 @@ Der Sound von ПАНЕЛЬКИ ist gedämpft – der Schnee schluckt alles. Aber
 - Pfeift durch Ritzen
 - Variiert in Intensität
 
-\columnbreak
-
 ### Mechanische Geräusche
 
 **Straßenbahn:**
@@ -191,8 +175,6 @@ Der Sound von ПАНЕЛЬКИ ist gedämpft – der Schnee schluckt alles. Aber
 - Türen, die sich öffnen
 - Motor im Schacht
 
-\columnbreak
-
 ### Urbane Geräusche
 
 **Schritte:**
@@ -204,8 +186,6 @@ Der Sound von ПАНЕЛЬКИ ist gedämpft – der Schnee schluckt alles. Aber
 - Gedämpft, undeutlich
 - Gelegentliches Rufen
 - Radiomusik aus Fenstern
-
-\columnbreak
 
 ### Die Stille
 
