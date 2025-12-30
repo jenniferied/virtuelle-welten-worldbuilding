@@ -46,9 +46,3 @@
 **Vermeiden:** Übertriebene Schärfe, aggressive Farbentsättigung.
 
 Die Welt soll wie eine lebendige Illustration wirken, nicht wie ein Film oder ein Foto.
-
-## Referenzen
-
-**Sowjetische Animation:** Sojusmultfilm (warme Farben, klare Formen), Ёжик в тумане (atmosphärisch, traumhaft), Nu, Pogodi! (dynamisch, lebendig).
-
-**Moderne Spiele:** Kentucky Route Zero (stilisiert, melancholisch), Inside/Limbo (Silhouetten, reduzierte Palette), Disco Elysium (painterly, charakterstark).
