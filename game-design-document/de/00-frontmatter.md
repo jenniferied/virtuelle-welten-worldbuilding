@@ -1,6 +1,6 @@
 ---
 title: "ПАНЕЛЬКИ"
-subtitle: "Prozessdokumentation"
+subtitle: "Eine Welt aus Schnee und Beton."
 author:
   - "Jennifer Meier"
 date: "WiSe 2025/26"
