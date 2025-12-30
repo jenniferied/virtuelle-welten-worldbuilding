@@ -38,3 +38,12 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Blender backup files
+*.blend1
+
+# Large binary files (use Git LFS if needed)
+# Uncomment these if not using Git LFS:
+# *.blend
+# *.fbx
+# *.tif
