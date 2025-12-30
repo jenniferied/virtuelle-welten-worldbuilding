@@ -1,197 +1,44 @@
 ::: {.new-page}
 :::
 
-# Orte
+# Orte & Umgebung
 
 ::: {.lead}
-Der Bezirk von ПАНЕЛЬКИ besteht aus wiederkehrenden Elementen: Plattenbauten, Innenhöfe, Straßen, Plätze. Diese Kapitel definiert die Schauplätze, die für das Spiel und die Cinematics gebaut werden.
+ПАНЕЛЬКИ spielt in einem ewigen Winter – einer Welt aus Schnee, Eis und gedämpftem Licht. Der Bezirk besteht aus wiederkehrenden Elementen: Plattenbauten, Innenhöfe, Straßen, Plätze.
 :::
 
 ## Der Innenhof (Двор)
 
-::: {.page-2}
+Das Herz jedes Wohnblocks ist der Innenhof – der *Dwor*. Ein Rechteck aus Beton und Schnee, umgeben von Gebäuden auf allen Seiten. Hier spielen Kinder, sitzen Alte auf Bänken, parken Autos. Gleichzeitig öffentlich und privat – ein Zwischenraum.
 
-### Beschreibung
-
-Das Herz jedes Wohnblocks ist der Innenhof – der *Dwor*. Ein Rechteck aus Beton und Schnee, umgeben von Gebäuden auf allen Seiten. Hier spielen Kinder (wenn es welche gibt), sitzen Alte auf Bänken (wenn es nicht zu kalt ist), parken Autos (wenn jemand eines hat).
-
-Der Innenhof ist gleichzeitig öffentlich und privat – ein Zwischenraum, in dem das Leben des Blocks sichtbar wird.
-
-### Elemente
-
-**Spielplatz:**
-- Metallgerüst (Klettergerüst, Schaukel, Wippe)
-- Verrostet, teilweise kaputt
-- Schnee auf den Sitzen, Eis an den Stangen
-
-**Bänke:**
-- Holzlatten auf Betonsockeln
-- Abgeblätterte Farbe (grün oder blau)
-- Oft leer, manchmal mit vergessenen Gegenständen
-
-**Parkplätze:**
-- Unsortiert, improvisiert
-- Alte Ladas, zugeschneit
-- Reifenspuren im Schnee
-
-**Vegetation:**
-- Kahle Bäume (Birken, Linden)
-- Büsche, zu Eisskulpturen gefroren
-- Vielleicht ein einsamer Schneemann
-
-:::
-
-::: {.boxed}
-
-**Für die Produktion:** Der detaillierte Innenhof ist das Herzstück des Environment-Builds. Er sollte Tiefe haben – Spuren von Leben, Details, die Geschichten erzählen. Wer hat den Schneemann gebaut? Wem gehört das Auto? Warum liegt ein einzelner Handschuh auf der Bank?
-
-:::
+**Spielplatz:** Metallgerüste, verrostet, Schnee auf den Sitzen. **Bänke:** Holzlatten auf Betonsockeln, abgeblätterte Farbe. **Parkplätze:** Alte Ladas, zugeschneit, Reifenspuren im Schnee. **Vegetation:** Kahle Birken, zu Eisskulpturen gefrorene Büsche.
 
 ## Die Straßen (Улицы)
 
-::: {.page-2}
+Breite Achsen zwischen den Gebäudewänden, gesäumt von kahlen Bäumen und Laternenmasten. In der Mitte: Straßenbahnschienen, blank poliert vom Eis. Leer, aber nicht verlassen – gelegentlich eine Tram, ein Auto, eine huschende Gestalt.
 
-### Beschreibung
-
-Die Straßen verbinden die Blöcke – breite Achsen zwischen den Gebäudewänden, gesäumt von kahlen Bäumen und Laternenmasten. In der Mitte: Straßenbahnschienen, blank poliert vom Eis.
-
-Die Straßen sind leer – aber nicht verlassen. Gelegentlich fährt eine Tram vorbei, ein Auto kämpft sich durch den Schnee, eine Gestalt huscht von einem Eingang zum nächsten.
-
-### Elemente
-
-**Straßenbahn:**
-- Alte Tatra-Wagen, orange oder rot
-- Vereiste Fenster, beschlagene Scheiben
-- Funken von den Oberleitung
-
-**Infrastruktur:**
-- Laternenmasten (funktionierend oder flackernd)
-- Oberleitungen, Stromkabel
-- Bushaltestellen mit Wartehäuschen
-
-**Straßenrand:**
-- Aufgeschütteter Schnee, schwarz vom Ruß
-- Parkende Autos, eingeschneit
-- Mülltonnen, Schneehaufen
-
-**Bäume:**
-- Birken mit weißer Rinde
-- Schwarze Äste gegen grauen Himmel
-- Schnee auf den Zweigen
-
-:::
+**Straßenbahn:** Alte Tatra-Wagen, orange oder rot, vereiste Fenster, Funken von der Oberleitung. **Infrastruktur:** Laternenmasten, Oberleitungen, Bushaltestellen. **Straßenrand:** Aufgeschütteter Schnee, schwarz vom Ruß, parkende Autos.
 
 ## Gebäudetypen
 
-::: {.page-3}
+**Chruschtschowka (1955–70):** Fünf Stockwerke ohne Aufzug, das Grundelement jeder sowjetischen Siedlung. Flachdach, kleine Fenster, oft zugebaute Balkone, verblasstes Gelb oder Rosa über grauem Beton.
 
-### Chruschtschowka (Хрущёвка)
+**Breschnewka (1970–91):** Neun bis sechzehn Stockwerke mit Aufzug, ragt über die Chruschtschowkas hinaus. Flachdach mit technischen Aufbauten, markante Balkonstrukturen, Antennenwälder auf den Dächern.
 
-**Baujahre:** 1955–1970
-**Stockwerke:** 5 (ohne Aufzug)
-**Höhe:** ca. 15 Meter
+**Sondergebäude:** Brutalistische Verwaltungsgebäude mit monumentalen Eingängen. Geschäfte im Erdgeschoss – *Produkty*, *Apteka* – mit teils defekten Leuchtreklamen. Transformatorhäuschen und oberirdische Heizungsrohre.
 
-Die klassische Chruschtschowka ist das Grundelement jeder sowjetischen Wohnsiedlung. Fünf Stockwerke, zwei bis vier Eingänge, identische Wohnungen gestapelt.
+## Tageszeiten & Wetter
 
-**Charakteristik:**
-- Flachdach oder leichtes Satteldach
-- Kleine Fenster in regelmäßigem Raster
-- Balkone (oft zugebaut/verglast)
-- Farbe: Verblasstes Gelb, Rosa, Blau über grauem Beton
+**Morgen:** Bläulich, kalt, flach. Erster Schnee noch unberührt. **Tag:** Grauer Himmel, diffuse Schatten, gedämpftes Licht. **Dämmerung:** Der magische Moment – Himmel flammt in Rosa, Orange, Violett. Fenster beginnen zu leuchten. **Nacht:** Straßenlaternen werfen orange Kreise, Fenster glühen, manchmal Aurora am Himmel.
 
-**Für Houdini:**
-- Basis-Baustein für prozedurale Generation
-- Variationen: Eingangszahl, Farbschema, Verfall-Grad
+**Schneefall:** Leicht bis Blizzard. **Wind:** Treibt Schneeflocken horizontal. **Nebel:** Kriecht zwischen Gebäuden, verstärkt Isolation.
 
-### Breschnewka (Брежневка)
+## Der ewige Schnee
 
-**Baujahre:** 1970–1991
-**Stockwerke:** 9–16 (mit Aufzug)
-**Höhe:** 27–48 Meter
+Nicht jeder Schnee ist gleich. **Frisch:** Reinweiß, auf Dächern und unbegehenen Flächen. **Festgetreten:** Gräulich-weiß auf Wegen. **Schmutzig:** Fast schwarz am Straßenrand. **Eis:** Auf Pfützen, Geländern, Fensterbrettern. **Verwehungen:** An Gebäudewänden, zeigen Windrichtung.
 
-Die Breschnewka ist größer, imposanter – und unpersönlicher. Sie ragt über die Chruschtschowkas hinaus, beherrscht die Skyline des Bezirks.
+## Aurora & Klang
 
-**Charakteristik:**
-- Flachdach mit technischen Aufbauten
-- Größere Fenster, aber gleiches Rasterprinzip
-- Markante Balkonstrukturen
-- Farbe: Grau, Braun, gelegentlich Akzentfarben
+**Das Nordlicht:** Grün, Violett, Rosa – schimmernde Vorhänge aus Licht. Die Bewohner beachten sie kaum. Für den Spieler ein Wunder.
 
-**Für Houdini:**
-- Höhenvariation für Skyline
-- Komplexere Fassadenstruktur
-- Antennenwälder auf den Dächern
-
-### Sondergebäude
-
-**Verwaltung:**
-- Brutalistische Betonkästen
-- Monumentale Eingänge
-- Sowjetische Symbole (verblasst)
-
-**Geschäfte:**
-- Im Erdgeschoss der Wohnblöcke
-- *Produkty* (Lebensmittel), *Apteka* (Apotheke)
-- Leuchtreklamen, teils defekt
-
-**Infrastruktur:**
-- Transformatorhäuschen
-- Heizungsrohre (oberirdisch, isoliert)
-- Müllcontainer-Bereiche
-
-:::
-
-## Stimmung nach Tageszeit
-
-::: {.page-4}
-
-### Morgen
-
-Der Bezirk erwacht. Erste Lichter in den Fenstern. Rauch aus Schornsteinen. Der Schnee ist noch unberührt – eine kurze, trügerische Reinheit.
-
-**Lichtstimmung:** Bläulich, kalt, flach
-**Aktivität:** Erste Pendler, Warteschlangen bilden sich
-
-### Tag
-
-Das gedämpfte Licht des ewigen Winters. Grauer Himmel, diffuse Schatten. Die Straßenbahnen fahren, die Geschäfte sind offen, das Leben schleppt sich dahin.
-
-**Lichtstimmung:** Grau, gleichmäßig, matt
-**Aktivität:** Alltagsgeschäft, wenig Dynamik
-
-### Dämmerung
-
-Der magische Moment. Der Himmel flammt auf – Rosa, Orange, Violett. Die Fenster beginnen zu leuchten. Tausend kleine Leben werden sichtbar.
-
-**Lichtstimmung:** Warm gegen kalt, Kontrast
-**Aktivität:** Heimkehr, Abendessen, Ruhe
-
-### Nacht
-
-Der Bezirk schläft – aber er ist nicht dunkel. Straßenlaternen werfen Kreise ins Weiß. Fenster glühen. Manchmal tanzt Aurora am Himmel.
-
-**Lichtstimmung:** Punktuell, kontrastreich
-**Aktivität:** Stille, gelegentlich Gestalten
-
-:::
-
-## Cinematic-Shots (Vorschläge)
-
-::: {.boxed}
-
-**Shot 1: Establishing – Die Skyline**
-Kamera blickt über Breschnewkas bei Dämmerung. Fenster leuchten auf. Langsamer Zoom oder Dolly.
-
-**Shot 2: Der Innenhof – Detail**
-Spielplatz im Schnee. Eine Schaukel bewegt sich leicht im Wind. Keine Menschen sichtbar.
-
-**Shot 3: Die Straße – Bewegung**
-Straßenbahn fährt durch Bild. Funken an der Oberleitung. Schnee wirbelt auf.
-
-**Shot 4: Das Fenster – Intimität**
-Blick von außen in eine erleuchtete Wohnung. Silhouetten, Wärme, ein anderes Leben.
-
-**Shot 5: Der Fremde – Einführung**
-Eine Gestalt (der Spieler?) steht allein im Hof. Die Kamera nähert sich. Der ewige Winter beginnt.
-
-:::
+**Soundscape:** Der Schnee schluckt alles. Wind heult zwischen Gebäuden. Straßenbahn rattert und quietscht. Schritte knirschen. Stimmen gedämpft. Und dazwischen: Momente völliger Stille.
