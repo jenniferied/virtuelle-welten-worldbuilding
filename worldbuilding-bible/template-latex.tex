@@ -70,6 +70,7 @@
 \definecolor{boxbg}{HTML}{F5F5F5}
 \definecolor{border}{HTML}{DDDDDD}
 \definecolor{quotetint}{HTML}{EDE8F0}  % Soft lavender for quote gradient
+\definecolor{hotpink}{HTML}{E85A6B}    % Hot red-pink for dark page captions
 
 % ==========================================================================
 %   SPACING
@@ -583,43 +584,48 @@ $if(date)$\date{$date$}$else$\date{}$endif$
 \renewcommand{\maketitle}{%
   \thispagestyle{empty}
 
+  % Black background using TikZ overlay
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[black] (current page.south west) rectangle (current page.north east);
+  \end{tikzpicture}
+
   % Use a full-page centered box for the text
   \null
   \vfill
 
   \begin{center}
-    % Title in Molot
-    {\titlefont\fontsize{90pt}{100pt}\selectfont\@title\par}
+    % Title in Molot (white on black)
+    {\titlefont\fontsize{90pt}{100pt}\selectfont\color{white}\@title\par}
 
     \vspace{15mm}
 
-    % Subtitle in PT Sans
+    % Subtitle in PT Sans (white on black)
     $if(subtitle)$
-    {\sffamily\bfseries\fontsize{16pt}{20pt}\selectfont Worldbuilding Bible\par}
+    {\sffamily\bfseries\fontsize{16pt}{20pt}\selectfont\color{white} Worldbuilding Bible\par}
     \vspace{4mm}
-    {\sffamily\fontsize{11pt}{15pt}\selectfont\color{black!60} $subtitle$\par}
+    {\sffamily\fontsize{11pt}{15pt}\selectfont\color{white!60} $subtitle$\par}
     \vspace{10mm}
     $endif$
 
-    % Author and date
-    {\small \@author\quad·\quad\@date\par}
+    % Author and date (white on black)
+    {\small\color{white} \@author\quad·\quad\@date\par}
 
     \vspace{10mm}
 
-    % Institution
-    {\small Technische Hochschule Ostwestfalen-Lippe\\[2mm]
+    % Institution (white on black)
+    {\small\color{white} Technische Hochschule Ostwestfalen-Lippe\\[2mm]
      Fachbereich Medienproduktion, Master Medienproduktion\\[2mm]
      $if(subject)$Fach: $subject$$if(tutor)$ · Dozent: $tutor$$endif$$endif$\par}
   \end{center}
 
   \vfill
 
-  % Logos at bottom right using TikZ overlay
+  % Logos at bottom right using TikZ overlay (white variants)
   \begin{tikzpicture}[remember picture, overlay]
     \node[anchor=south east, inner sep=0pt] at ([xshift=-15mm, yshift=15mm]current page.south east) {%
-      \includegraphics[height=20mm]{../../assets/logos/th-owl-logo.png}%
+      \includegraphics[height=20mm]{../../assets/logos/th-owl-logo-white.png}%
       \hspace{5mm}%
-      \includegraphics[height=20mm]{../../assets/logos/mp-logo-gradient-red.png}%
+      \includegraphics[height=20mm]{../../assets/logos/mp-logo-solid-white.png}%
     };
   \end{tikzpicture}
 
