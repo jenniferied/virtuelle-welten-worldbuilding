@@ -13,4 +13,5 @@ toc: true
 toc-title: "Inhaltsverzeichnis"
 lof: true
 lof-title: "Abbildungsverzeichnis"
+dark-mode: true   # Toggle: true = black pages, false = white pages
 ---
