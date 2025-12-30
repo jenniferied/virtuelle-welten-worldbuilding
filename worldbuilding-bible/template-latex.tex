@@ -78,15 +78,21 @@ $if(dark-mode)$
 \definecolor{quotetint}{HTML}{1A1A1A}
 \definecolor{linkcolor}{HTML}{888888}
 $else$
-% LIGHT MODE - white pages, black text
-\definecolor{pagebg}{HTML}{FFFFFF}
+% LIGHT MODE - light grey pages, dark text
+\definecolor{pagebg}{HTML}{F8F8F8}
 \definecolor{textcolor}{HTML}{1A1A1A}
 \definecolor{textmuted}{HTML}{666666}
-\definecolor{boxbg}{HTML}{F5F5F5}
+\definecolor{boxbg}{HTML}{EFEFEF}
 \definecolor{border}{HTML}{DDDDDD}
-\definecolor{quotetint}{HTML}{EDE8F0}
+\definecolor{quotetint}{HTML}{E8E4EB}
 \definecolor{linkcolor}{HTML}{888888}
 $endif$
+
+% Softer black for title/architecture pages (between pure black and near-black)
+\definecolor{softblack}{HTML}{0D0D0D}
+
+% Length for title width (used to align subtitle)
+\newlength{\titlewidth}
 
 % Background
 \usepackage{pagecolor}
@@ -605,9 +611,9 @@ $if(date)$\date{$date$}$else$\date{}$endif$
 \renewcommand{\maketitle}{%
   \thispagestyle{empty}
 
-  % True black background using TikZ overlay (always black regardless of mode)
+  % Soft black background using TikZ overlay (always black regardless of mode)
   \begin{tikzpicture}[remember picture, overlay]
-    \fill[trueblack] (current page.south west) rectangle (current page.north east);
+    \fill[softblack] (current page.south west) rectangle (current page.north east);
   \end{tikzpicture}
 
   % Use a full-page centered box for the text
@@ -615,16 +621,17 @@ $if(date)$\date{$date$}$else$\date{}$endif$
   \vfill
 
   \begin{center}
-    % Title in Molot (white on black)
+    % Title in Molot (white on black) - save width for subtitle alignment
+    \settowidth{\titlewidth}{\titlefont\fontsize{90pt}{100pt}\selectfont\@title}%
     {\titlefont\fontsize{90pt}{100pt}\selectfont\color{white}\@title\par}
 
     \vspace{15mm}
 
-    % Subtitle in PT Sans (white on black)
+    % Subtitle in PT Sans (white on black) - constrained to title width
     $if(subtitle)$
     {\sffamily\bfseries\fontsize{16pt}{20pt}\selectfont\color{white} Worldbuilding Bible\par}
     \vspace{4mm}
-    {\sffamily\fontsize{11pt}{15pt}\selectfont\color{white!60} $subtitle$\par}
+    \parbox{\titlewidth}{\centering\sffamily\fontsize{11pt}{15pt}\selectfont\color{white!60} $subtitle$\par}
     \vspace{10mm}
     $endif$
 

@@ -34,7 +34,7 @@ Die sowjetische Plattenbauweise basierte auf industrieller Vorfertigung: Standar
 \clearpage
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[trueblack] (current page.south west) rectangle (current page.north east);
+  \fill[softblack] (current page.south west) rectangle (current page.north east);
 \end{tikzpicture}
 \noindent
 \begin{minipage}[t][\textheight][t]{\textwidth}
@@ -80,7 +80,7 @@ Die sowjetische Plattenbauweise basierte auf industrieller Vorfertigung: Standar
 \clearpage
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[trueblack] (current page.south west) rectangle (current page.north east);
+  \fill[softblack] (current page.south west) rectangle (current page.north east);
 \end{tikzpicture}
 \noindent
 \begin{minipage}[t][\textheight][t]{\textwidth}

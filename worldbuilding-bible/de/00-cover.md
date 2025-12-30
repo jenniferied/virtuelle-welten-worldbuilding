@@ -1,6 +1,6 @@
 ---
 title: "ПАНЕЛЬКИ"
-subtitle: "Eine Welt im ewigen Winter, bevölkert von anthropomorphen Tieren zwischen sowjetischen Plattenbauten."
+subtitle: "Eine Welt aus Schnee und Beton."
 author:
   - "Jennifer Meier"
 date: "WiSe 2025/26"
@@ -13,5 +13,5 @@ toc: true
 toc-title: "Inhaltsverzeichnis"
 lof: true
 lof-title: "Abbildungsverzeichnis"
-dark-mode: true   # Toggle: true = black pages, false = white pages
+dark-mode: false  # Toggle: true = black pages, false = light grey pages
 ---
