@@ -104,9 +104,9 @@ $endif$
 % ==========================================================================
 
 \usepackage{setspace}
-\setstretch{1.15}
+\setstretch{1.08}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{1.25mm}
+\setlength{\parskip}{0.8mm}
 
 % ==========================================================================
 %   HEADINGS - Fyodor Bold (Soviet geometric) 30pt
@@ -133,26 +133,26 @@ $endif$
 \renewcommand{\cftdotsep}{2}              % Dot spacing
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}  % Dots for sections too
 
-% H1 - Fyodor Bold 30pt (Soviet geometric display)
+% H1 - Heading font 24pt (cleaner, less imposing)
 \titleformat{\section}
-  {\headingfont\fontsize{30pt}{36pt}\selectfont\color{textcolor}}
+  {\headingfont\fontsize{24pt}{28pt}\selectfont\color{textcolor}}
   {}{0em}{}
-\titlespacing*{\section}{0pt}{10mm}{5mm}  % 10mm before, 5mm after major sections
+\titlespacing*{\section}{0pt}{8mm}{4mm}  % 8mm before, 4mm after major sections
 
 % Page break before sections - DISABLED (use ::: {.new-page} in markdown instead)
 \newcommand{\sectionbreak}{}
 
-% H2 - Molot 18pt with flexible spacing
+% H2 - Heading font 14pt with flexible spacing
 \titleformat{\subsection}
-  {\headingfont\fontsize{18pt}{22pt}\selectfont\color{textcolor}}
+  {\headingfont\fontsize{14pt}{17pt}\selectfont\color{textcolor}}
   {}{0em}{}
-\titlespacing*{\subsection}{0pt}{5mm plus 2mm minus 1mm}{1.5mm}
+\titlespacing*{\subsection}{0pt}{4mm plus 1mm minus 0.5mm}{1.5mm}
 
-% H3 - Bold 12pt with flexible spacing
+% H3 - Bold 11pt with flexible spacing
 \titleformat{\subsubsection}
-  {\bfseries\fontsize{12pt}{14pt}\selectfont\color{textcolor}}
+  {\bfseries\fontsize{11pt}{13pt}\selectfont\color{textcolor}}
   {}{0em}{}
-\titlespacing*{\subsubsection}{0pt}{4mm plus 1mm minus 0.5mm}{1mm plus 0.25mm}
+\titlespacing*{\subsubsection}{0pt}{3mm plus 1mm minus 0.5mm}{1mm plus 0.25mm}
 
 % Prevent orphaned headings and widows/clubs
 \widowpenalty=10000
@@ -195,7 +195,7 @@ $endif$
 \usepackage{tabularx}
 
 \usepackage{caption}
-\captionsetup{font={small}, labelfont={bf}, format=plain, skip=2mm, justification=raggedright, singlelinecheck=false}
+\captionsetup{font={scriptsize}, labelfont={bf}, format=plain, skip=0.5mm, justification=raggedright, singlelinecheck=false}
 \renewcommand{\figurename}{Abb.}
 
 % Spacing around figures (more breathing room)
@@ -274,11 +274,12 @@ $endif$
 \newenvironment{columns-3}{\begin{multicols}{3}}{\end{multicols}}
 \newenvironment{columns-4}{\begin{multicols}{4}}{\end{multicols}}
 
-% Page-spanning columns: now using regular multicols to allow page breaks
+% Page-spanning columns: using multicols* for UNBALANCED fill (left-first, no balancing)
+% multicols* fills columns sequentially without balancing at end of environment
 \newenvironment{page-1}{\par}{\par}
-\newenvironment{page-2}{\begin{multicols}{2}}{\end{multicols}}
-\newenvironment{page-3}{\begin{multicols}{3}}{\end{multicols}}
-\newenvironment{page-4}{\begin{multicols}{4}}{\end{multicols}}
+\newenvironment{page-2}{\begin{multicols*}{2}}{\end{multicols*}}
+\newenvironment{page-3}{\begin{multicols*}{3}}{\end{multicols*}}
+\newenvironment{page-4}{\begin{multicols*}{4}}{\end{multicols*}}
 
 % ==========================================================================
 %   INLINE IMAGES - Flow with column text (non-floating)
@@ -412,74 +413,80 @@ $endif$
 }
 
 % Column figure with separate captions for text and list of figures
-% Uses minipage instead of figure[H] to prevent overflow in multicols
+% NO minipage - allows newspaper-style flow across columns
 % Usage: \colfig{image path}{text caption}{list caption with attribution}
 \newcommand{\colfig}[3]{%
-  \par\noindent%
-  \begin{minipage}{\columnwidth}%
-    \includegraphics[width=\columnwidth,keepaspectratio,max height=0.5\textheight]{#1}%
-    \captionof{figure}[#3]{#2}%
-  \end{minipage}%
-  \par\vspace{4mm}%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.92\columnwidth,keepaspectratio,max height=0.24\textheight]{#1}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#3]{#2}%
+  \par\vspace{0.5mm}%
+  \raggedright%
 }
 
 % 2x2 grid figure with single caption (for grouping related images)
-% Uses minipage to prevent overflow in multicols
+% NO minipage - allows newspaper-style flow across columns
 % Usage: \colgridfig{img1}{img2}{img3}{img4}{text caption}{list caption}
 \newcommand{\colgridfig}[6]{%
-  \par\noindent%
-  \begin{minipage}{\columnwidth}%
-    \begin{tabular}{@{}l@{\hspace{1mm}}l@{}}%
-      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#1} &
-      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#2} \\[1mm]
-      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#3} &
-      \includegraphics[width=0.485\columnwidth,max height=0.25\textheight,keepaspectratio]{#4} \\
-    \end{tabular}%
-    \captionof{figure}[#6]{#5}%
-  \end{minipage}%
-  \par\vspace{4mm}%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \begin{tabular}{@{}c@{\hspace{0.5mm}}c@{}}%
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#1} &
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#2} \\[0.3mm]
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#3} &
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#4}
+  \end{tabular}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#6]{#5}%
+  \par\vspace{0.5mm}%
+  \raggedright%
 }
 
 % 1x2 horizontal grid (two images side by side)
-% Uses minipage to prevent overflow in multicols
+% NO minipage - allows newspaper-style flow across columns
 % Usage: \colpairfig{img1}{img2}{text caption}{list caption}
 \newcommand{\colpairfig}[4]{%
-  \par\noindent%
-  \begin{minipage}{\columnwidth}%
-    \begin{tabular}{@{}l@{\hspace{1mm}}l@{}}%
-      \includegraphics[width=0.485\columnwidth,max height=0.3\textheight,keepaspectratio]{#1} &
-      \includegraphics[width=0.485\columnwidth,max height=0.3\textheight,keepaspectratio]{#2} \\
-    \end{tabular}%
-    \captionof{figure}[#4]{#3}%
-  \end{minipage}%
-  \par\vspace{4mm}%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.485\columnwidth,keepaspectratio,max height=0.17\textheight]{#1}%
+  \includegraphics[width=0.485\columnwidth,keepaspectratio,max height=0.17\textheight]{#2}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#4]{#3}%
+  \par\vspace{0.5mm}%
+  \raggedright%
 }
 
 % 3-image vertical stack with single caption (compact)
-% Uses minipage to prevent overflow in multicols
+% NO minipage - allows newspaper-style flow across columns
 % Usage: \coltriplefig{img1}{img2}{img3}{text caption}{list caption}
 \newcommand{\coltriplefig}[5]{%
-  \par\noindent%
-  \begin{minipage}{\columnwidth}%
-    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#1}\\[1mm]
-    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#2}\\[1mm]
-    \includegraphics[width=\columnwidth,max height=0.22\textheight,keepaspectratio]{#3}%
-    \captionof{figure}[#5]{#4}%
-  \end{minipage}%
-  \par\vspace{4mm}%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.88\columnwidth,keepaspectratio,max height=0.07\textheight]{#1}%
+  \par\nobreak\vspace{0.3mm}%
+  \includegraphics[width=0.88\columnwidth,keepaspectratio,max height=0.07\textheight]{#2}%
+  \par\nobreak\vspace{0.3mm}%
+  \includegraphics[width=0.88\columnwidth,keepaspectratio,max height=0.07\textheight]{#3}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#5]{#4}%
+  \par\vspace{0.5mm}%
+  \raggedright%
 }
 
 % 2-image vertical stack with single caption
-% Uses minipage to prevent overflow in multicols
+% NO minipage - allows newspaper-style flow across columns
 % Usage: \coldualfig{img1}{img2}{text caption}{list caption}
 \newcommand{\coldualfig}[4]{%
-  \par\noindent%
-  \begin{minipage}{\columnwidth}%
-    \includegraphics[width=\columnwidth,max height=0.28\textheight,keepaspectratio]{#1}\\[1mm]
-    \includegraphics[width=\columnwidth,max height=0.28\textheight,keepaspectratio]{#2}%
-    \captionof{figure}[#4]{#3}%
-  \end{minipage}%
-  \par\vspace{4mm}%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.92\columnwidth,keepaspectratio,max height=0.14\textheight]{#1}%
+  \par\nobreak\vspace{0.3mm}%
+  \includegraphics[width=0.92\columnwidth,keepaspectratio,max height=0.14\textheight]{#2}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#4]{#3}%
+  \par\vspace{0.5mm}%
+  \raggedright%
 }
 
 % ==========================================================================

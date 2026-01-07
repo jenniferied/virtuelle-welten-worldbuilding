@@ -3,90 +3,243 @@
 
 # Inspiration: Eine Reise nach Russland
 
-::: {.lead}
-Die ursprüngliche Inspiration für ПАНЕЛЬКИ entstand während eines Besuchs bei einer Freundin in Russland. Die Reise führte durch Moskau, eine mittelgroße Stadt mit typischen Plattenbauten, und ein einfaches Dorf auf dem Land.
+::: {.page-3}
+
+Alles begann mit einer Reise. Meine Freundin lebt in Russland – erst Moskau, dann eine mittelgroße Stadt irgendwo im Nichts, schließlich ein Dorf. Was ich dort fand, hat mich nicht mehr losgelassen.
+
+Endlose Reihen identischer Gebäude. Tiere überall – Katzen auf dem Ofen, Hunde im Schnee, Kühe auf der Dorfstraße. Der Winter in stiller, brutaler Schönheit. In den Cafés hängen noch Sowjet-Plakate. Die Leute trinken Tee aus Gläsern mit Metallhaltern. Nostalgie als Lebensgefühl.
+
+Ich stand am Fenster ihrer Wohnung: Wohnblöcke, Kirche, Fabrikschlote – alles auf einen Blick. Bei Nacht leuchten tausend Fenster, jedes eine Geschichte. Die *Panelki* prägen jede russische Stadt. Millionen leben darin – standardisiert, identisch, grau. Und doch heimelig.
+
+Was folgt, sind Bilder dieser Reise. Mein visuelles Tagebuch einer Welt, die ПАНЕЛЬКИ inspiriert hat.
+
 :::
 
-```{=latex}
-% Two-column layout: text on left, images on right
-\noindent
-\begin{minipage}[t]{0.62\textwidth}
-\raggedright
+::: {.new-page}
+:::
 
-\subsection*{Die Stadt}
+### Die Stadt
 
-Die \textit{Panelki} -- standardisierte Plattenbauten aus der Sowjetzeit -- prägen das Stadtbild jeder russischen Stadt. Millionen Menschen leben in diesen Wohnblöcken. Der Blick aus dem Fenster zeigt die typische Schichtung: Wohnen, Religion, Industrie. Bei Nacht verwandelt sich die Szene.
-
-Was mich besonders inspiriert hat: die endlosen Reihen von Gebäuden, die überall anzutreffenden Tiere -- Katzen, Hunde, Kühe, Schweine -- und die Schönheit des russischen Winters mit Schnee und Kälte. Gleichzeitig lag eine gewisse Schwere über allem.
-
-Denkmäler des Großen Vaterländischen Krieges sind allgegenwärtig. Sie stehen oft direkt vor Wohnblöcken. Im Herbst mit frischen Blumen geschmückt, im Winter unter Schnee begraben.
-
-\subsection*{Der Lada}
-
-Der \textit{Lada} (ВАЗ) ist mehr als ein Auto -- er ist ein kulturelles Symbol. Seit 1970 in Togliatti produziert, war er das Volksauto der UdSSR. Robust, reparierbar, unverwüstlich. Noch heute prägen alte Ladas das Straßenbild.
-
-\subsection*{Winterlandschaften}
-
-Der russische Winter ist hart und schön zugleich. Die Landschaft verwandelt sich in ein stilles, weißes Gemälde. Rauch steigt aus Schornsteinen, Dampf tanzt über warmem Wasser, die Sonne steht tief am Horizont.
-
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.35\textwidth}
-\vspace{0pt}
-\includegraphics[width=\linewidth]{russia-photographs/IMG_9416.png}
-\vspace{1mm}
-
-\includegraphics[width=\linewidth]{russia-photographs/IMG_9415.png}
-\vspace{1mm}
-
-\includegraphics[width=\linewidth]{russia-photographs/IMG_8315.png}
-\vspace{1mm}
-
-\includegraphics[width=\linewidth]{russia-photographs/IMG_9484.png}
-
-{\footnotesize\color{gray} Fensterblick Tag/Nacht, Kriegsdenkmal, Lada.\par}
-\end{minipage}
-```
+::: {.page-4}
 
 ```{=latex}
-\vspace{6mm}
 \noindent
-\begin{minipage}[t]{0.62\textwidth}
-\raggedright
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9416.png}
 
-\subsection*{Sowjet-Nostalgie}
-
-In vielen russischen Städten gibt es Cafés und Restaurants im Sowjet-Stil. ``Meine Adresse ist nicht Haus oder Straße -- meine Adresse ist Sowjetunion'' steht an der Wand. Alte Fernseher, Uniformen, Plakate und der allgegenwärtige olympische Bär Mischka schaffen eine Atmosphäre der Nostalgie.
-
-Jede Ecke erzählt eine Geschichte: sowjetische Uhren, Matroschkas, vergilbte Fotos. Die Ästhetik ist zugleich Museum und Geschäftsmodell -- Nostalgie als Ware.
-
-Der olympische Bär Mischka, Maskottchen der Spiele von 1980, ist noch immer überall präsent. Bei der Abschlussfeier 1980 stieg ein riesiger Mischka-Ballon mit Tränen in den Augen in den Moskauer Himmel.
-
-\subsection*{Tiere}
-
-Die Liebe zu Tieren ist in Russland allgegenwärtig. Katzen wärmen sich auf dem Ofen, dem Herz des russischen Hauses. Hunde sind treue Begleiter bei extremen Temperaturen. Diese Zuneigung zu Kreaturen inspiriert die anthropomorphen Charaktere unseres Spiels.
-
-Auf dem Land leben die Bewohner eng mit ihren Tieren zusammen. Kühe trotzen der Kälte, ihr dampfender Atem sichtbar in der eisigen Luft. Im Stall ist es warm: Schweine dösen in Boxen.
-
-\subsection*{Fazit}
-
-Diese Reise hat die Grundstimmung von ПАНЕЛЬКИ geprägt: Die \textit{Panelki} als Bühne des Überlebens. Die allgegenwärtige Erinnerung an die Sowjetzeit. Katzen, Hunde, Nutztiere als kulturelles Symbol. Die Kontraste von Wärme und Kälte, Schönheit und Verfall.
-
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.35\textwidth}
-\vspace{0pt}
-\includegraphics[width=\linewidth]{russia-photographs/IMG_9516.png}
 \vspace{1mm}
+{\footnotesize Fensterblick Tag\hfill\textit{J. Meier}}
+\vspace{3mm}
 
-\includegraphics[width=\linewidth]{russia-photographs/IMG_9536.png}
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9415.png}
+
 \vspace{1mm}
+{\footnotesize Fensterblick Nacht\hfill\textit{J. Meier}}
+\vspace{3mm}
 
-\includegraphics[width=\linewidth]{russia-photographs/IMG_0125.png}
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9611.png}
+
 \vspace{1mm}
+{\footnotesize Panelki-Panorama I\hfill\textit{J. Meier}}
+\vspace{3mm}
 
-\includegraphics[width=\linewidth]{russia-photographs/IMG_0078.png}
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9612.png}
 
-{\footnotesize\color{gray} Sowjet-Café, Mischka-Relief, Katze auf Ofen, Kühe im Schnee.\par}
-\end{minipage}
+\vspace{1mm}
+{\footnotesize Panelki-Panorama II\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_8315.png}
+
+\vspace{1mm}
+{\footnotesize Kriegsdenkmal Herbst\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0137.png}
+
+\vspace{1mm}
+{\footnotesize Kriegsdenkmal Winter\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9620.png}
+
+\vspace{1mm}
+{\footnotesize Sowjet-Orden\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_8319.png}
+
+\vspace{1mm}
+{\footnotesize Flagge auf Dach\hfill\textit{J. Meier}}
 ```
+
+:::
+
+::: {.new-page}
+:::
+
+### Der Lada · Winterlandschaften
+
+::: {.page-4}
+
+```{=latex}
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9484.png}
+
+\vspace{1mm}
+{\footnotesize Lada im Schnee I\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_8279.png}
+
+\vspace{1mm}
+{\footnotesize Lada im Schnee II\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0052.png}
+
+\vspace{1mm}
+{\footnotesize Dampf über Wasser\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0122.png}
+
+\vspace{1mm}
+{\footnotesize Dorf im Sonnenschein\hfill\textit{J. Meier}}
+```
+
+:::
+
+::: {.new-page}
+:::
+
+### Sowjet-Nostalgie
+
+::: {.page-4}
+
+```{=latex}
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9516.png}
+
+\vspace{1mm}
+{\footnotesize Sowjet-Café Wand\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9540.png}
+
+\vspace{1mm}
+{\footnotesize Memorabilia\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9515.png}
+
+\vspace{1mm}
+{\footnotesize Sowjet-Dekoration\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9524.png}
+
+\vspace{1mm}
+{\footnotesize Café-Interieur\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9513.png}
+
+\vspace{1mm}
+{\footnotesize Alter Fernseher\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9521.png}
+
+\vspace{1mm}
+{\footnotesize Vergilbte Fotos\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_9536.png}
+
+\vspace{1mm}
+{\footnotesize Mischka-Relief\hfill\textit{J. Meier}}
+```
+
+:::
+
+::: {.new-page}
+:::
+
+### Tiere
+
+::: {.page-4}
+
+```{=latex}
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0125.png}
+
+\vspace{1mm}
+{\footnotesize Katze auf Ofen\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0111.png}
+
+\vspace{1mm}
+{\footnotesize Katze in Küche\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0099.png}
+
+\vspace{1mm}
+{\footnotesize Hund im Schnee I\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0140.png}
+
+\vspace{1mm}
+{\footnotesize Hund im Schnee II\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0078.png}
+
+\vspace{1mm}
+{\footnotesize Kühe\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0081.png}
+
+\vspace{1mm}
+{\footnotesize Kuh im Schnee\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0069.png}
+
+\vspace{1mm}
+{\footnotesize Schweine\hfill\textit{J. Meier}}
+\vspace{3mm}
+
+\noindent
+\includegraphics[width=\columnwidth]{russia-photographs/IMG_0072.png}
+
+\vspace{1mm}
+{\footnotesize Kaninchen\hfill\textit{J. Meier}}
+```
+
+:::

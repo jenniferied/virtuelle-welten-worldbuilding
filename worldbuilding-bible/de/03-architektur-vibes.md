@@ -1,36 +1,114 @@
 ::: {.new-page}
 :::
 
-# Inspiration: Sowjetische Architektur und Atmosphäre
+# Inspiration: Sowjetische Architektur
 
 ::: {.page-4}
 
-Die sowjetische Wohnarchitektur ist mehr als eine Bauweise – sie ist ein visuelles Zeugnis einer Ideologie. Über sieben Jahrzehnte hinweg (1917–1991) entwickelten sich verschiedene Baustile, die alle einem Ziel dienten: möglichst viele Menschen möglichst schnell und kostengünstig unterzubringen.
+Die Plattenbauten sind mehr als Kulisse – sie sind Protagonisten. Über sieben Jahrzehnte entwickelten sich verschiedene Stile, jeder ein visuelles Zeugnis seiner Ära. Was im Westen als triste Uniformität gilt, ist in Russland Heimat für über 170 Millionen Menschen.
 
-Für ПАНЕЛЬКИ ist diese Architektur die Bühne, auf der sich das Spiel entfaltet. Die Plattenbauten sind nicht nur Kulisse – sie sind Protagonisten einer Geschichte über Hoffnung, Verfall und das, was bleibt.
+Nach dem Zweiten Weltkrieg stand die UdSSR vor einer beispiellosen Wohnungskrise. 25 Millionen Menschen waren obdachlos. Die Lösung: industrielle Massenproduktion von Wohnraum. Das Dekret von 1955 markierte den Wendepunkt – weg von stalinscher Monumentalarchitektur, hin zu funktionaler Effizienz.
 
-**Stalinistische Ära (1930er–1955)** – Die frühe Sowjetzeit brachte monumentale, ornamentreiche Bauten hervor. Hohe Decken, verzierte Fassaden, repräsentative Eingänge. Diese Architektur war teuer und für die Elite bestimmt.
+### Die Stalinka (1930er–1955)
 
-**Die Chruschtschowka (1955–1970)** – Nach Stalins Tod ordnete Chruschtschow den Bau von Millionen einfacher Wohnungen an. Fünfstöckige Plattenbauten ohne Aufzug, mit niedrigen Decken und kleinen Küchen. Funktional, billig, identisch.
+```{=latex}
+\noindent
+\includegraphics[width=\columnwidth]{housing-types/stalinka-moscow-gothic.jpg}
 
-**Die Breschnewka (1970–1991)** – Die Gebäude wurden größer: 9, 12, 16 Stockwerke. Aufzüge wurden obligatorisch, die Wohnungen etwas geräumiger. Doch das Grundprinzip blieb: Standardisierung, Massenproduktion, Effizienz.
+\vspace{1mm}
+{\footnotesize „Sieben Schwestern" Moskau\hfill\textit{Pexels, CC0}}
+\vspace{3mm}
+```
 
-Die sowjetische Plattenbauweise basierte auf industrieller Vorfertigung: Standardisierte Betonplatten wurden in Fabriken gegossen und vor Ort montiert. Jede Region hatte ihre Baunormen (P-44, I-515, 111M). Minimaler Materialverbrauch war oberstes Gebot – ein Gebäude konnte in wenigen Wochen errichtet werden. Das Ergebnis: Millionen identischer Wohnungen, die sich nur durch Farbanstriche und Verfall unterscheiden.
+Die frühe Sowjetzeit brachte monumentale, ornamentreiche Bauten hervor. Hohe Decken (bis 4,3 Meter), verzierte Fassaden, repräsentative Eingänge. Dicke Wände (60–70 cm) aus roten Ziegeln – hervorragende Isolierung, aber teuer in der Herstellung. Diese Architektur war für die Elite bestimmt: Parteifunktionäre, Akademiker, Schriftsteller.
 
-**Die Panelki-Ästhetik** definiert die visuelle Identität unseres Spiels: Wiederholende Fensterraster und orthogonale Formen. Verblasstes Blau, Grün, Rosa, Beige über grauem Beton. Abblätternde Farbe, Wasserflecken, Rostspuren. Innenhöfe mit verwilderten Spielplätzen. Sowjetische Mosaike, Schriftzüge, verwitterte Briefkästen.
+Die „Sieben Schwestern" in Moskau verkörpern diesen Stil: gotisch anmutende Wolkenkratzer mit Türmen und Ornamenten. Stalins Dekret von 1947 ordnete ihren Bau an – als Demonstration sowjetischer Überlegenheit.
 
-**Atmosphäre** – Fahle Wintersonne am Morgen, schwache Beleuchtung bei Tag, rosa-orange Horizont in der Dämmerung, Straßenlaternen und Aurora bei Nacht. Schnee auf Dächern und Fenstersimsen, Eisblumen an Scheiben, Nebel und verwehter Schnee. Heulender Wind zwischen Gebäuden, quietschende Aufzüge, ferne Straßenbahnklingeln, die Stille des Schnees. Wäscheleinen und Blumentöpfe auf Balkonen, Vorhänge und Katzen in Fenstern, Spielplätze in Höfen, Fußspuren im Schnee.
+Nach Stalins Tod 1953 kam die Abrechnung. Chruschtschow verurteilte den „Personenkult" und die Verschwendung. Das Dekret von 1955 „Über die Beseitigung von Exzessen in Planung und Bau" verbot Ornamentik und forderte Standardisierung.
+
+### Die Chruschtschowka (1955–1970)
+
+```{=latex}
+\noindent
+\includegraphics[width=\columnwidth]{housing-types/kyiv-soviet-balconies.jpg}
+
+\vspace{1mm}
+{\footnotesize Typische Chruschtschowka-Fassade\hfill\textit{Pexels, CC0}}
+\vspace{3mm}
+```
+
+Chruschtschow ordnete den Bau von Millionen einfacher Wohnungen an. Das Ziel: Jede Familie sollte eine eigene Wohnung haben. Das Mittel: radikale Standardisierung. Die *SNiP*-Baunormen (Строительные нормы и правила) definierten jeden Aspekt: Deckenhöhe 2,5 Meter, Küche 5–6 m², Badezimmer kombiniert mit Toilette.
+
+Die Gebäude wurden in Fabriken vorgefertigt. Betonplatten, nummeriert und katalogisiert, fuhren per LKW zur Baustelle. Ein fünfstöckiger Block entstand in 12 Tagen. Kein Aufzug nötig – die fünf Stockwerke blieben unter der gesetzlichen Grenze. Die Einsparung: 8% der Baukosten.
+
+Ich liebe diese Gebäude. Sie sind hässlich und schön zugleich. Die typische Chruschtschowka: 80 Wohnungen, 5 Stockwerke, verblasste Farbe über grauem Beton. Fenster in exakten Rastern. Balkone nachträglich verglast, jeder anders.
+
+**Baunormen (SNiP 1957):**
+
+- Deckenhöhe: 2,48–2,60 m (statt 3,2 m in Stalinkas)
+- Küche: 4,5–6,0 m²
+- Wohnfläche pro Person: 9 m² (Minimum)
+- Lebensdauer geplant: 25 Jahre (viele stehen noch nach 60)
+
+### Die Breschnewka (1970–1991)
+
+```{=latex}
+\noindent
+\includegraphics[width=\columnwidth]{housing-types/minsk-soviet-blocks.jpg}
+
+\vspace{1mm}
+{\footnotesize Breschnewkas in Minsk\hfill\textit{S. Nester/Pexels, CC0}}
+\vspace{3mm}
+```
+
+Unter Breschnew wurden die Gebäude größer: 9, 12, 16 Stockwerke. Aufzüge obligatorisch. Wohnungen etwas geräumiger – separate Badezimmer, größere Küchen. Doch das Grundprinzip blieb: Standardisierung, Massenproduktion, Effizienz.
+
+Die *Serien* definierten alles. Serie P-44: 17 Stockwerke, weiße Fassade, charakteristische Balkone. Serie II-68: 16 Stockwerke, blaue Akzente. Serie 1-515: 9 Stockwerke, beige Fassade. Jede Serie hatte ihren Katalog: Grundrisse, Materialien, Produktionsverfahren.
+
+**Verbesserte Baunormen (SNiP 1971):**
+
+- Deckenhöhe: 2,64 m
+- Küche: 7,5–10 m²
+- Separate Sanitäranlagen ab 2-Zimmer-Wohnungen
+- Müllschlucker und Aufzüge ab 6 Stockwerken
+- Schallschutzanforderungen verschärft
+
+Die späten Breschnewkas zeigten erste Ansätze von Individualität: farbige Fassadenelemente, abgerundete Balkone, dekorative Paneele. Die Uniformität begann zu bröckeln – wie das System selbst.
+
+### Die Panelki-Ästhetik
+
+Was mich fasziniert: die Wiederholung. Wiederholende Fensterraster und orthogonale Formen. Verblasstes Blau, Grün, Rosa, Beige über grauem Beton. Abblätternde Farbe, Wasserflecken, Rostspuren. Innenhöfe mit verwilderten Spielplätzen. Sowjetische Mosaike, Schriftzüge, verwitterte Briefkästen.
+
+Diese Gebäude waren nie für die Ewigkeit gedacht. Die Chruschtschowkas sollten 25 Jahre halten – als Übergangslösung, bis der Kommunismus echte Wohnpaläste ermöglichte. Jetzt stehen sie seit über 60 Jahren. Manche wurden saniert, manche verfallen, alle tragen die Spuren der Zeit.
+
+**Typische visuelle Elemente:**
+
+- Fensterraster: 3×5 oder 4×5 Module pro Aufgang
+- Farbschichten: Original (1960er), Renovierung (1980er), Verfall (heute)
+- Balkone: verglast, teils mit Blumenkästen, teils als Abstellkammer
+- Eingänge: Metalltüren mit Gegensprechanlage, Briefkästen, kyrillische Hausnummern
+- Dachlinien: Flachdach mit Antennen, Lüftungsschächten, Wäscheleinen
+
+Diese Ästhetik ist die Bühne für ПАНЕЛЬКИ.
+
+### Atmosphäre
+
+**Licht:** Fahle Wintersonne am Morgen, schwache Beleuchtung bei Tag, rosa-orange Horizont in der Dämmerung, Straßenlaternen und Aurora bei Nacht.
+
+**Wetter:** Schnee auf Dächern und Fenstersimsen, Eisblumen an Scheiben, Nebel und verwehter Schnee. Die Kälte kriecht in jede Ritze.
+
+**Geräusche:** Heulender Wind zwischen Gebäuden, quietschende Aufzüge, ferne Straßenbahnklingeln, die Stille des Schnees. Das Knarren alter Heizungsrohre.
+
+**Leben:** Wäscheleinen und Blumentöpfe auf Balkonen, Vorhänge und Katzen in Fenstern, Spielplätze in Höfen, Fußspuren im Schnee. Die Gemeinschaft der Anonymität.
 
 :::
 
 ```{=latex}
 % =============================================================================
-% Architecture Reference Grids - Constrained to single pages
-% A3 landscape: 420mm x 297mm, margins 19.05mm = usable 381.9mm x 258.9mm
+% Architecture Reference Grids - Pinterest-style mood boards
 % =============================================================================
 
-% Page 1: Portrait images (8 columns x 4 rows = 32 slots, 28 images)
-% Calculated: 46mm wide x 55mm tall per cell with 2mm gaps
+% Page 1: Portrait images (8 columns x 4 rows)
 \clearpage
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
@@ -72,11 +150,10 @@ Die sowjetische Plattenbauweise basierte auf industrieller Vorfertigung: Standar
 \includegraphics[width=46mm,height=55mm,keepaspectratio]{architecture-reference/f123efd1391abe73c12627349021f3b9.jpg} & & & & \\
 \end{tabular}
 \vfill
-{\color{hotpink}\small\raggedright Architektur-Referenzen I -- Sowjetische Plattenbauten, Fassadendetails, Perspektiven.\par}
+{\color{hotpink}\small\raggedright Architektur-Referenzen I -- Sowjetische Plattenbauten, Fassadendetails, urbane Perspektiven.\par}
 \end{minipage}
 
-% Page 2: Landscape images (4 columns x 5 rows = 20 slots, 22 images -> need 6 rows)
-% Calculated: 93mm wide x 38mm tall per cell with 2mm gaps
+% Page 2: Landscape images (4 columns x 6 rows)
 \clearpage
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
