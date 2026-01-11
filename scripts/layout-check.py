@@ -6,13 +6,16 @@ This script helps assess and iterate on PDF layouts by:
 1. Building the PDF
 2. Rendering pages to images for inspection
 3. Comparing against previous versions
-4. Recording what works
+4. Outputting structured JSON reports for Claude analysis
+5. Recording what works
 
 Usage:
     python scripts/layout-check.py                    # Build and preview
     python scripts/layout-check.py --page 3           # Preview specific page
     python scripts/layout-check.py --compare old.pdf  # Compare with previous
     python scripts/layout-check.py --all-pages        # Render all pages
+    python scripts/layout-check.py --json             # Output JSON report
+    python scripts/layout-check.py --analyze 5        # Analyze page 5 for issues
 
 Requirements:
     - poppler (pdftocairo): brew install poppler
@@ -23,6 +26,7 @@ Requirements:
 import argparse
 import subprocess
 import sys
+import json
 from pathlib import Path
 from datetime import datetime
 
@@ -140,7 +144,7 @@ def build_pdf() -> tuple[int, Path]:
     project_root = Path(__file__).parent.parent
     build_script = project_root / "scripts" / "build-worldbuilding.py"
 
-    print("Building PDF...")
+    print("Building PDF...", file=sys.stderr)
     result = subprocess.run(
         [sys.executable, str(build_script)],
         cwd=project_root,
@@ -150,6 +154,132 @@ def build_pdf() -> tuple[int, Path]:
     pdf_path = project_root / "worldbuilding-bible" / "export" / "worldbuilding-bible-de.pdf"
 
     return result.returncode, pdf_path
+
+
+def get_pdf_metadata(pdf_path: Path) -> dict:
+    """Get PDF metadata using pdfinfo."""
+    metadata = {}
+    try:
+        result = subprocess.run(
+            ["pdfinfo", str(pdf_path)],
+            capture_output=True, text=True, check=True
+        )
+        for line in result.stdout.splitlines():
+            if ":" in line:
+                key, value = line.split(":", 1)
+                metadata[key.strip().lower().replace(" ", "_")] = value.strip()
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        pass
+    return metadata
+
+
+def analyze_page_image(image_path: Path) -> dict:
+    """Analyze a rendered page image for layout issues."""
+    analysis = {
+        "path": str(image_path),
+        "exists": image_path.exists(),
+        "issues": [],
+        "metrics": {}
+    }
+
+    if not image_path.exists():
+        return analysis
+
+    try:
+        from PIL import Image
+        import statistics
+
+        with Image.open(image_path) as img:
+            analysis["metrics"]["width"] = img.width
+            analysis["metrics"]["height"] = img.height
+
+            # Convert to grayscale for analysis
+            gray = img.convert("L")
+            pixels = list(gray.getdata())
+
+            # Calculate brightness statistics
+            avg_brightness = statistics.mean(pixels)
+            analysis["metrics"]["avg_brightness"] = round(avg_brightness, 1)
+
+            # Check for large white areas (potential empty space)
+            white_threshold = 250
+            white_pixels = sum(1 for p in pixels if p > white_threshold)
+            white_percentage = (white_pixels / len(pixels)) * 100
+            analysis["metrics"]["white_percentage"] = round(white_percentage, 1)
+
+            # Flag high white percentage as potential issue
+            if white_percentage > 40:
+                analysis["issues"].append({
+                    "type": "excessive_whitespace",
+                    "severity": "warning" if white_percentage < 60 else "error",
+                    "detail": f"{white_percentage:.1f}% of page is white"
+                })
+
+            # Check edges for margins (sample left/right strips)
+            width, height = img.size
+            left_strip = gray.crop((0, 0, width // 20, height))
+            right_strip = gray.crop((width - width // 20, 0, width, height))
+
+            left_avg = statistics.mean(list(left_strip.getdata()))
+            right_avg = statistics.mean(list(right_strip.getdata()))
+            analysis["metrics"]["left_margin_brightness"] = round(left_avg, 1)
+            analysis["metrics"]["right_margin_brightness"] = round(right_avg, 1)
+
+    except ImportError:
+        analysis["issues"].append({
+            "type": "missing_dependency",
+            "severity": "info",
+            "detail": "Pillow not installed, skipping image analysis"
+        })
+    except Exception as e:
+        analysis["issues"].append({
+            "type": "analysis_error",
+            "severity": "error",
+            "detail": str(e)
+        })
+
+    return analysis
+
+
+def generate_json_report(pdf_path: Path, pages_to_analyze: list[int] = None, output_dir: Path = None, dpi: int = 72) -> dict:
+    """Generate a structured JSON report of the PDF layout."""
+    report = {
+        "timestamp": datetime.now().isoformat(),
+        "pdf_path": str(pdf_path),
+        "metadata": get_pdf_metadata(pdf_path),
+        "pages": [],
+        "summary": {
+            "total_issues": 0,
+            "pages_with_issues": []
+        }
+    }
+
+    page_count = get_page_count(pdf_path)
+    report["metadata"]["page_count"] = page_count
+
+    if pages_to_analyze is None:
+        pages_to_analyze = list(range(1, min(page_count + 1, 6)))  # First 5 pages by default
+
+    if output_dir is None:
+        output_dir = pdf_path.parent / "analysis"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    for page_num in pages_to_analyze:
+        if page_num > page_count:
+            continue
+
+        # Render page at low DPI for analysis
+        preview = render_page(pdf_path, page_num, output_dir, dpi)
+        analysis = analyze_page_image(preview)
+        analysis["page_number"] = page_num
+
+        report["pages"].append(analysis)
+
+        if analysis["issues"]:
+            report["summary"]["total_issues"] += len(analysis["issues"])
+            report["summary"]["pages_with_issues"].append(page_num)
+
+    return report
 
 
 def main():
@@ -172,6 +302,8 @@ Examples:
     parser.add_argument("--no-build", action="store_true", help="Skip building, use existing PDF")
     parser.add_argument("--dpi", type=int, default=150, help="DPI for rendering (default: 150)")
     parser.add_argument("--output-dir", type=str, help="Directory for preview images")
+    parser.add_argument("--json", action="store_true", help="Output JSON report (for Claude analysis)")
+    parser.add_argument("--analyze", type=str, help="Analyze specific pages (e.g., '1,3,5' or '1-5' or 'all')")
 
     args = parser.parse_args()
 
@@ -203,6 +335,44 @@ Examples:
         if returncode != 0 or not pdf_path.exists():
             print("Build failed")
             return 1
+
+    # JSON/Analyze mode - quieter output, structured data
+    if args.json or args.analyze:
+        pages_to_analyze = None
+        if args.analyze:
+            if args.analyze.lower() == "all":
+                pages_to_analyze = list(range(1, get_page_count(pdf_path) + 1))
+            elif "-" in args.analyze:
+                start, end = map(int, args.analyze.split("-"))
+                pages_to_analyze = list(range(start, end + 1))
+            else:
+                pages_to_analyze = [int(p.strip()) for p in args.analyze.split(",")]
+
+        report = generate_json_report(
+            pdf_path,
+            pages_to_analyze=pages_to_analyze,
+            output_dir=output_dir if args.output_dir else None,
+            dpi=72  # Lower DPI for analysis
+        )
+
+        if args.json:
+            print(json.dumps(report, indent=2))
+        else:
+            # Human-readable summary
+            print(f"\nPDF: {pdf_path}")
+            print(f"Pages: {report['metadata'].get('page_count', 'unknown')}")
+            print(f"File size: {report['metadata'].get('file_size', 'unknown')}")
+            print(f"\nAnalyzed {len(report['pages'])} pages")
+            print(f"Total issues found: {report['summary']['total_issues']}")
+            if report['summary']['pages_with_issues']:
+                print(f"Pages with issues: {report['summary']['pages_with_issues']}")
+            for page in report['pages']:
+                if page['issues']:
+                    print(f"\n  Page {page['page_number']}:")
+                    for issue in page['issues']:
+                        print(f"    - [{issue['severity']}] {issue['type']}: {issue['detail']}")
+
+        return 0
 
     print(f"\nPDF: {pdf_path}")
     print(f"Pages: {get_page_count(pdf_path)}")
