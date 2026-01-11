@@ -1,6 +1,10 @@
-# Houdini Integration Skill
+---
+name: Houdini Integration
+triggers: ["/houdini", "houdini", "hip file", "assets", "screenshots"]
+description: Document Houdini project, capture screenshots, and manage assets
+---
 
-Document Houdini project, capture screenshots, and manage assets.
+# Houdini Integration Skill
 
 ## Trigger
 Run `/houdini` when:
@@ -10,13 +14,21 @@ Run `/houdini` when:
 
 ## Project Files
 
-### Main Houdini File
-`wip/houdini/VirtuelleWeltenAbgabe.hipnc`
+### Main Houdini Project
+`wip/houdini/vw_project/`
+```
+vw_project/
+├── VirtuelleWeltenAbgabe.hipnc   # Main HIP file
+├── backup/                        # Auto-backups (bak1-37+)
+├── comp/                          # Compositing files
+├── hda/                           # Digital assets
+└── tex/                           # Textures
+```
 
-### Assets
-- `wip/houdini/assets-cars/` - Vehicle models (Blender/FBX)
-  - Mercedes.blend/fbx
-  - YugoKoral55.blend/fbx (large - 291MB/137MB)
+### Vehicle Assets
+`wip/houdini/assets-cars/`
+- Mercedes.blend/fbx
+- YugoKoral55.blend/fbx (large — 291MB/137MB, uses Git LFS)
 
 ### Geodata
 - `wip/neryungi/` - Terrain and city data
@@ -79,9 +91,9 @@ This enables:
 
 ## Asset Inventory
 
-| Asset | Format | Size | Notes |
-|-------|--------|------|-------|
-| VirtuelleWeltenAbgabe.hipnc | Houdini | ~50MB | Main project |
-| Mercedes.blend | Blender | ~5MB | Reference car |
-| YugoKoral55.blend | Blender | 291MB | Hero vehicle (LFS) |
-| YugoKoral55.fbx | FBX | 137MB | Export for Unreal (LFS) |
+| Asset | Location | Size | Notes |
+|-------|----------|------|-------|
+| VirtuelleWeltenAbgabe.hipnc | vw_project/ | ~1.5MB | Main project |
+| Mercedes.blend/fbx | assets-cars/ | ~5MB | Reference car |
+| YugoKoral55.blend | assets-cars/ | 291MB | Hero vehicle (LFS) |
+| YugoKoral55.fbx | assets-cars/ | 137MB | Export for Unreal (LFS) |

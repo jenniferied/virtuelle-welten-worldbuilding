@@ -1,6 +1,10 @@
-# Content Review Skill
+---
+name: Content Review
+triggers: ["/content-review", "missing text", "incomplete section", "content gaps"]
+description: Checks text completeness, missing sections, and content flow
+---
 
-Checks text completeness, missing sections, and content flow.
+# Content Review Skill
 
 ## Trigger
 Run `/content-review` when:

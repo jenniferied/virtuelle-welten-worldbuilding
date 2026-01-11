@@ -1,6 +1,10 @@
-# Layout Skill
+---
+name: Layout Skill
+triggers: ["/layout", "image overflow", "white space", "column issues", "layout problems"]
+description: Fixes image placement, column balancing, and white space issues in multi-column LaTeX documents
+---
 
-Fixes image placement, column balancing, and white space issues in multi-column LaTeX documents.
+# Layout Skill
 
 ## Trigger
 Run `/layout` when:

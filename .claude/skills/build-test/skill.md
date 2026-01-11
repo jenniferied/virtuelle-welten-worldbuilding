@@ -1,6 +1,10 @@
-# Build & Test Skill
+---
+name: Build & Test
+triggers: ["/build", "rebuild PDF", "build errors", "visual regression"]
+description: PDF generation, visual regression testing, and optimization
+---
 
-PDF generation, visual regression testing, and optimization.
+# Build & Test Skill
 
 ## Trigger
 Run `/build` when:
