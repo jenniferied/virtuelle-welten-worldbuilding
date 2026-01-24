@@ -11,7 +11,25 @@ make all            # Build both documents
 make clean          # Remove build artifacts
 ```
 
-## Skills
+## Worldbuilding Agents
+| Agent | Purpose | Invocation |
+|-------|---------|------------|
+| `panelki` | Orchestrator — interviews, suggests, spawns workers | "Use panelki agent" |
+| `worldbuild-analyst` | Framework analysis (Zaidi/Wolf) | Spawned by panelki or direct |
+| `faction-developer` | Faction/character development | Spawned by panelki or direct |
+| `lore-checker` | Consistency verification (Tolkien) | Auto-delegated or direct |
+| `location-designer` | Environmental storytelling (Jenkins) | Spawned by panelki or direct |
+
+## Framework Skills (preloaded into agents)
+| Skill | Source | Used by |
+|-------|--------|---------|
+| `zaidi-foundations` | Zaidi 2019 | worldbuild-analyst, faction-developer, panelki |
+| `wolf-subcreation` | Wolf 2012 | worldbuild-analyst |
+| `jenkins-environmental` | Jenkins 2004 | location-designer |
+| `tolkien-belief` | Tolkien/Brierly | lore-checker |
+| `panelki-world-rules` | 04-die-welt.md | all agents |
+
+## Document Skills
 | Skill | Trigger | Purpose |
 |-------|---------|---------|
 | `/layout` | Image overflow, white space, column issues | Fix PDF layout problems |
@@ -26,8 +44,5 @@ make clean          # Remove build artifacts
 - **Large files**: YugoKoral55.blend/fbx use Git LFS (>100MB)
 
 ## When To Read More
-- **Layout fixes**: `.claude/skills/layout/skill.md`
-- **Content standards**: `.claude/skills/content-review/skill.md`
-- **Build pipeline**: `.claude/skills/build-test/skill.md`
-- **Quality criteria**: `.claude/rules/quality-standards.md`
-- **Preferences**: `.claude/preferences.md`
+- **Layout fixes**: `.claude/skills/layout/skill.md` · **Content**: `.claude/skills/content-review/skill.md`
+- **Build pipeline**: `.claude/skills/build-test/skill.md` · **Quality**: `.claude/rules/quality-standards.md`
