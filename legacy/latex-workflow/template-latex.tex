@@ -1,0 +1,710 @@
+% LaTeX Template for Worldbuilding Bible
+% A3 Landscape, Minimal Design
+% LuaLaTeX required
+
+\documentclass[10pt, a3paper, landscape, oneside]{article}
+
+% ==========================================================================
+%   PACKAGES & FONTS
+% ==========================================================================
+
+\usepackage{fontspec}
+
+% Soviet font path (relative to de/ subdirectory)
+\def\sovietfontpath{../../assets/fonts/soviet/}
+
+% Body: PT Sans (Russian-designed system font)
+\setmainfont{PT Sans}
+
+% Sans: PT Sans (same as body for consistency)
+\setsansfont{PT Sans}
+
+% Mono: PT Mono (Russian-designed, matches PT family)
+\setmonofont{PT Mono}[Scale=0.9]
+
+% Heading font: Futura Bold (clean geometric)
+\newfontfamily\headingfont{Futura}[
+  UprightFont = *-Bold,
+  BoldFont = *-Bold
+]
+
+% Title font: Molot (Soviet constructivist style - best kerning)
+\newfontfamily\titlefont{Molot}[
+  Path = \sovietfontpath,
+  Extension = .otf
+]
+
+% Subtitle font: PT Mono (Soviet technical aesthetic)
+\newfontfamily\subtitlefont{PT Mono}[
+  BoldFont = *-Bold
+]
+
+% Alternative fonts (available for special use)
+% Fyodor Bold - Soviet geometric (OFL license, full German support)
+\newfontfamily\fyodorfont{Fyodor-Bold}[
+  Path = \sovietfontpath,
+  Extension = .ttf
+]
+
+% USSR Stencil - military stencil style (OFL license)
+\newfontfamily\stencilfont{USSR-Stencil}[
+  Path = \sovietfontpath,
+  Extension = .otf
+]
+
+\usepackage{polyglossia}
+\setdefaultlanguage{$if(lang)$$lang$$else$german$endif$}
+
+% Page layout - 0.75 inch margins (19.05mm)
+\usepackage[a3paper, landscape, left=19.05mm, right=19.05mm, top=19.05mm, bottom=19.05mm]{geometry}
+
+% Colors - define all colors first
+\usepackage{xcolor}
+\definecolor{trueblack}{HTML}{000000}  % Pure black for dark mode
+\definecolor{nearblack}{HTML}{1A1A1A}  % Near-black for light mode text
+\definecolor{pagewhite}{HTML}{FFFFFF}
+\definecolor{gray}{HTML}{888888}
+\definecolor{hotpink}{HTML}{E85A6B}    % Hot red-pink for dark page captions
+
+% Dark mode toggle: set dark-mode: true in markdown frontmatter
+% Colors adapt based on mode
+$if(dark-mode)$
+% DARK MODE - black pages, white text
+\definecolor{pagebg}{HTML}{000000}
+\definecolor{textcolor}{HTML}{FFFFFF}
+\definecolor{textmuted}{HTML}{AAAAAA}
+\definecolor{boxbg}{HTML}{1A1A1A}
+\definecolor{border}{HTML}{333333}
+\definecolor{quotetint}{HTML}{1A1A1A}
+\definecolor{linkcolor}{HTML}{888888}
+$else$
+% LIGHT MODE - light grey pages, dark text
+\definecolor{pagebg}{HTML}{F8F8F8}
+\definecolor{textcolor}{HTML}{1A1A1A}
+\definecolor{textmuted}{HTML}{666666}
+\definecolor{boxbg}{HTML}{EFEFEF}
+\definecolor{border}{HTML}{DDDDDD}
+\definecolor{quotetint}{HTML}{E8E4EB}
+\definecolor{linkcolor}{HTML}{888888}
+$endif$
+
+% Softer black for title/architecture pages (between pure black and near-black)
+\definecolor{softblack}{HTML}{0D0D0D}
+
+% Length for title width (used to align subtitle)
+\newlength{\titlewidth}
+
+% Background
+\usepackage{pagecolor}
+\pagecolor{pagebg}
+\color{textcolor}  % Set default text color
+
+% ==========================================================================
+%   SPACING
+% ==========================================================================
+
+\usepackage{setspace}
+\setstretch{1.08}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8mm}
+
+% ==========================================================================
+%   HEADINGS - Fyodor Bold (Soviet geometric) 30pt
+% ==========================================================================
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\small\color{textmuted}\thepage}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+
+\usepackage{titlesec}
+\usepackage{needspace}  % Prevent orphaned headings
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+
+% TOC styling
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{4mm}        % Extra space before section entries
+\setlength{\cftaftertoctitleskip}{8mm}    % Space after TOC title
+\setlength{\cftsecindent}{0pt}            % No section indent
+\setlength{\cftsubsecindent}{0pt}         % No subsection indent
+\renewcommand{\cftdotsep}{2}              % Dot spacing
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}  % Dots for sections too
+
+% H1 - Heading font 24pt (cleaner, less imposing)
+\titleformat{\section}
+  {\headingfont\fontsize{24pt}{28pt}\selectfont\color{textcolor}}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{8mm}{4mm}  % 8mm before, 4mm after major sections
+
+% Page break before sections - DISABLED (use ::: {.new-page} in markdown instead)
+\newcommand{\sectionbreak}{}
+
+% H2 - Heading font 14pt with flexible spacing
+\titleformat{\subsection}
+  {\headingfont\fontsize{14pt}{17pt}\selectfont\color{textcolor}}
+  {}{0em}{}
+\titlespacing*{\subsection}{0pt}{4mm plus 1mm minus 0.5mm}{1.5mm}
+
+% H3 - Bold 11pt with flexible spacing
+\titleformat{\subsubsection}
+  {\bfseries\fontsize{11pt}{13pt}\selectfont\color{textcolor}}
+  {}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{3mm plus 1mm minus 0.5mm}{1mm plus 0.25mm}
+
+% Prevent orphaned headings and widows/clubs
+\widowpenalty=10000
+\clubpenalty=10000
+\brokenpenalty=10000
+\interlinepenalty=150
+\predisplaypenalty=10000
+\postdisplaypenalty=10000
+
+% H4 - italic
+\titleformat{\paragraph}[runin]
+  {\itshape\color{textcolor}}
+  {}{0em}{}
+\titlespacing*{\paragraph}{0pt}{2mm}{1em}
+
+% ==========================================================================
+%   LINKS & GRAPHICS
+% ==========================================================================
+
+\usepackage[colorlinks=true, linkcolor=textcolor, citecolor=textcolor, urlcolor=linkcolor, pdfusetitle]{hyperref}
+
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}  % For max height/width constraints on images
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\graphicspath{{../../assets/logos/}{../figures/}{./figures/}{./}}
+
+\providecommand{\pandocbounded}[1]{#1}
+\newcommand{\includesvg}[2][]{\fbox{\small [SVG: #2]}}
+
+% ==========================================================================
+%   TABLES
+% ==========================================================================
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{tabularx}
+
+\usepackage{caption}
+\captionsetup{font={scriptsize}, labelfont={bf}, format=plain, skip=0.5mm, justification=raggedright, singlelinecheck=false}
+\renewcommand{\figurename}{Abb.}
+
+% Spacing around figures (more breathing room)
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}  % Space above/below floats in text
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}   % Space between floats
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt} % Space between float and text
+
+% ==========================================================================
+%   BOXES - Minimal
+% ==========================================================================
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Lead - slightly larger
+\newenvironment{lead}{\fontsize{11pt}{14pt}\selectfont}{\par\vspace{2mm}}
+
+% Quote - radial gradient from soft lavender to page background (transparent effect)
+\renewenvironment{quote}{%
+  \vspace{2mm}
+  \begin{tcolorbox}[enhanced, frame hidden,
+    interior style={shading=radial, inner color=quotetint, outer color=pagewhite},
+    left=8mm, right=8mm, top=4mm, bottom=4mm,
+    before skip=3mm, after skip=3mm, breakable]
+  \itshape
+}{%
+  \end{tcolorbox}
+}
+
+% Single unified box style (replaces sidebar, infobox, warning, note, success)
+% width=\linewidth ensures boxes respect multi-column context
+\newtcolorbox{boxed}{enhanced, frame hidden, borderline west={2pt}{0pt}{border},
+  colback=boxbg, left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=3mm, after skip=3mm, breakable, width=\linewidth}
+
+% Aliases for backwards compatibility
+\newenvironment{sidebar}{\begin{boxed}}{\end{boxed}}
+\newenvironment{infobox}{\begin{boxed}}{\end{boxed}}
+\newenvironment{warning}{\begin{boxed}}{\end{boxed}}
+\newenvironment{note}{\begin{boxed}}{\end{boxed}}
+\newenvironment{success}{\begin{boxed}}{\end{boxed}}
+
+% Special boxes with distinct styling
+\newtcolorbox{metadata}{enhanced, frame hidden, colback=boxbg,
+  left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=2mm, after skip=2mm, fontupper=\ttfamily\small}
+
+\newtcolorbox{hierarchy}{enhanced, colframe=border, colback=boxbg, boxrule=0.5pt,
+  left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=3mm, after skip=3mm, fontupper=\ttfamily\small}
+
+\newtcolorbox{statsbox}{enhanced, colframe=border, colback=boxbg, boxrule=0.5pt,
+  left=4mm, right=4mm, top=2mm, bottom=2mm,
+  before skip=3mm, after skip=3mm, fontupper=\small}
+
+% ==========================================================================
+%   COLUMNS - 1 to 4 columns with 0.2in (5.08mm) gutter
+%   Two modes:
+%   - columns-X: Balanced columns (equal height) - for sections within a page
+%   - page-X: Unbalanced columns (fill left-to-right) - for full pages
+% ==========================================================================
+
+\usepackage{multicol}
+\setlength{\columnsep}{5.08mm}  % 0.2 inch gutter
+\setlength{\columnseprule}{0pt}
+\setlength{\multicolsep}{0pt}  % Minimal space before/after multicol environments
+\raggedcolumns  % Prevent extra vertical spacing to fill columns
+
+% Default is 2 columns (balanced)
+\newenvironment{columns}{\begin{multicols}{2}}{\end{multicols}}
+
+% Section-based columns: BALANCED height (columns try to be equal)
+% Use for content sections that don't fill a full page
+\newenvironment{columns-1}{\par\vspace{2mm}}{\par\vspace{2mm}}
+\newenvironment{columns-2}{\begin{multicols}{2}}{\end{multicols}}
+\newenvironment{columns-3}{\begin{multicols}{3}}{\end{multicols}}
+\newenvironment{columns-4}{\begin{multicols}{4}}{\end{multicols}}
+
+% Page-spanning columns: using multicols* for UNBALANCED fill (left-first, no balancing)
+% multicols* fills columns sequentially without balancing at end of environment
+\newenvironment{page-1}{\par}{\par}
+\newenvironment{page-2}{\begin{multicols*}{2}}{\end{multicols*}}
+\newenvironment{page-3}{\begin{multicols*}{3}}{\end{multicols*}}
+\newenvironment{page-4}{\begin{multicols*}{4}}{\end{multicols*}}
+
+% ==========================================================================
+%   INLINE IMAGES - Flow with column text (non-floating)
+%   Uses \columnwidth which correctly reflects multicol column width
+%   Heights use fixed minimums to ensure visibility in narrow columns
+% ==========================================================================
+
+% Full width box (100% of column) - default for multi-column layouts
+\newcommand{\inlinebox}[1]{%
+  \par\vspace{2mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{25mm}\centering\color{gray}\small [#1]\vspace{2mm}}}%
+  \par\vspace{2mm}%
+}
+
+% Three-quarter width box (75% of column)
+\newcommand{\inlineboxlarge}[1]{%
+  \par\vspace{2mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr0.75\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{20mm}\centering\color{gray}\small [#1]\vspace{2mm}}}%
+  \par\vspace{2mm}%
+}
+
+% Half width box (50% of column) - good for single-column layouts
+\newcommand{\inlineboxhalf}[1]{%
+  \par\vspace{2mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr0.5\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{18mm}\centering\color{gray}\small [#1]\vspace{2mm}}}%
+  \par\vspace{2mm}%
+}
+
+% Quarter width box (25% of column) - good for icons in single-column
+\newcommand{\inlineboxquarter}[1]{%
+  \par\vspace{1mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr0.25\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{12mm}\centering\color{gray}\scriptsize [#1]\vspace{1mm}}}%
+  \par\vspace{1mm}%
+}
+
+% Small box - shorter height, full column width
+\newcommand{\inlineboxsmall}[1]{%
+  \par\vspace{1mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{15mm}\centering\color{gray}\small [#1]\vspace{1mm}}}%
+  \par\vspace{1mm}%
+}
+
+% Tiny box - minimal height, full column width
+\newcommand{\inlineboxtiny}[1]{%
+  \par\vspace{1mm}%
+  \noindent\fcolorbox{border}{boxbg}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+    \vspace{8mm}\centering\color{gray}\scriptsize [#1]\vspace{1mm}}}%
+  \par\vspace{1mm}%
+}
+
+% ==========================================================================
+%   PLACEHOLDER IMAGES - Square variants (floating figures)
+% ==========================================================================
+
+\newcommand{\placeholder}[3]{%
+  \begin{figure}[H]
+    \centering
+    \fcolorbox{border}{boxbg}{\parbox{#1}{\vspace{#2}\centering\color{gray}\small [IMAGE]\vspace{#2}}}
+    \caption{#3}
+  \end{figure}
+}
+
+\newcommand{\placeholdersmall}[1]{\placeholder{40mm}{20mm}{#1}}
+\newcommand{\placeholdermedium}[1]{\placeholder{60mm}{30mm}{#1}}
+\newcommand{\placeholderlarge}[1]{\placeholder{80mm}{40mm}{#1}}
+\newcommand{\placeholderwide}[1]{\placeholder{\linewidth}{20mm}{#1}}
+\newcommand{\placeholderportrait}[1]{\placeholder{50mm}{70mm}{#1}}
+
+% Square placeholders for columns
+\newcommand{\placeholdersquare}[1]{%
+  \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{0.9\linewidth}\mbox{}}}%
+  \par{\small\centering #1\par}%
+}
+\newcommand{\placeholdersquaresmall}[1]{%
+  \fcolorbox{border}{boxbg}{\parbox{30mm}{\vspace{30mm}\mbox{}}}%
+  \par{\small #1\par}%
+}
+
+% Image grids
+\newcommand{\imagegridtwo}[4]{%
+  \begin{figure}[H]\centering
+    \begin{subfigure}[t]{0.48\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{15mm}\centering\color{gray}\small [#1]\vspace{15mm}}}
+      \caption{#2}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.48\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{15mm}\centering\color{gray}\small [#3]\vspace{15mm}}}
+      \caption{#4}
+    \end{subfigure}
+  \end{figure}
+}
+
+\newcommand{\imagegridthree}[6]{%
+  \begin{figure}[H]\centering
+    \begin{subfigure}[t]{0.31\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{12mm}\centering\color{gray}\scriptsize [#1]\vspace{12mm}}}
+      \caption{#2}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.31\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{12mm}\centering\color{gray}\scriptsize [#3]\vspace{12mm}}}
+      \caption{#4}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.31\linewidth}\centering
+      \fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{12mm}\centering\color{gray}\scriptsize [#5]\vspace{12mm}}}
+      \caption{#6}
+    \end{subfigure}
+  \end{figure}
+}
+
+% 2x2 image grid with real images (for column layouts)
+% Usage: \imagegridfour{img1}{img2}{img3}{img4}{caption}
+\newcommand{\imagegridfour}[5]{%
+  \par\vspace{1mm}%
+  \noindent\begin{minipage}{\columnwidth}%
+    \centering%
+    \begin{tabular}{@{}c@{\hspace{1mm}}c@{}}%
+      \includegraphics[width=0.48\columnwidth]{#1} &
+      \includegraphics[width=0.48\columnwidth]{#2} \\[1mm]
+      \includegraphics[width=0.48\columnwidth]{#3} &
+      \includegraphics[width=0.48\columnwidth]{#4} \\
+    \end{tabular}%
+    \par\vspace{1mm}%
+    {\small #5}%
+  \end{minipage}%
+  \par\vspace{2mm}%
+}
+
+% Column figure with separate captions for text and list of figures
+% NO minipage - allows newspaper-style flow across columns
+% Usage: \colfig{image path}{text caption}{list caption with attribution}
+\newcommand{\colfig}[3]{%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.92\columnwidth,keepaspectratio,max height=0.24\textheight]{#1}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#3]{#2}%
+  \par\vspace{0.5mm}%
+  \raggedright%
+}
+
+% 2x2 grid figure with single caption (for grouping related images)
+% NO minipage - allows newspaper-style flow across columns
+% Usage: \colgridfig{img1}{img2}{img3}{img4}{text caption}{list caption}
+\newcommand{\colgridfig}[6]{%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \begin{tabular}{@{}c@{\hspace{0.5mm}}c@{}}%
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#1} &
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#2} \\[0.3mm]
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#3} &
+    \includegraphics[width=0.46\columnwidth,keepaspectratio,max height=0.09\textheight]{#4}
+  \end{tabular}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#6]{#5}%
+  \par\vspace{0.5mm}%
+  \raggedright%
+}
+
+% 1x2 horizontal grid (two images side by side)
+% NO minipage - allows newspaper-style flow across columns
+% Usage: \colpairfig{img1}{img2}{text caption}{list caption}
+\newcommand{\colpairfig}[4]{%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.485\columnwidth,keepaspectratio,max height=0.17\textheight]{#1}%
+  \includegraphics[width=0.485\columnwidth,keepaspectratio,max height=0.17\textheight]{#2}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#4]{#3}%
+  \par\vspace{0.5mm}%
+  \raggedright%
+}
+
+% 3-image vertical stack with single caption (compact)
+% NO minipage - allows newspaper-style flow across columns
+% Usage: \coltriplefig{img1}{img2}{img3}{text caption}{list caption}
+\newcommand{\coltriplefig}[5]{%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.88\columnwidth,keepaspectratio,max height=0.07\textheight]{#1}%
+  \par\nobreak\vspace{0.3mm}%
+  \includegraphics[width=0.88\columnwidth,keepaspectratio,max height=0.07\textheight]{#2}%
+  \par\nobreak\vspace{0.3mm}%
+  \includegraphics[width=0.88\columnwidth,keepaspectratio,max height=0.07\textheight]{#3}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#5]{#4}%
+  \par\vspace{0.5mm}%
+  \raggedright%
+}
+
+% 2-image vertical stack with single caption
+% NO minipage - allows newspaper-style flow across columns
+% Usage: \coldualfig{img1}{img2}{text caption}{list caption}
+\newcommand{\coldualfig}[4]{%
+  \par\vspace{0.5mm}\noindent%
+  \centering%
+  \includegraphics[width=0.92\columnwidth,keepaspectratio,max height=0.14\textheight]{#1}%
+  \par\nobreak\vspace{0.3mm}%
+  \includegraphics[width=0.92\columnwidth,keepaspectratio,max height=0.14\textheight]{#2}%
+  \par\nopagebreak[4]%
+  \captionof{figure}[#4]{#3}%
+  \par\vspace{0.5mm}%
+  \raggedright%
+}
+
+% ==========================================================================
+%   CONTACT SHEET - Tight image grid for reference boards
+% ==========================================================================
+
+% Contact sheet row: 2 images side by side (for use within minipage)
+% Usage: \csrow{img1}{img2}
+\newcommand{\csrow}[2]{%
+  \includegraphics[width=0.48\columnwidth,height=0.10\textheight,keepaspectratio]{#1}\hspace{0.5mm}%
+  \includegraphics[width=0.48\columnwidth,height=0.10\textheight,keepaspectratio]{#2}\\[0.5mm]%
+}
+
+% Contact sheet single image (for odd counts)
+% Usage: \cssingle{img}
+\newcommand{\cssingle}[1]{%
+  \includegraphics[width=0.48\columnwidth,height=0.10\textheight,keepaspectratio]{#1}\\[0.5mm]%
+}
+
+% Contact sheet caption (placed at end of grid)
+% Usage: \cscaption{text caption}{list of figures caption}
+\newcommand{\cscaption}[2]{%
+  \par\vspace{1mm}%
+  \captionof{figure}[#2]{#1}%
+}
+
+% Full-page contact sheet (spans entire page width, use outside multicols)
+% Row of 4 images for full-page width
+% Usage: \fpcsrow{img1}{img2}{img3}{img4}
+\newcommand{\fpcsrow}[4]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#2}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#3}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#4}\\[1mm]%
+}
+
+% Full-page contact sheet row of 3 images (for odd counts)
+\newcommand{\fpcsrowthree}[3]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#2}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#3}\hfill%
+  \hspace{0.24\textwidth}\\[1mm]%
+}
+
+% Full-page contact sheet row of 2 images
+\newcommand{\fpcsrowtwo}[2]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\hfill%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#2}\hfill%
+  \hspace{0.24\textwidth}\hfill\hspace{0.24\textwidth}\\[1mm]%
+}
+
+% Full-page contact sheet single image
+\newcommand{\fpcssingle}[1]{%
+  \includegraphics[width=0.24\textwidth,height=0.12\textheight,keepaspectratio]{#1}\\[1mm]%
+}
+
+% ==========================================================================
+%   CODE & DIVIDERS
+% ==========================================================================
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small, backgroundcolor=\color{boxbg},
+  frame=single, framesep=3mm, rulecolor=\color{border}, breaklines=true}
+
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\colorbox{boxbg}{\oldtexttt{\small #1}}}
+
+\newcommand{\sectiondivider}{\vspace{3mm}}
+\newcommand{\linedivider}{\vspace{2mm}}
+
+% ==========================================================================
+%   PANDOC COMPATIBILITY
+% ==========================================================================
+
+\newlength{\cslhangindent}\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2]
+ {\begin{list}{}{\setlength{\itemindent}{0pt}\setlength{\leftmargin}{0pt}\setlength{\parsep}{0pt}
+  \ifodd #1 \setlength{\leftmargin}{\cslhangindent}\setlength{\itemindent}{-1\cslhangindent}\fi
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=5mm, itemsep=0.5mm, topsep=0pt}
+\setlist[enumerate]{leftmargin=5mm, itemsep=0.5mm, topsep=0pt}
+\setlist[description]{style=unboxed, leftmargin=0pt, itemsep=1mm, font=\bfseries}
+
+\usepackage{longtable}
+\setlength{\LTpre}{\smallskipamount}
+\setlength{\LTpost}{\smallskipamount}
+\newcounter{none}
+
+\setlength{\heavyrulewidth}{0.08em}
+\setlength{\lightrulewidth}{0.04em}
+\setlength{\tabcolsep}{3mm}
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\}, fontsize=\small, frame=single, rulecolor=\color{border}
+}
+
+% ==========================================================================
+%   METADATA
+% ==========================================================================
+
+$if(title)$\title{$title$}$endif$
+$if(author)$\author{$for(author)$$author$$sep$ \and $endfor$}$endif$
+$if(date)$\date{$date$}$else$\date{}$endif$
+
+\hypersetup{pdftitle={$if(title)$$title$$endif$}, pdfauthor={$for(author)$$author$$sep$; $endfor$}}
+
+% ==========================================================================
+%   COVER PAGE
+% ==========================================================================
+
+\usepackage{tikz}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \thispagestyle{empty}
+
+  % Soft black background using TikZ overlay (always black regardless of mode)
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[softblack] (current page.south west) rectangle (current page.north east);
+  \end{tikzpicture}
+
+  % Use a full-page centered box for the text
+  \null
+  \vfill
+
+  \begin{center}
+    % Title in Molot (white on black) - save width for subtitle alignment
+    \settowidth{\titlewidth}{\titlefont\fontsize{90pt}{100pt}\selectfont\@title}%
+    {\titlefont\fontsize{90pt}{100pt}\selectfont\color{white}\@title\par}
+
+    \vspace{15mm}
+
+    % Subtitle in PT Sans (white on black) - constrained to title width
+    $if(subtitle)$
+    {\sffamily\bfseries\fontsize{16pt}{20pt}\selectfont\color{white} Worldbuilding Bible\par}
+    \vspace{4mm}
+    \parbox{\titlewidth}{\centering\sffamily\fontsize{11pt}{15pt}\selectfont\color{white!60} $subtitle$\par}
+    \vspace{10mm}
+    $endif$
+
+    % Author and date (white on black)
+    {\small\color{white} \@author\quad·\quad\@date\par}
+
+    \vspace{10mm}
+
+    % Institution (white on black)
+    {\small\color{white} Technische Hochschule Ostwestfalen-Lippe\\[2mm]
+     Fachbereich Medienproduktion, Master Medienproduktion\\[2mm]
+     $if(subject)$Fach: $subject$$if(tutor)$ · Dozent: $tutor$$endif$$endif$\par}
+  \end{center}
+
+  \vfill
+
+  % Logos at bottom right using TikZ overlay (white variants)
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south east, inner sep=0pt] at ([xshift=-15mm, yshift=15mm]current page.south east) {%
+      \includegraphics[height=20mm]{../../assets/logos/th-owl-logo-white.png}%
+      \hspace{5mm}%
+      \includegraphics[height=20mm]{../../assets/logos/mp-logo-solid-white.png}%
+    };
+  \end{tikzpicture}
+
+  \newpage
+}
+\makeatother
+
+% ==========================================================================
+%   DOCUMENT
+% ==========================================================================
+
+\begin{document}
+\raggedbottom  % Allow natural page breaks without forcing justification
+
+$if(title)$\maketitle$endif$
+
+$if(toc)$
+% TOC takes 2/3, placeholder image on right
+\thispagestyle{empty}
+\begin{minipage}[t]{0.62\textwidth}
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.33\textwidth}
+  \vspace{10mm}
+  \includegraphics[width=\linewidth]{../figures/toc-illustration.png}
+\end{minipage}
+\newpage
+$endif$
+
+$body$
+
+$if(lof)$
+% List of Figures at end (added to TOC as last entry)
+\clearpage
+\thispagestyle{empty}
+{
+  \hypersetup{linkcolor=black}
+  \renewcommand{\listfigurename}{$if(lof-title)$$lof-title$$else$Abbildungsverzeichnis$endif$}
+  \phantomsection
+  \addcontentsline{toc}{section}{$if(lof-title)$$lof-title$$else$Abbildungsverzeichnis$endif$}
+  \listoffigures
+}
+$endif$
+
+\end{document}
