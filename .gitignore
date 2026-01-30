@@ -53,3 +53,9 @@ Thumbs.db
 
 # PDF preview images
 **/export/previews/
+
+# Node.js
+node_modules/
+
+# Build artifacts
+**/dist/

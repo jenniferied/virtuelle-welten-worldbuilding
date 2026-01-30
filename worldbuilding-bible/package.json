@@ -1,0 +1,26 @@
+{
+  "name": "worldbuilding-bible",
+  "version": "1.0.0",
+  "description": "ПАНЕЛЬКИ Worldbuilding Bible - Soviet-inspired 16:9 presentation",
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md",
+    "export": "slidev export slides.md --format pdf --output export/worldbuilding-bible.pdf",
+    "export-png": "slidev export slides.md --format png --output export/slides"
+  },
+  "keywords": [
+    "worldbuilding",
+    "slidev",
+    "presentation"
+  ],
+  "author": "Jennifer Meier",
+  "license": "ISC",
+  "devDependencies": {
+    "@slidev/cli": "^52.11.3",
+    "@slidev/theme-default": "^0.25.0",
+    "playwright-chromium": "^1.57.0"
+  },
+  "dependencies": {
+    "slidev-addon-fancy-arrow": "^0.16.0"
+  }
+}

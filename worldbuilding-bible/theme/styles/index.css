@@ -1,0 +1,393 @@
+/* ПАНЕЛЬКИ Soviet Theme - Global Styles */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Mono&display=swap');
+
+:root {
+  /* Soviet color palette */
+  --soviet-black: #0D0D0D;
+  --soviet-dark: #1A1A1A;
+  --soviet-gray: #888888;
+  --soviet-light: #F8F8F8;
+  --soviet-white: #FFFFFF;
+  --soviet-red: #E85A6B;
+
+  /* Theme colors */
+  --slidev-theme-primary: var(--soviet-white);
+  --slidev-theme-background: var(--soviet-black);
+
+  /* Typography */
+  --slidev-font-family: 'PT Sans', sans-serif;
+  --slidev-font-mono: 'PT Mono', monospace;
+}
+
+/* Base slide styling */
+.slidev-layout {
+  background: var(--soviet-black);
+  color: var(--soviet-white);
+  font-family: var(--slidev-font-family);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Auto-fit text utility */
+.auto-fit-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Headings */
+h1 {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem 0;
+}
+
+h3 {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Body text */
+p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Images - auto-fit to container */
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* Grid utilities for galleries */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-2x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.25rem;
+  width: 100%;
+  height: 100%;
+}
+
+/* Flexbox utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* Caption styling */
+.caption {
+  font-size: 0.75rem;
+  color: var(--soviet-gray);
+  text-align: right;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Padding utilities */
+.p-0 { padding: 0; }
+.p-4 { padding: 1rem; }
+.p-8 { padding: 2rem; }
+.p-12 { padding: 3rem; }
+
+/* Full bleed */
+.full-bleed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlay for text on images */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    transparent 60%
+  );
+}
+
+.overlay-full {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Content positioning */
+.content-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem;
+}
+
+.content-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+/* Split layout helpers */
+.split-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+/* Light theme variant */
+.theme-light {
+  background: var(--soviet-light);
+  color: var(--soviet-dark);
+}
+
+.theme-light h1,
+.theme-light h2,
+.theme-light h3 {
+  color: var(--soviet-dark);
+}
+
+/* =============================================================================
+   Magazine Layout Utilities
+   ============================================================================= */
+
+/* Column utilities for multi-column text */
+.columns-2 {
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+.columns-3 {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+/* Dense text for magazine layouts */
+.text-dense {
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.text-dense p {
+  margin-bottom: 0.4rem;
+}
+
+/* Magazine body text (smaller than default) */
+.text-magazine {
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+/* Hot pink accent color */
+.text-pink {
+  color: var(--soviet-red);
+}
+
+/* Hot pink captions */
+.caption-pink {
+  font-size: 0.8rem;
+  color: var(--soviet-red);
+  text-align: left;
+  padding: 0.5rem 0;
+}
+
+/* v-mark styling for hot pink highlights */
+.v-mark-underline {
+  text-decoration-color: var(--soviet-red);
+}
+
+/* Drop cap for magazine layouts */
+.drop-cap::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 1;
+  padding-right: 0.5rem;
+  color: var(--soviet-red);
+  font-weight: 700;
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Storyboard table styling */
+.storyboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7rem;
+}
+
+.storyboard-table th,
+.storyboard-table td {
+  padding: 0.35rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.storyboard-table th {
+  color: var(--soviet-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+
+/* Color swatch utilities */
+.color-swatch {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.color-swatch-large {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Character grid styling */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.character-card {
+  background: #1A1A1A;
+  padding: 1rem;
+  text-align: center;
+}
+
+.character-card h4 {
+  color: var(--soviet-red);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.character-card p {
+  font-size: 0.75rem;
+  color: var(--soviet-gray);
+  margin: 0;
+}
+
+/* Hierarchy table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7rem;
+}
+
+th, td {
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  color: var(--soviet-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+/* Boxed content for callouts */
+.boxed {
+  background: rgba(232, 90, 107, 0.1);
+  border-left: 3px solid var(--soviet-red);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.boxed p {
+  margin: 0 0 0.5rem 0;
+}
+
+.boxed p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lead paragraph styling */
+.lead {
+  font-size: 0.85rem;
+  color: var(--soviet-gray);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}

@@ -53,6 +53,62 @@ Die Gesellschaft ist streng hierarchisch, aber auf eine schleichende, bürokrati
 **Fremd, aber nicht unverständlich.** Der Spieler ist ein Außenseiter, aber die Gefühle sind universell: Einsamkeit, Sehnsucht, Hoffnung auf Veränderung.
 :::
 
+## Die Winter-Ökonomie
+
+Der ewige Winter ist kein Unfall und keine Strafe. Er ist das *ökonomische Fundament* des Systems. Die Gesellschaft hat sich nicht trotz des Winters entwickelt, sondern *wegen* ihm.
+
+**Das Knappheitsprinzip.** Der Winter erzeugt permanente Knappheit:
+
+- *Wärme* — Heizung muss zentral verteilt werden. Wer Heizung kontrolliert, kontrolliert das Leben.
+- *Nahrung* — Keine lokale Produktion möglich. Alles kommt aus den mysteriösen „südlichen Produktionszonen", die niemand je gesehen hat.
+- *Bewegung* — Reisen im Winter ist gefährlich und teuer. Die Wölfe kontrollieren Checkpoints.
+- *Energie* — Brennstoff ist eine kontrollierte Ressource.
+
+Diese Knappheit ist kein Bug, sondern ein Feature. Sie macht die Bevölkerung vollständig abhängig von der zentralen Verteilung.
+
+**Die Wärme-Bürokratie.** Die Heizungszuteilung folgt einer komplexen Formellogik: Quadratmeter, Anzahl Bewohner, „sozialer Beitrag" — und unausgesprochene Loyalitätsfaktoren. Die Schweine sitzen nicht zufällig in stickigen, überheizten Büros. Ihr Zugang zu Wärme ist ihr Privileg.
+
+**Wer profitiert vom Winter?**
+
+| Fraktion | Profit |
+|----------|--------|
+| Schweine | Absolute Kontrolle über Zuteilung. Ohne Knappheit keine Macht. |
+| Wölfe | Kontrolle der Bewegung. Winter = Ausgangssperren, Checkpoints. |
+| Füchse | Je größer die Knappheit, desto höher die Margen. |
+| Eulen | Verwalten das Narrativ. Schreiben die Theorie, warum Winter „natürlich" ist. |
+
+**Die Ironie.** Selbst die Unterdrückten haben ein Interesse am Status quo. Der Winter gibt Struktur. Sommer wäre Chaos.
+
+## Das Geheimnis
+
+::: {.boxed}
+**Spielanleitung:** Die folgenden Informationen sind *versteckte Lore*. Der Spieler entdeckt sie durch Dokumente, Gespräche und Orte — nicht durch Exposition.
+:::
+
+**Die offizielle Version.** Es gibt keine. Der Winter *ist*. Punkt.
+
+**Die Flüsterkultur.** „Die Alten erinnern sich an Sommer. Aber die Alten sind verwirrt." — „Es gab mal einen Sommer. Dann kam der Große Frost." — „Der Fremde weiß mehr. Aber frag ihn nicht."
+
+**Die Schichten der Wahrheit.**
+
+| Schicht | Was der Spieler entdeckt |
+|---------|--------------------------|
+| 0 | Der Winter ist normal |
+| 1 | Der Winter hat eine Ursache |
+| 2 | Kein Unfall — „Projekt Зима" |
+| 3 | Das System hält den Winter aufrecht |
+| 4 | Wer davon profitiert |
+| 5 | Möglichkeit, es zu beenden |
+| 6 | Aber will man das? |
+
+**Die drei Versionen der Wahrheit.** Das Spiel bietet keine eindeutige Antwort:
+
+- *Technologisch* — Eine Wettersteuerungsanlage aus der Sowjetära, ursprünglich militärisch, jetzt zivil genutzt. Die Anlage könnte abgeschaltet werden.
+- *Ökonomisch* — Der Winter ist real, aber die Gesellschaft hat sich so strukturiert, dass ein Ende undenkbar wäre. Es gibt keinen „Aus"-Schalter — nur jahrhundertelanges Umdenken.
+- *Metaphysisch* — Der Winter ist die manifestierte Stagnation der Gesellschaft. Solange das System bleibt, bleibt der Winter.
+
+**Was würde passieren, wenn der Winter endet?** Die gesamte Verteilungslogik bricht zusammen. Bauern gibt es nicht mehr — niemand weiß, wie man Nahrung produziert. Die Schweine verlieren ihre Legitimität. Die Wölfe verlieren ihre Rechtfertigung. Die Füchse verlieren ihr Geschäftsmodell. Potenzielle Revolution, aber auch potentielles Chaos.
+
 ## Regeln der Welt
 
 Die Welt ist *nicht* postapokalyptisch – das System funktioniert, wenn auch schlecht. Es gibt Strom, Heizung, fließendes Wasser. Die Straßenbahnen fahren nach Fahrplan.
