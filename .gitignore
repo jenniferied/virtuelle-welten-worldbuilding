@@ -57,5 +57,8 @@ Thumbs.db
 # Node.js
 node_modules/
 
+# Houdini Engine
+**/HoudiniEngine/Temp/
+
 # Build artifacts
 **/dist/
