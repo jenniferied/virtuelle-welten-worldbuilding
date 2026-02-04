@@ -1,6 +1,7 @@
 # Houdini: TOPs Tile Export mit Height Field Tile Split
 
-**Stand**: 2026-02-04
+**Stand**: 2026-02-04 (aktualisiert)
+**Session**: Texture Baking + TOPs @attribute Debugging
 **Versionen**: Houdini 21.0
 **Problem gelöst**: File Cache + PDG/TOPs Export
 
@@ -188,3 +189,105 @@ Quellen:
 - [SideFX - File Cache](https://www.sidefx.com/docs/houdini/nodes/sop/filecache.html)
 - [SideFX - ROP Fetch](https://www.sidefx.com/docs/houdini/nodes/top/ropfetch.html)
 - [SideFX - Karma Texture Baker](https://www.sidefx.com/docs/houdini/nodes/lop/karmatexturebaker.html)
+
+---
+
+## Session 2026-02-04: @attribute Syntax & Texture Baking
+
+### Das @tile Problem
+
+**Symptom**: TOPs produziert nur 1KB/8KB Dateien, obwohl manueller Export funktioniert.
+
+**Ursache**: `@tile` Attribut wird im `heightfield_tilesplit` nicht korrekt evaluiert.
+
+#### Getestete Syntax-Varianten
+
+| Syntax | Parameter-Typ | Ergebnis |
+|--------|---------------|----------|
+| `@tile` | Numerisch | ❌ Nicht evaluiert |
+| `` `@tile` `` | Numerisch | ❌ Fehler |
+| `detail("pfad/wedge1", "tile", 0)` | Numerisch | ⚠️ Teilweise |
+| `pdgattribute("tile", 0)` | Numerisch | ⏳ Ungetestet |
+
+**Empfehlung**: `pdgattribute("tile", 0)` statt `@tile` verwenden.
+
+### Copernicus COPs Workflow (Houdini 21)
+
+Für Texture Baking ohne Labs Baker:
+
+```
+[SOP Import] → [Rasterize Setup] → [Rasterize Geometry] → [File Output]
+                  Space: UVs
+                  UV Attribute: uv
+```
+
+**Problem entdeckt**: Schwarze Bereiche bei hohen Terrain-Bereichen.
+
+- Nicht Steilheit-abhängig, sondern Höhe-abhängig
+- "Face Visibility Culling: No Culling" hilft nicht
+- UV Flatten behebt das Problem, ist aber sehr langsam
+
+### Bake Geometry Textures COP
+
+Moderner Ersatz, aber gleiches Problem:
+
+```
+[SOP Import] → [Bake Geometry Textures]
+                 Tracing Mode: Single Mesh
+                 Face Visibility Culling: No Culling
+                 UV Attribute: uv
+                 Custom Attributes: Cd (RGB)
+```
+
+**Schwarze Bereiche**: Auch hier Cutoff bei bestimmter Höhe. Ursache unklar.
+
+### Labs Simple Baker (funktioniert)
+
+Der einzige zuverlässig funktionierende Baker:
+
+```
+Labs Simple Baker
+  Resolution: 2048
+  ✓ Vertex Color
+  ✓ Custom Channel: roughness
+  Base Path: $HIP/tex/tile_`@tile`_$(CHANNEL).png
+```
+
+**Hinweis**: Langsam bei hochaufgelösten Meshes (Millionen Polygone).
+
+### TOPs Node-Übersicht
+
+| Node | Zweck | @attribute Support |
+|------|-------|-------------------|
+| **Wedge** | Work Items erstellen | Quelle der Attribute |
+| **ROP Fetch** | ROP triggern | ⚠️ Kocht SOPs nicht neu |
+| **ROP Geometry Output** | Geo direkt exportieren | ✓ Sollte funktionieren |
+| **Geometry Import** | Geo in PDG laden | ✓ Kocht SOPs |
+| **HDA Processor** | HDA mit Attributen kochen | ✓ Zuverlässig |
+
+### Empfohlener Workflow
+
+Bis @attribute zuverlässig funktioniert:
+
+1. **Manuell exportieren** (9x, pro Tile)
+2. **Oder**: Subnet → HDA wrappen → HDA Processor
+3. **Oder**: Python Script das Parameter setzt und ROP triggert
+
+### Vertex Colors als Alternative
+
+FBX exportiert `@Cd` automatisch. In Unreal Material:
+
+```
+Vertex Color → Base Color
+```
+
+**Vorteile**: Kein Baking, instant, funktioniert zuverlässig
+**Nachteile**: Auflösung = Vertex-Dichte
+
+### Quellen (diese Session)
+
+- [SideFX - Using PDG Attributes](https://www.sidefx.com/docs/houdini/tops/attributes.html)
+- [SideFX - ROP Geometry Output](https://www.sidefx.com/docs/houdini/nodes/top/ropgeometry.html)
+- [SideFX - Rasterize Setup](https://www.sidefx.com/docs/houdini/nodes/cop/rasterizesetup.html)
+- [SideFX - Bake Geometry Textures](https://www.sidefx.com/docs/houdini/nodes/cop/bakegeometrytextures.html)
+- [CGWiki - Houdini Tops](https://tokeru.com/cgwiki/HoudiniTops.html)
