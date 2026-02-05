@@ -1,6 +1,11 @@
 ::: {.new-page}
 :::
 
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+```
+
 # Visueller Stil
 
 ::: {.lead}
@@ -46,3 +51,22 @@
 **Vermeiden:** Übertriebene Schärfe, aggressive Farbentsättigung.
 
 Die Welt soll wie eine lebendige Illustration wirken, nicht wie ein Film oder ein Foto.
+
+```{=latex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.24\textwidth}
+\vspace{0pt}
+% Placeholder images for visual style
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [PALETTE]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [MATERIAL]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [LICHT]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [STIL]\vspace{2mm}}}
+\end{minipage}
+```

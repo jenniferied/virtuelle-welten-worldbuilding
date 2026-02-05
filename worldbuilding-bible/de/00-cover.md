@@ -11,7 +11,6 @@ houdini: "Houdini 21"
 lang: de
 toc: true
 toc-title: "Inhaltsverzeichnis"
-lof: true
-lof-title: "Abbildungsverzeichnis"
-dark-mode: false  # Toggle: true = black pages, false = light grey pages
+lof: false
+dark-mode: true  # Toggle: true = black pages, false = light grey pages
 ---

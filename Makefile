@@ -1,48 +1,47 @@
 # Makefile for ПАНЕЛЬКИ Worldbuilding Project
 
-.PHONY: help dev build export clean
+.PHONY: help worldbuilding gdd clean check-deps
 
 help:
 	@echo "ПАНЕЛЬКИ Worldbuilding Bible"
 	@echo ""
 	@echo "Commands:"
-	@echo "  dev       Start Slidev dev server with hot reload"
-	@echo "  build     Build static site"
-	@echo "  export    Export to PDF (16:9)"
-	@echo "  clean     Remove generated files"
+	@echo "  worldbuilding   Build worldbuilding bible PDF (LaTeX)"
+	@echo "  gdd             Build game design document PDF"
+	@echo "  all             Build both documents"
+	@echo "  clean           Remove generated files"
+	@echo "  check-deps      Check LaTeX dependencies"
 	@echo ""
 	@echo "Requirements:"
-	@echo "  - Node.js 18+"
-	@echo "  - npm install (run once)"
+	@echo "  - Python 3.8+"
+	@echo "  - Pandoc"
+	@echo "  - LuaLaTeX (via MacTeX)"
 
-# Start development server
-dev:
-	@echo "Starting Slidev dev server..."
-	@cd worldbuilding-bible && npm run dev
+# Build worldbuilding bible PDF
+worldbuilding:
+	@echo "Building Worldbuilding Bible..."
+	@python3 scripts/build-worldbuilding.py --lang de
 
-# Build static site
-build:
-	@echo "Building static site..."
-	@cd worldbuilding-bible && npm run build
-	@echo "✓ Built to worldbuilding-bible/dist/"
+# Build GDD PDF
+gdd:
+	@echo "Building Game Design Document..."
+	@python3 scripts/build-gdd.py --lang de
 
-# Export to PDF
-export:
-	@echo "Exporting to PDF..."
-	@mkdir -p worldbuilding-bible/export
-	@cd worldbuilding-bible && npm run export
-	@echo "✓ PDF: worldbuilding-bible/export/worldbuilding-bible.pdf"
+# Build all documents
+all: worldbuilding gdd
+
+# Check dependencies
+check-deps:
+	@python3 scripts/build-worldbuilding.py --check-deps
 
 # Clean generated files
 clean:
 	@echo "Cleaning generated files..."
-	@rm -rf worldbuilding-bible/dist
 	@rm -rf worldbuilding-bible/export/*.pdf
-	@rm -rf worldbuilding-bible/node_modules/.cache
-	@echo "✓ Cleaned"
-
-# Install dependencies (run once)
-install:
-	@echo "Installing dependencies..."
-	@cd worldbuilding-bible && npm install
-	@echo "✓ Dependencies installed"
+	@rm -rf worldbuilding-bible/export/*.tex
+	@rm -rf worldbuilding-bible/export/*.aux
+	@rm -rf worldbuilding-bible/export/*.log
+	@rm -rf worldbuilding-bible/export/*.out
+	@rm -rf worldbuilding-bible/export/*.toc
+	@rm -rf worldbuilding-bible/export/*.lof
+	@echo "Done."

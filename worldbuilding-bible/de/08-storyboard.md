@@ -1,7 +1,12 @@
 ::: {.new-page}
 :::
 
-# Storyboard: Opening Cutscene
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+```
+
+# Storyboard
 
 ::: {.lead}
 Die Opening Cutscene etabliert die Welt, bevor der Spieler die Kontrolle übernimmt. Keine Charaktere direkt – stattdessen Schatten, Silhouetten, First-Person-Perspektive. Der mysteriöse Fuchs „Der Fremde" narrt aus dem Off.
@@ -21,20 +26,17 @@ Der Spieler erwacht in einem Zug, der sich ПАНЕЛЬГРАД nähert. Keine E
 \toprule
 \textbf{Shot} & \textbf{Bild} & \textbf{Technik} & \textbf{Dauer} \\
 \midrule
-1 & Schwarz. Augen öffnen sich. Verschwommenes Zuginneres. & First-Person Erwachen & \textasciitilde3s \\
-2 & Hände auf kaltem Fenster. Schneelandschaft rauscht vorbei. & POV, Zeitraffer & \textasciitilde4s \\
-3 & Schatten von Tier-Passagieren strecken sich über Sitze. & Schattenspiel & \textasciitilde4s \\
-4 & Stadt erscheint -- ПАНЕЛЬГРАД Skyline durch beschlagenes Glas. & Kondenswasser & \textasciitilde5s \\
-5 & Zeitraffer: Tag→Dämmerung→Nacht. Fenster leuchten auf. & Establishing & \textasciitilde6s \\
-6 & POV blickt auf Hand mit zerknittertem Dokument. Unleserlich. & Insert & \textasciitilde3s \\
-7 & Silhouetten in Fenstern. Wolf-Schatten beobachtet. & Überwachung & \textasciitilde4s \\
-8 & Zugtür öffnet sich. Kalte Luft. Erster Schritt auf Bahnsteig. & POV Füße & \textasciitilde3s \\
-9 & Totale: Einsame Figur auf leerem Bahnsteig. Stadt ragt auf. & Schlussbild & \textasciitilde4s \\
+1 & Schwarz. Augen öffnen sich. Verschwommenes Zuginneres. & First-Person Erwachen & \textasciitilde10s \\
+2 & Hände auf kaltem Fenster. Schneelandschaft rauscht vorbei. & POV, Zeitraffer & \textasciitilde10s \\
+3 & Stadt erscheint -- ПАНЕЛЬГРАД Skyline durch beschlagenes Glas. & Kondenswasser & \textasciitilde10s \\
+4 & Zeitraffer: Tag→Dämmerung→Nacht. Fenster leuchten auf. & Establishing & \textasciitilde10s \\
+5 & Zugtür öffnet sich. Kalte Luft. Erster Schritt auf Bahnsteig. & POV Füße & \textasciitilde10s \\
+6 & Totale: Einsame Figur auf leerem Bahnsteig. Stadt ragt auf. & Schlussbild & \textasciitilde10s \\
 \bottomrule
 \end{tabular}
 ```
 
-**Gesamtdauer: ~36 Sekunden**
+**Gesamtdauer: ~60 Sekunden**
 
 ## Voice-Over: Der Fremde
 
@@ -52,8 +54,6 @@ Der Fremde spricht aus dem Off – Fuchs oder Wolf? Die Grenzen verschwimmen an 
 3 & \textit{„Sieh sie dir an. Sie bemerken dich nicht. Noch nicht."} \\
 4--5 & \textit{„ПАНЕЛЬГРАД. Die graue Stadt. Hier endet jede Reise."} \\
 6 & \textit{„Keine Papiere. Kein Name. Das... ist ein Problem."} \\
-7 & \textit{„Sie beobachten alles. Besonders... Fremde."} \\
-8--9 & \textit{„Aber ich kann helfen. Gegen einen kleinen Gefallen."} \\
 \bottomrule
 \end{tabular}
 ```
@@ -70,26 +70,6 @@ Der Fremde spricht aus dem Off – Fuchs oder Wolf? Die Grenzen verschwimmen an 
 3 & \textit{„Interessante Reisegesellschaft, nicht wahr? Sie beißen nicht. Meistens."} \\
 4--5 & \textit{„Willkommen in ПАНЕЛЬГРАД. Schön ist sie nicht -- aber sie wächst einem ans Herz."} \\
 6 & \textit{„Hm. Keine Papiere? Kompliziert. Aber nicht unmöglich."} \\
-7 & \textit{„Ein Rat: Vertraue niemandem. Außer mir natürlich."} \\
-8--9 & \textit{„Komm. Ich zeige dir, wie man hier überlebt."} \\
-\bottomrule
-\end{tabular}
-```
-
-### Variante C: Es war einmal...
-
-```{=latex}
-\noindent
-\begin{tabular}{@{}p{0.08\textwidth}p{0.88\textwidth}@{}}
-\toprule
-\textbf{Shot} & \textbf{Voice-Over} \\
-\midrule
-1--2 & \textit{„Es war einmal... ein Fremder. Er kam aus dem Nichts."} \\
-3 & \textit{„Die anderen sahen ihn nicht. Sie sahen nie, was sie nicht sehen sollten."} \\
-4--5 & \textit{„Er kam in eine Stadt aus Beton und Schnee. Eine Stadt, die einfach... war."} \\
-6 & \textit{„Er hatte nichts. Keine Papiere. Nur eine Ahnung."} \\
-7 & \textit{„Die Stadt hatte Augen. Überall."} (Pause) \textit{„Mir. Sie gehörten mir."} \\
-8--9 & \textit{„Und so beginnt unsere Geschichte. Wir werden sehen, wer sie zu Ende erzählt."} \\
 \bottomrule
 \end{tabular}
 ```
@@ -99,3 +79,28 @@ Der Fremde spricht aus dem Off – Fuchs oder Wolf? Die Grenzen verschwimmen an 
 **Audio:** KI-generierte Stimme (männlich, russischer Akzent). Zuggeräusche, Wind, gedämpfte Stimmen. Melancholische Musik ab Shot 4–5.
 
 **Visuell:** Kontrast warm (Zuginneres) vs. kalt (außen). Fensterkondenswasser als Motiv. Langsame Kamerabewegungen. Farbpalette: Blau-Grau außen, Orange-Gelb innen.
+
+```{=latex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.24\textwidth}
+\vspace{0pt}
+% Storyboard thumbnails
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [SHOT 1]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [SHOT 2]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [SHOT 3]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [SHOT 4]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [SHOT 5]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [SHOT 6]\vspace{2mm}}}
+\end{minipage}
+```

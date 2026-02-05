@@ -1,11 +1,14 @@
 ::: {.new-page}
 :::
 
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+```
+
 # Gameplay
 
-::: {.lead}
 Wie der Spieler die Welt erlebt: Bürokratie als Quest-Engine, LLM-NPCs, Telefonate und das Geheimnis des Winters.
-:::
 
 ## Das Quest-Prinzip
 
@@ -40,15 +43,6 @@ Das Telefon ist das zentrale Quest-Tool. Nicht Internet, nicht Karten — schwar
   - *Ablehnung* — „Diese Nummer ist nicht vergeben" (Sackgasse oder Verschleierung)
   - *Hinweise* — „Frag Mischa im Innenhof, der weiß Bescheid"
 
-**Beispiel-Quest: „Das verschwundene Formular"**
-
-1. Spieler ruft Amt an: „Ihr Antrag fehlt ein Dokument"
-2. Welches? „Formular 23-C, Bescheinigung über Nichtvorhandensein von Dokumenten"
-3. Wo bekommt man das? „Rufen Sie Amt 17 an" (gibt Nummer)
-4. Amt 17: „Wir stellen das nicht mehr aus. Fragen Sie Archive"
-5. Archive: „Wir haben Ihr Original. Kommen Sie vorbei."
-6. Vor Ort: Das Archiv ist ein labyrinthischer Keller...
-
 ## Orte und ihre Funktionen
 
 | Ort | Funktion | Typische Quests |
@@ -59,105 +53,70 @@ Das Telefon ist das zentrale Quest-Tool. Nicht Internet, nicht Karten — schwar
 | Miliz-Wache | Kontrolle, Strafen | Verwarnungen löschen, Informationen |
 | Archiv | Dokumente, Geschichte | Alte Akten, verschwundene Personen |
 | Basar/Schwarzmarkt | Illegale Waren | Beschaffungsaufträge, Informationen |
-| Produkty (Laden) | Legale Waren | Schlange stehen, Bekannte treffen |
-| Kommunalka | Wohnen | Nachbarschaftskonflikte, Zugang |
-| Fabrik | Arbeit | Arbeitsaufträge, Unfälle, Sabotage |
+
+```{=latex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.24\textwidth}
+\vspace{0pt}
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [AMT]\vspace{2mm}}}
+\vspace{3mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [TELEFON]\vspace{2mm}}}
+\vspace{3mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [ORTE]\vspace{2mm}}}
+\vspace{3mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [FORMULARE]\vspace{2mm}}}
+\end{minipage}
+
+\clearpage
+
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+```
 
 ## LLM-NPCs
 
-Die NPCs spielen ihre Klassen-Rollen, aber mit individueller Variation. Jeder NPC wird durch einen LLM-Prompt gesteuert, der folgende Faktoren berücksichtigt:
+```{=latex}
+\large
+```
 
-**Spezies-Rolle:**
-- Schwein = bürokratisch, statusbewusst, korrekt aber bestechlich
-- Wolf = autoritär, misstrauisch, pflichtbewusst
-- Fuchs = geschäftstüchtig, informiert, neutral
-- Bär = müde, freundlich, hilfsbereit aber machtlos
-- Eule = wissend, kryptisch, vorsichtig
+Die NPCs werden durch LLM-Prompts gesteuert, die Spezies-Rolle, persönliche Situation und Tagesform kombinieren.
 
-**Persönliche Situation:**
-- Frau krank, braucht Medikamente vom Schwarzmarkt
-- Schulden bei den Füchsen
-- Kind will studieren, braucht Empfehlung
-- Kurz vor der Pension, will keine Probleme
+**Spezies:** Schwein = bürokratisch, bestechlich · Wolf = autoritär · Fuchs = geschäftstüchtig · Bär = müde, hilfsbereit · Eule = kryptisch
 
-**Tagesform:**
-- Nach Mittagessen kooperativer
-- Montag morgens besonders bürokratisch
-- Freitag nachmittags will nur noch nach Hause
-
-**Beziehung zum Spieler:**
-- Kennt ihn von früher
-- Schuldet ihm was
-- Hasst Menschen grundsätzlich
-- Neugierig auf den Fremden
-
-**Beispiel-Prompt für Schwein am Schalter:**
-
-> Du bist Genosse Pyatkov, ein Schwein, Sachbearbeiter im Amt für Wärmezuteilung. Du arbeitest hier seit 23 Jahren. Du bist müde, aber korrekt. Du hasst Ausnahmen. Ein Mensch ohne Papiere ist ein Problem — aber vielleicht auch eine Gelegenheit. Deine Frau beschwert sich über die Heizung zu Hause. Du könntest einen Gefallen gebrauchen.
+**Beispiel-Prompt:** *„Du bist Genosse Pyatkov, Schwein, Sachbearbeiter. 23 Jahre im Amt. Müde, aber korrekt. Du hasst Ausnahmen. Ein Mensch ohne Papiere ist ein Problem — aber vielleicht auch eine Gelegenheit."*
 
 ## Narrative Supps
 
-„Narrative Supps" sind Hinweise, die der Spieler sammelt — Puzzleteile, die zum Geheimnis des Winters führen.
+Hinweise zum Geheimnis des Winters, versteckt in Dokumenten, Gesprächen und Orten.
 
-**Wo findet man sie?**
-
-*Dokumente (in Ämtern und Archiven):*
-- Alte Zeitungen mit Wettermeldungen aus „vor dem Frost"
-- Versiegelte Akten (erfordern Zugang)
-- Interne Memos zwischen Ämtern („Projekt Зима — Fortschrittsbericht")
-- Statistische Anomalien (Energieverbrauch passt nicht zu offiziellen Zahlen)
-
-*Gespräche (mit bestimmten NPCs):*
-- Alte Eulen, die sich erinnern
-- Betrunkene Funktionäre, die zu viel reden
-- Der Fremde, der in Rätseln spricht
-- Dissidenten im Untergrund
-
-*Orte (Environmental Storytelling):*
-- Verlassene Wetterstationen am Stadtrand
-- Ein zugewachsenes Gewächshaus unter dem Schnee
-- Graffiti an Wänden: „Erinnert euch an den Sommer"
-- Ein Raum im Archiv, der immer verschlossen ist
-
-**Fraktions-Perspektiven:**
-
-| Fraktion | Ihre Version der Wahrheit |
-|----------|---------------------------|
-| Schweine | „Es gibt kein Geheimnis. Der Winter ist eine natürliche Klimaanomalie. Wir managen die Situation vorbildlich." |
-| Wölfe | „Manche Fragen sind gefährlich. Wer zu viel fragt, ist ein Destabilisator." |
-| Füchse | „Natürlich ist der Winter künstlich. Ist doch egal. Solange es Knappheit gibt, gibt es Geschäft." |
-| Eulen | „Die Wahrheit... ist komplex. Ja, wir wissen mehr. Aber Wissen ist nicht Macht. Manchmal ist es Last." |
-| Bären | „Meine Großmutter erzählte von Sommer. Aber das sind alte Geschichten. Wir müssen arbeiten." |
-| Hasen | „Sommer? Gibt es so etwas wirklich? Wenn ja... könnte alles anders sein..." |
+| Fraktion | Ihre Version |
+|----------|--------------|
+| Schweine | „Der Winter ist natürlich. Wir managen vorbildlich." |
+| Wölfe | „Wer zu viel fragt, ist ein Destabilisator." |
+| Füchse | „Natürlich künstlich. Knappheit = Geschäft." |
+| Eulen | „Wir wissen mehr. Aber Wissen ist Last." |
 
 ## Post-Enthüllung
 
 **Warum weiterspielen, wenn man das Geheimnis kennt?**
 
-*Das Wissen ändert zunächst nichts.* Der Spieler weiß jetzt die Wahrheit. Aber was tut er damit?
+Das Wissen ändert zunächst nichts. Der Spieler weiß jetzt die Wahrheit — aber was tut er damit?
 
-- Die Anlage zerstören? (Katastrophe)
-- Die Wahrheit verbreiten? (Niemand glaubt ihm / Miliz verhaftet ihn)
-- Schweigen? (Leben wie vorher, aber mit Wissen)
+- Die Anlage zerstören? → Katastrophe, niemand weiß wie man ohne sie überlebt
+- Die Wahrheit verbreiten? → Niemand glaubt ihm, oder die Miliz verhaftet ihn
+- Schweigen? → Leben wie vorher, aber mit dem Gewicht des Wissens
 
-*Neue Questlinien öffnen sich:*
+**Neue Questlinien öffnen sich:**
 
-- **Untergrund-Netzwerk** — Andere Wahrheitssucher finden, koordinieren
-- **Systemarbeit von innen** — In die Bürokratie aufsteigen, Veränderung bewirken
-- **Der dritte Weg** — Mit dem Fremden verhandeln
+- *Untergrund-Netzwerk* — Andere Wahrheitssucher finden und koordinieren
+- *Systemarbeit von innen* — In die Bürokratie aufsteigen, Veränderung bewirken
+- *Der dritte Weg* — Mit dem Fremden verhandeln, dessen Motive unklar bleiben
 
-*Die Welt reagiert auf das Wissen:*
-
-- NPCs, die der Spieler informiert hat, verhalten sich anders
-- Manche schließen sich an
-- Manche verraten ihn
-- Manche werden paranoid
-
-*Subtile Änderungen:*
-
-- Manche NPCs sprechen anders mit dem Spieler (wissen sie?)
-- Neue Graffiti erscheint: „Er weiß"
-- Der Fremde sucht den Kontakt
+**Die Welt reagiert:** NPCs verhalten sich anders. Manche schließen sich an, manche verraten ihn, manche werden paranoid. Neue Graffiti erscheint: „Er weiß."
 
 ## Endgame-Optionen
 
@@ -174,3 +133,21 @@ Die NPCs spielen ihre Klassen-Rollen, aber mit individueller Variation. Jeder NP
 Die zentrale Frage bleibt: *Wenn du wüsstest, dass der Winter künstlich ist — würde es etwas ändern?*
 
 Und die Antwort ist: **Nur wenn genug andere es auch wissen. Und nur wenn sie bereit sind, die Konsequenzen zu tragen.**
+
+```{=latex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.24\textwidth}
+\vspace{0pt}
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [NPC]\vspace{2mm}}}
+\vspace{3mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [DOKUMENT]\vspace{2mm}}}
+\vspace{3mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [GRAFFITI]\vspace{2mm}}}
+\vspace{3mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{25mm}\centering\color{gray}\scriptsize [ENDGAME]\vspace{2mm}}}
+\end{minipage}
+```

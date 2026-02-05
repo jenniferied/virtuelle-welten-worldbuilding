@@ -1,11 +1,14 @@
 ::: {.new-page}
 :::
 
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+```
+
 # Die Welt
 
-::: {.lead}
 Eine dystopische, sowjetisch inspirierte Schneemetropole, in der korrupte Versionen sowjetischer Zeichentrickfiguren die eisigen Straßen bevölkern. Der Spieler ist der einzige Mensch – ein Fremder in einer Welt, die ihn nicht erwartet hat.
-:::
 
 ## ПАНЕЛЬКИ
 
@@ -52,6 +55,30 @@ Die Gesellschaft ist streng hierarchisch, aber auf eine schleichende, bürokrati
 
 **Fremd, aber nicht unverständlich.** Der Spieler ist ein Außenseiter, aber die Gefühle sind universell: Einsamkeit, Sehnsucht, Hoffnung auf Veränderung.
 :::
+
+```{=latex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.24\textwidth}
+\vspace{0pt}
+% Placeholder images
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{50mm}\centering\color{gray}\scriptsize [STADT]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{50mm}\centering\color{gray}\scriptsize [PANELKI]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{50mm}\centering\color{gray}\scriptsize [WINTER]\vspace{2mm}}}
+\end{minipage}
+```
+
+::: {.new-page}
+:::
+
+```{=latex}
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+```
 
 ## Die Winter-Ökonomie
 
@@ -114,3 +141,22 @@ Diese Knappheit ist kein Bug, sondern ein Feature. Sie macht die Bevölkerung vo
 Die Welt ist *nicht* postapokalyptisch – das System funktioniert, wenn auch schlecht. Es gibt Strom, Heizung, fließendes Wasser. Die Straßenbahnen fahren nach Fahrplan.
 
 Was anders ist: Der ewige Winter wird nicht hinterfragt. Die Bewohner sind anthropomorphe Tiere – der Spieler ist der einzige Mensch. Manche Ecken des Bezirks fühlen sich *falsch* an – als würde die Realität dünn werden.
+
+```{=latex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.24\textwidth}
+\vspace{0pt}
+% Placeholder images for Winter-Ökonomie
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [HEIZUNG]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [BÜROKRATIE]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [GEHEIMNIS]\vspace{2mm}}}
+\vspace{4mm}
+
+\fcolorbox{border}{boxbg}{\parbox{0.9\linewidth}{\vspace{40mm}\centering\color{gray}\scriptsize [ANLAGE]\vspace{2mm}}}
+\end{minipage}
+```
