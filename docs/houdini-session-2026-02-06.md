@@ -141,3 +141,98 @@ Falls einzelne Wände trotz korrektem Threshold fehlen: Group-Feld auf dem Wrang
 - `pointprims(0, @ptnum)` ist die korrekte Funktion für "welche Prims nutzen diesen Punkt"
 - Group Expression kann Point-Normals statt Prim-Normals lesen → Wrangle bevorzugen
 - Dissolve SOP Edge-Syntax: `p4-6` (Punkt-Punkt mit p-Prefix)
+
+---
+
+## 5. Blast SOP mit Attribut-Expressions
+
+### Syntax für Integer-Attribute
+
+```
+@lgth_pnt==0    // Alles mit Wert 0 selektieren
+@lgth_pnt==1    // Alles mit Wert 1 selektieren
+@lgth_pnt!=1    // Alles OHNE Wert 1 selektieren
+```
+
+### Delete Non Selected
+
+- **ON**: Löscht alles was NICHT im Group-Feld steht
+- **OFF**: Löscht alles was IM Group-Feld steht
+
+**Beispiel:** "Behalte nur `lgth_pnt==1`":
+- `@lgth_pnt==1` mit Delete Non Selected **ON**
+- ODER `@lgth_pnt==0` mit Delete Non Selected **OFF**
+
+### Wichtig: Group Type muss zum Attribut passen
+
+Wenn Blast nichts oder alles löscht:
+1. Prüfen ob Attribut auf **Points** oder **Primitives** liegt (Spreadsheet)
+2. **Group Type** in Blast auf denselben Typ setzen
+
+---
+
+## 6. Foreach Loop — Attribut-Debugging
+
+### Problem: Attribut existiert im Loop, aber Blast danach findet nichts
+
+**Debug-Check:** Null SOP nach Foreach End → Spreadsheet öffnen → Attribut vorhanden?
+
+Falls Attribut fehlt: Im **Foreach End** unter "Attributes from Pieces" das Attribut listen oder `*` setzen.
+
+Falls Attribut vorhanden: Group Type in Blast prüfen (siehe oben).
+
+---
+
+## 7. Unreal Engine — Lighting Limits
+
+### Statische Lights (gebacken)
+- Praktisch unbegrenzt (tausende möglich)
+- Kosten nur Lightmap-Speicher und Bake-Zeit
+
+### Dynamische Point Lights
+| Rendering | Limit |
+|-----------|-------|
+| Deferred | ~100-500 sichtbare gleichzeitig |
+| Forward | Hard limit 8-16 pro Objekt |
+| Lumen (UE5) | ~50-100 bevor Performance einbricht |
+
+### Performance-Strategie für viele Lichter
+- **Emissive Materials + Bloom** statt echte Lights für Deko
+- Wenige echte Lights + viele Fake-Emissives
+- Statisch baken wo möglich
+
+---
+
+## 8. Houdini Engine — Blueprint Instancing in Unreal
+
+### Blueprint per Attribut instanziieren
+
+**Attribute Create SOP:**
+
+| Feld | Wert |
+|------|------|
+| Name | `unreal_instance` |
+| Class | Point |
+| Type | String |
+| String Value | `/Game/Blueprints/BP_StreetLight` |
+
+Oder als **Wrangle:**
+```vex
+s@unreal_instance = "/Game/Blueprints/BP_StreetLight";
+```
+
+### Hierarchical Instanced Static Mesh (HISM)
+
+Für tausende Meshes mit einem Draw Call:
+
+| Attribut | Typ | Wert |
+|----------|-----|------|
+| `unreal_instance` | String | `/Game/Meshes/SM_StreetLight` |
+| `unreal_hierarchical_instancer` | Integer | `1` |
+
+### Hinweis zu Lights in Blueprints
+
+Lights in Blueprints werden trotzdem einzeln gespawnt — kein Instancing möglich. Strategie:
+1. Mesh instanziieren (HISM)
+2. Nur nächste Lights zur Kamera aktiv
+3. Rest mit Emissive faken
