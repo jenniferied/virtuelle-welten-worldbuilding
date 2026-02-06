@@ -185,6 +185,8 @@ if(is_garage) {
 **Group:** @is_garage_wall==1
 
 ```vex
+addpointattrib(0, "light_pnt", 0);
+
 if(i@is_garage_wall != 1) return;
 if(abs(@N.y) > 0.3) return;
 
@@ -194,6 +196,7 @@ float door_spacing = chf("door_spacing");
 float margin = chf("margin");
 float light_height = chf("light_height");
 float min_wall_width = chf("min_wall_width");
+vector light_rot = chv("light_rotation");
 
 int pts[] = primpoints(0, @primnum);
 if(len(pts) != 4) {
@@ -291,11 +294,21 @@ for(int i = 0; i < num_doors; i++) {
     setprimattrib(0, "N", pr, wall_N);
     setprimattrib(0, "is_door", pr, 1);
 
-    // Licht-Punkt über der Tür
+    // Licht-Punkt über der Tür (mit Rotation)
     vector light_pos = set(base_c.x, door_top_y + light_height, base_c.z);
     int light_pt = addpoint(0, light_pos);
-    setpointattrib(0, "N", light_pt, wall_N);
-    setpointattrib(0, "lgth_pnt", light_pt, 1);
+
+    vector local_x = wall_dir;
+    vector local_y = {0, 1, 0};
+    vector local_z = wall_N;
+    matrix3 rot = ident();
+    rotate(rot, radians(light_rot.x), local_x);
+    rotate(rot, radians(light_rot.y), local_y);
+    rotate(rot, radians(light_rot.z), local_z);
+    vector light_N = wall_N * rot;
+
+    setpointattrib(0, "N", light_pt, light_N);
+    setpointattrib(0, "light_pnt", light_pt, 1, "set");
 }
 
 // Oberes N-gon
@@ -326,7 +339,7 @@ for(int i = 0; i < num_doors - 1; i++) {
     int idx = i * 2 + 1;
     int pr = addprim(0, "poly", pt_door_bottom[idx], pt_door_bottom[idx+1], pt_door_top[idx+1], pt_door_top[idx]);
     setprimattrib(0, "N", pr, wall_N);
-    setprimattrib(0, "is_wall", pr_right, 1);
+    setprimattrib(0, "is_wall", pr, 1);
 }
 ```
 
@@ -337,6 +350,7 @@ for(int i = 0; i < num_doors - 1; i++) {
 - `margin`: 0.5m (Rand links/rechts)
 - `light_height`: 0.3m (Höhe des Licht-Punkts über Tür)
 - `min_wall_width`: 4.0m
+- `light_rotation`: Vector3 (Rotation der Licht-Normalen in Grad, relativ zur Wand)
 
 ---
 
@@ -377,7 +391,7 @@ Alternativ für Triplanar-Materials in Unreal: Keine UVs nötig.
 | `is_garage_wall` | int (prim) | 1 = Garage-Wand |
 | `is_door` | int (prim) | 1 = Tür-Face |
 | `is_wall` | int (prim) | 1 = Wand-Face |
-| `lgth_pnt` | int (point) | 1 = Licht-Punkt |
+| `light_pnt` | int (point) | 1 = Licht-Punkt |
 
 ---
 
