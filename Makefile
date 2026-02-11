@@ -25,7 +25,7 @@ worldbuilding:
 # Build GDD PDF
 gdd:
 	@echo "Building Game Design Document..."
-	@python3 scripts/build-gdd.py --lang de
+	@python3 scripts/build-gdd.py
 
 # Build all documents
 all: worldbuilding gdd

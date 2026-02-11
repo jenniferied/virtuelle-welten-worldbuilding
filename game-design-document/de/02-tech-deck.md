@@ -2,48 +2,11 @@
 
 ## Entwicklungsumgebung
 
-```
-┌─────────────────────┐                              ┌─────────────────────┐
-│   MAC WORKSTATION   │                              │   PC WORKSTATION    │
-│                     │                              │                     │
-│  MacBook Pro M1 Max │                              │  Intel i9-13900K    │
-│  64 GB RAM          │                              │  RTX 3090           │
-│                     │                              │  64 GB RAM          │
-│  ┌───────────────┐  │                              │  ┌───────────────┐  │
-│  │ Unreal 5.5+   │◄─┼──────┐                ┌─────►┼──│ Unreal 5.5+   │  │
-│  └───────────────┘  │      │                │      │  └───────────────┘  │
-│  ┌───────────────┐  │      │                │      │  ┌───────────────┐  │
-│  │ Houdini Engine│──┼──────┘                └──────┼──│ Houdini Engine│  │
-│  └───────────────┘  │                              │  └───────────────┘  │
-│  ┌───────────────┐  │                              │  ┌───────────────┐  │
-│  │ Houdini       │  │                              │  │ Houdini       │  │
-│  └───────────────┘  │                              │  └───────────────┘  │
-│  ┌───────────────┐  │                              │  ┌───────────────┐  │
-│  │ P4V Client    │  │                              │  │ P4V Client    │  │
-│  └───────────────┘  │                              │  └───────────────┘  │
-│                     │                              │                     │
-└──────────┬──────────┘                              └──────────┬──────────┘
-           │                                                    │
-           │              ┌─────────────────────┐               │
-           │              │   DIGITAL OCEAN     │               │
-           │              │                     │               │
-           └──────────────┤  Perforce Server    ├───────────────┘
-                          │  (Helix Core)       │
-                          │                     │
-                          │  ┌───────────────┐  │
-                          │  │ Depot         │  │
-                          │  │ - //depot/... │  │
-                          │  └───────────────┘  │
-                          │                     │
-                          └─────────────────────┘
-```
-
-### Workflow
-
-1. **Entwicklung** erfolgt auf beiden Workstations parallel
-2. **Assets** werden via Perforce synchronisiert
-3. **Große Binärdateien** (Texturen, Meshes) nutzen Perforce-Locking
-4. **Houdini Digital Assets** werden zentral versioniert
+| | Mac Workstation | PC Workstation |
+|---|---|---|
+| **Hardware** | MacBook Pro M1 Max, 64 GB RAM | Intel i9-13900K, RTX 3090, 64 GB RAM |
+| **Software** | Unreal 5.7, Houdini 20, Houdini Engine | Unreal 5.7, Houdini 20, Houdini Engine |
+| **Versionierung** | Perforce (Helix Core) via Digital Ocean Server |
 
 ## Unreal Engine Assets
 
@@ -57,7 +20,6 @@
 **Ultra Dynamic Sky** bietet ein vollständiges Himmel- und Wettersystem mit:
 
 - Tag/Nacht-Zyklus mit einem einzigen Time-of-Day-Parameter
-- Ultra Dynamic Weather für Blizzard, leichten Schneefall, Gewitter
 - Volumetrische 3D-Wolken und dynamische Aurora
 - Echtzeit-Simulation basierend auf Breitengrad/Längengrad
 
@@ -103,4 +65,105 @@ Zuerst habe ich das [Bounding Box Tool](https://boundingbox.klokantech.com/) ver
 
 - **Zentrierung:** Das gesamte Terrain habe ich auf den Ursprung (0,0,0) verschoben, um Rechenfehler bei großen Koordinaten zu vermeiden.
 
-- **Eye Matching:** Die OSM-Daten habe ich eingeladen und visuell an das Terrain angepasst. Als primäre Referenz dienten die Schleifenstraßen des Tagebaus. Da die Straßen in OSM präzise digitalisiert sind, habe ich sie mittels Transform-Nodes so verschoben und skaliert, bis sie exakt auf den Krater-Terrassen des 12,5m-Terrains auflagen.
+- **Eye Matching:** Die OSM-Daten habe ich eingeladen und visuell an das Terrain angepasst. Als Referenz dienten Straßen in Tälern und an Berghängen. Mittels Transform-Nodes wurden die Daten so verschoben und skaliert, bis sie exakt auf dem Terrain auflagen.
+
+**Schritt 3: Terrain-Aufbereitung für Unreal**
+
+Das Heightfield wurde für den Echtzeit-Einsatz dramatisiert – Höhenunterschiede verstärkt, um die visuelle Wirkung bei flachen Kamerawinkeln zu verbessern.
+
+- **Nanite-Konvertierung:** Ursprünglich als Unreal Landscape importiert, dann auf Hi-Res Nanite Geometry umgestellt (HeightField Convert). Nanite erhält feine Details auch in der Ferne, wo traditionelle LODs bereits degradieren. Das Terrain wurde in 9 Tiles aufgeteilt.
+
+- **Textur-Generierung:** Diffuse- und Roughness-Maps über den Labs Maps Baker erstellt. COPs wurde getestet, erzeugte jedoch schwarze Artefakte auf den Texturen.
+
+- **Batch-Processing:** TOPS (Task Operator Network) verarbeitet alle Tiles parallel – sowohl Texturen als auch FBX-Geometrie-Export.
+
+**Schritt 4: Multipass Terrain-Anpassung**
+
+Das Heightfield wurde in mehreren Durchläufen an die Stadt-Infrastruktur angepasst:
+
+1. **District-Anpassung:** Grobe Nivellierung der Wohngebiete
+2. **Straßen-Projektion:** Einschnitte für Hauptstraßen
+3. **Gebäude-Fundamente:** Lokale Planierung unter Gebäude-Footprints
+
+## Straßen-System
+
+### OSM-Extraktion
+
+Aus den OpenStreetMap-Daten wurden verschiedene Straßentypen extrahiert und klassifiziert:
+
+| Typ | Beschreibung | Behandlung |
+|-----|-------------|------------|
+| `major_big` | Hauptverkehrsstraßen (breit) | Asphalt-Geometrie mit Bordsteinen |
+| `major_small` | Nebenstraßen (schmal) | Asphalt-Geometrie mit Bordsteinen |
+| `mud` | Unbefestigte Wege | Ribbon-Geometrie |
+
+### Geometrie-Vereinfachung
+
+Parallele OSM-Straßen (z.B. Fahrbahnen mit Mittelstreifen) wurden über eine Pipeline aus Fuse, Resample und PolyPath zu einzelnen Curves konsolidiert.
+
+### Custom Road Tool
+
+Das Labs Road Generator Tool erwies sich als instabil. Stattdessen wurde ein eigenes System entwickelt:
+
+- Ribbon-Geometrie entlang der Curve
+- Bordstein-Extrusion über gezieltes PolyExtrude mit Inset
+- Intersection-Handling über Point und Primitive Wrangles: Intersection Points wurden identifiziert, zuerst major-Straßen verarbeitet, dann Mud-Ribbons gegen major-Geometrie geschnitten
+
+### Beleuchtung
+
+Entlang der `major_big` und `major_small` Straßen wurden Straßenlaternen prozedural verteilt.
+
+## Garagen
+
+Gebäude unter 5 Metern Höhe aus den OSM-Daten wurden als Garagen interpretiert:
+
+- Einfache Box-Geometrie aus Building-Footprints extrudiert
+- Material-Variation über Attribute Create (verschiedene Unreal-Materials)
+- Lightpoints über den Garagentoren für nächtliche Beleuchtung
+
+## Gebäude-Generator
+
+Für Gebäude über 5 Meter wurde die **Buildings from Patterns**-Node eingesetzt.
+
+### Komponenten
+
+Prozedurale Generierung modularer Building-Elemente, mit zukünftigen Variationen im Blick:
+
+- Fassaden mit Fenster-Rastern
+- Balkone und Eingänge
+- Dachgeometrie
+
+### Fenster-Beleuchtung
+
+Ursprünglicher Ansatz: Point Lights hinter jedem Fenster. Problem: ~10.000 Light-Instances – für Unreal nicht praktikabel.
+
+Lösung: Emissive Material Planes hinter den Fensteröffnungen. Gleicher visueller Effekt, minimaler Performance-Impact.
+
+*Zukünftige Erweiterung: Logik zur Steuerung von Fensterfarbe und -zustand (beleuchtet / gedimmt / aus).*
+
+### Fundamente
+
+Da das Terrain trotz Multipass-Anpassung nicht perfekt plan unter allen Gebäuden lag, wurden automatische Fundamente generiert, die Unebenheiten kaschieren.
+
+## Unreal Engine Integration
+
+### Asset-Import
+
+| Methode | Assets |
+|---------|--------|
+| TOPS/FBX | Nanite Terrain Tiles, Texturen |
+| Houdini Engine/HDA | Gebäude, Straßen, Garagen, Laternen |
+
+### Vegetation
+
+PCG (Procedural Content Generation) für Baumplatzierung. Die Bäume wurden mit der EasySnow Material Function von William Faucher versehen.
+
+### Post-Processing
+
+- **Pixelation:** Custom Post Process Material für stilisierten Look
+- **Color Grading:** LUT auf dem Post Process Volume
+
+### Zusätzliche Assets
+
+- **Train Station:** Prefab im sowjetischen Stil für die Opening-Szene
+- *Fahrzeuge: Mit EasySnow Material Function vorbereitet, Scattering ausstehend*
