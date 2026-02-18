@@ -1,0 +1,469 @@
+%!Adobe-FontList 1.25
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/AdobeFnt25.lst
+FileLength:9777
+FileModTime:793129874
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:792356117
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Molot
+FamilyName:Molot
+StyleName:Regular
+MenuName:Molot
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Molot
+FamilyNameNative:
+StyleNameNative:Regular
+FullNameNative:
+WritingScript:Cyrillic
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/Molot.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:11900
+FileModTime:788467105
+NameArray:0,Mac,4,Molot
+NameArray:0,Win,1,Molot
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTMono-Bold
+FamilyName:PT Mono
+StyleName:Bold
+MenuName:PT Mono
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:PT Mono Bold
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTMono.ttc
+TTCOffset:32
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:315876
+FileModTime:785512168
+NameArray:0,Mac,18,PT Mono Bold
+NameArray:0,Mac,4,PT Mono Bold
+NameArray:0,Win,1,PT Mono
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTMono-Regular
+FamilyName:PT Mono
+StyleName:Regular
+MenuName:PT Mono
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:PT Mono
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTMono.ttc
+TTCOffset:316
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:315876
+FileModTime:785512168
+NameArray:0,Mac,18,PT Mono
+NameArray:0,Mac,4,PT Mono
+NameArray:0,Win,1,PT Mono
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-Bold
+FamilyName:PT Sans
+StyleName:Bold
+MenuName:PT Sans
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:PT Sans Bold
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:2380
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans Bold
+NameArray:0,Mac,4,PT Sans Bold
+NameArray:0,Win,1,PT Sans
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-BoldItalic
+FamilyName:PT Sans
+StyleName:Bold Italic
+MenuName:PT Sans
+StyleBits:3
+WeightClass:700
+WidthClass:5
+AngleClass:1
+FullName:PT Sans Bold Italic
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:2048
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans Bold Italic
+NameArray:0,Mac,4,PT Sans Bold Italic
+NameArray:0,Win,1,PT Sans
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-Caption
+FamilyName:PT Sans Caption
+StyleName:Regular
+MenuName:PT Sans Caption
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:PT Sans Caption
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:1716
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans Caption
+NameArray:0,Mac,4,PT Sans Caption
+NameArray:0,Win,1,PT Sans Caption
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-CaptionBold
+FamilyName:PT Sans Caption
+StyleName:Bold
+MenuName:PT Sans Caption
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:PT Sans Caption Bold
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:1384
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans Caption Bold
+NameArray:0,Mac,4,PT Sans Caption Bold
+NameArray:0,Win,1,PT Sans Caption
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-Italic
+FamilyName:PT Sans
+StyleName:Italic
+MenuName:PT Sans
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:PT Sans Italic
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:388
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans Italic
+NameArray:0,Mac,4,PT Sans Italic
+NameArray:0,Win,1,PT Sans
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-Narrow
+FamilyName:PT Sans Narrow
+StyleName:Regular
+MenuName:PT Sans Narrow
+StyleBits:0
+WeightClass:400
+WidthClass:3
+AngleClass:0
+FullName:PT Sans Narrow
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:1052
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans Narrow
+NameArray:0,Mac,4,PT Sans Narrow
+NameArray:0,Win,1,PT Sans Narrow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-NarrowBold
+FamilyName:PT Sans Narrow
+StyleName:Bold
+MenuName:PT Sans Narrow
+StyleBits:2
+WeightClass:700
+WidthClass:3
+AngleClass:0
+FullName:PT Sans Narrow Bold
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:720
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans Narrow Bold
+NameArray:0,Mac,4,PT Sans Narrow Bold
+NameArray:0,Win,1,PT Sans Narrow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PTSans-Regular
+FamilyName:PT Sans
+StyleName:Regular
+MenuName:PT Sans
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:PT Sans
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/PTSans.ttc
+TTCOffset:56
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:2794628
+FileModTime:785512168
+NameArray:0,Mac,18,PT Sans
+NameArray:0,Mac,4,PT Sans
+NameArray:0,Win,1,PT Sans
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Times-Bold
+FamilyName:Times
+StyleName:Bold
+MenuName:Times
+StyleBits:0
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Times Bold
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/Times.ttc
+TTCOffset:388
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:919104
+FileModTime:785512168
+NameArray:0,Mac,4,Times Bold
+NameArray:0,Mac,4,Times Gras
+NameArray:0,Mac,4,Times Fett
+NameArray:0,Mac,4,Times grassetto
+NameArray:0,Mac,4,Times vet
+NameArray:0,Mac,4,Times Fet
+NameArray:0,Mac,4,Times Negrita
+NameArray:0,Mac,4,Times Fed
+NameArray:0,Mac,4,Times Carregado
+NameArray:0,Mac,4,Times Halvfet
+NameArray:0,Mac,4,Times lihava
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Times-BoldItalic
+FamilyName:Times
+StyleName:Bold Italic
+MenuName:Times
+StyleBits:1
+WeightClass:700
+WidthClass:5
+AngleClass:1
+FullName:Times Bold Italic
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/Times.ttc
+TTCOffset:1084
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:919104
+FileModTime:785512168
+NameArray:0,Mac,4,Times Bold Italic
+NameArray:0,Mac,4,Times Gras italique
+NameArray:0,Mac,4,Times Fett Kursiv
+NameArray:0,Mac,4,Times grassetto corsivo
+NameArray:0,Mac,4,Times vet-cursief
+NameArray:0,Mac,4,Times Fet Kursiv
+NameArray:0,Mac,4,Times Negrita Cursiva
+NameArray:0,Mac,4,Times Fed kursiv
+NameArray:0,Mac,4,Times Carregado Itálico
+NameArray:0,Mac,4,Times Halvfet kursiv
+NameArray:0,Mac,4,Times lihava kursiivi
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Times-Italic
+FamilyName:Times
+StyleName:Italic
+MenuName:Times
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:Times Italic
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/Times.ttc
+TTCOffset:736
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:919104
+FileModTime:785512168
+NameArray:0,Mac,4,Times Italic
+NameArray:0,Mac,4,Times Italique
+NameArray:0,Mac,4,Times Kursiv
+NameArray:0,Mac,4,Times corsivo
+NameArray:0,Mac,4,Times cursief
+NameArray:0,Mac,4,Times Kursiv
+NameArray:0,Mac,4,Times Cursiva
+NameArray:0,Mac,4,Times kursiv
+NameArray:0,Mac,4,Times Itálico
+NameArray:0,Mac,4,Times kursiv
+NameArray:0,Mac,4,Times kursiivi
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Times-Roman
+FamilyName:Times
+StyleName:Regular
+MenuName:Times
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Times Roman
+WritingScript:Roman
+OutlineFileName:/Users/jennifer/Downloads/VW_InDesign_WBB/Document fonts/Times.ttc
+TTCOffset:40
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:919104
+FileModTime:785512168
+NameArray:0,Mac,4,Times Roman
+%EndFont
+
